@@ -7,4 +7,4 @@ const char *game_url = "https://nyaaa.moe";
 
 //Screen dimension constants
 const int game_screen_width = 640;
-const int game_screen_height = 480;
+const int game_screen_height = 576;

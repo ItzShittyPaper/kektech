@@ -1,5 +1,7 @@
 #include "libs.h"
 
+#define RENDER_SCALE 4
+
 #ifndef RENDER_H_INCLUDED
 #define RENDER_H_INCLUDED
 bool R_Clear();

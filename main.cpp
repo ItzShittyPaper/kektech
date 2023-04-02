@@ -111,7 +111,7 @@ bool loop() {
 		}
 	}
 
-	M_DrawTileRect(1, 1, 6, 4, 32, glaggle);
+	M_DrawTileRect(1, 1, 6, 4, 16, glaggle);
 	TextLabel(8, 8, "label widget test");
 
 	// Render texture

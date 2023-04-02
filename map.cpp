@@ -45,8 +45,8 @@ void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index)
 
 	bgtile.rect.x = pos_x * tile_size;
 	bgtile.rect.y = pos_y * tile_size;
-	bgtile.rect.w = tile_size;
-	bgtile.rect.h = tile_size;
+	bgtile.rect.w = tile_size * RENDER_SCALE;
+	bgtile.rect.h = tile_size * RENDER_SCALE;
 	
 	SDL_RenderCopy(renderer, texture_index, NULL, &bgtile.rect); 
 

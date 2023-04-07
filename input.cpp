@@ -106,5 +106,4 @@ bool I_ProcessInput(int key_code) {
 			std::cout << "DOWN / S pressed" << std::endl;
 			break;
 	}
-	}
 }

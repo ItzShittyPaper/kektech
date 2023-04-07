@@ -111,7 +111,7 @@ bool loop() {
 		}
 	}
 
-	M_DrawTileRect(1, 1, 6, 4, 16, glaggle);
+	M_ReadMapFile("leo/ds/test.ds");
 	TextLabel(8, 8, "label widget test");
 
 	// Render texture

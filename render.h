@@ -1,6 +1,6 @@
 #include "libs.h"
 
-#define RENDER_SCALE 2
+#define RENDER_SCALE 1
 
 #ifndef RENDER_H_INCLUDED
 #define RENDER_H_INCLUDED

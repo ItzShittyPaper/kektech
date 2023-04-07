@@ -10,6 +10,8 @@ void M_DrawTileLineH(int pos_x, int pos_y, int num_x, int tile_size, SDL_Texture
 void M_DrawTileLineV(int pos_x, int pos_y, int num_y, int tile_size, SDL_Texture* texture_index);
 void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, SDL_Texture* texture_index);
 
+int M_ReadMapFile(const char* map);
+
 extern FILE *map_file;
 
 extern int file_x;

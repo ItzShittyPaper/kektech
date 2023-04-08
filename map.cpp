@@ -91,6 +91,20 @@ void commentcheck(int i) {
 
 }
 
+SDL_Texture* M_TextureAssign(const char* texture) {
+
+	SDL_Texture* temp_tex;
+
+	if(strcmp(texture, "glaggle\n") == 0) {temp_tex = glaggle;}
+	if(strcmp(texture, "leadpipe\n") == 0) {temp_tex = leadpipe;}
+	if(strcmp(texture, "branch\n") == 0) {temp_tex = branch;}
+	if(strcmp(texture, "bare_hands\n") == 0) {temp_tex = bare_hands;}
+	
+	return temp_tex;
+	free(temp_tex);
+
+}
+
 int M_ReadMapFile(const char* map) {
 
   map_file = fopen(map, "r");
@@ -128,10 +142,7 @@ int M_ReadMapFile(const char* map) {
         break;
       case 2:
 
-        /* these commands check for commands like /s or /r */
-        ye = strstr(chunk, "/s");
-        if (ye != NULL) { i = 2; break; }
-
+        /* these commands check for commands like /r */
         ye_rec = strstr(chunk, "/r");
         if (ye_rec != NULL) { i = 3; break; }
 
@@ -143,20 +154,13 @@ int M_ReadMapFile(const char* map) {
         ye = strstr(chunk, "/v");
         if (ye != NULL) { i = 8; break; }
 
-        else { M_DrawTile(file_y, file_x, 32, glaggle); i = -1; break; }
+        else {
 
-      /* SENTENCE DRAWING ROUTINE */
-      case 3:
+		M_DrawTile(file_y, file_x, 32, M_TextureAssign(chunk)); 
 
-        ye2 = strstr(chunk, "/e");
-        if (ye2 != NULL) { i = -1; break; }
-        else { i = 2; }
+		i = -1; break; 
 
-        /* print the character / line */
-	M_DrawTile(file_y + 1 + i2, file_x - 1, 32, glaggle);
-
-        i2++;
-        break;
+	}
 
       /* RECTANGLE DRAWING ROUTINE */
       case 4:

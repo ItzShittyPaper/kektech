@@ -18,7 +18,7 @@ struct ui {
 ui UI;
 SDL_Rect dest;
 
-void TextBox() {
+void UI_TextBox() {
 
 	SDL_Color foreground = { 255, 255, 255 };
 	
@@ -37,7 +37,7 @@ void TextBox() {
 	}
 }
 
-void TextLabel(int pos_x, int pos_y, const char *label) {
+void UI_TextLabel(int pos_x, int pos_y, const char *label) {
 
 	SDL_Color foreground = { 0, 0, 0 };
 	
@@ -55,11 +55,30 @@ void TextLabel(int pos_x, int pos_y, const char *label) {
 
 }
 
-void Rectangle(int pos_x, int pos_y, int width, int height) {
+void UI_Rect(int pos_x, int pos_y, int width, int height) {
 
-	SDL_Rect* rect_rect;
-	SDL_RenderDrawRect(renderer, rect_rect);
-	free(rect_rect);
+	SDL_Rect rect;
+	rect.x = pos_x;
+	rect.y = pos_y;
+	rect.w = width;
+	rect.h = height;
+
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	SDL_RenderDrawRect(renderer, &rect);
+	
+}
+
+void UI_FillRect(int pos_x, int pos_y, int width, int height) {
+
+	SDL_Rect rect;
+	rect.x = pos_x;
+	rect.y = pos_y;
+	rect.w = width;
+	rect.h = height;
+
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	SDL_RenderFillRect(renderer, &rect);
+	free(&rect);
 	
 }
 
@@ -112,12 +131,14 @@ bool loop() {
 	}
 
 	M_ReadMapFile("leo/ds/test.ds");
-	TextLabel(8, 8, "label widget test");
+	UI_TextLabel(8, 8, "label widget test");
+
+	UI_Rect(256, 128, 64, 72);
 
 	// Render texture
 	SDL_RenderCopy(renderer, texture, NULL, NULL);
 
-	//TextBox();
+	//UI_TextBox();
 
 	// Update window
 	SDL_RenderPresent( renderer );

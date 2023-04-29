@@ -99,9 +99,9 @@ SDL_Texture* M_TextureAssign(const char* texture) {
 	if(strcmp(texture, "leadpipe\n") == 0) {temp_tex = leadpipe;}
 	if(strcmp(texture, "branch\n") == 0) {temp_tex = branch;}
 	if(strcmp(texture, "bare_hands\n") == 0) {temp_tex = bare_hands;}
-	
+
 	return temp_tex;
-	free(temp_tex);
+	SDL_DestroyTexture(temp_tex);
 
 }
 

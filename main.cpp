@@ -7,80 +7,33 @@
 #include "ui.h"
 #include "map.h"
 
+// definitions
+dialog_file dialog;
+dialog_menu menu;
+modes mode;
+
+/* ANIMATION PLAYERS */
+int animplayer0 = 0;
+int animplayer1 = 0;
+int animplayer2 = 0;
+int animplayer3 = 0;
+int animplayer4 = 0;
+int animplayer5 = 0;
+int animplayer6 = 0;
+int animplayer7 = 0;
+
 // Pointers to our window, renderer, texture, and font
-
-struct ui {
-
-	SDL_Texture *text;
-
-};
-
-ui UI;
 SDL_Rect dest;
 
-void UI_TextBox() {
+/*
 
-	SDL_Color foreground = { 255, 255, 255 };
-	
-	if ( textbox_input.size() ) {
-		SDL_Surface* text_surf = TTF_RenderText_Solid(font, textbox_input.c_str(), foreground);
+MISC FUNCTIONS
 
-		UI.text = SDL_CreateTextureFromSurface(renderer, text_surf);
-		dest.x = 320 - (text_surf->w / 2.0f);
-		dest.y = 240;
-		dest.w = text_surf->w;
-		dest.h = text_surf->h;
-		SDL_RenderCopy(renderer, UI.text, NULL, &dest);
+*/
 
-		SDL_DestroyTexture(UI.text);
-		SDL_FreeSurface(text_surf);
-	}
-}
+/* HERE BE DRAGONS FOR NOW */
 
-void UI_TextLabel(int pos_x, int pos_y, const char *label) {
-
-	SDL_Color foreground = { 0, 0, 0 };
-	
-	SDL_Surface* text_surf = TTF_RenderText_Solid(font, label, foreground);
-
-	UI.text = SDL_CreateTextureFromSurface(renderer, text_surf);
-	dest.x = pos_x;
-	dest.y = pos_y;
-	dest.w = text_surf->w;
-	dest.h = text_surf->h;
-	SDL_RenderCopy(renderer, UI.text, NULL, &dest);
-
-	SDL_DestroyTexture(UI.text);
-	SDL_FreeSurface(text_surf);
-
-}
-
-void UI_Rect(int pos_x, int pos_y, int width, int height) {
-
-	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
-	rect.w = width;
-	rect.h = height;
-
-	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-	SDL_RenderDrawRect(renderer, &rect);
-	
-}
-
-void UI_FillRect(int pos_x, int pos_y, int width, int height) {
-
-	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
-	rect.w = width;
-	rect.h = height;
-
-	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-	SDL_RenderFillRect(renderer, &rect);
-	free(&rect);
-	
-}
+/* ============================= */
 
 int main(int argc, char** args) {
 
@@ -119,26 +72,15 @@ bool loop() {
 			case SDL_KEYDOWN:
 				if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
 					textbox_input.pop_back();
-				}
-				
-				else {
-
+				} else {
 					I_ProcessKeys();
+				} break;
 
-				}
-				break;
 		}
 	}
 
 	M_ReadMapFile("leo/ds/test.ds");
-	UI_TextLabel(8, 8, "label widget test");
-
-	UI_Rect(256, 128, 64, 72);
-
-	// Render texture
-	SDL_RenderCopy(renderer, texture, NULL, NULL);
-
-	//UI_TextBox();
+	UI_Dialog("leo/txt/dialog0.txt");
 
 	// Update window
 	SDL_RenderPresent( renderer );
@@ -190,17 +132,22 @@ bool init() {
 	}
 
 	// Load font
-	font = TTF_OpenFont("leo/res/tewi.ttf", 24);
+	font = TTF_OpenFont("leo/res/ff1.ttf", 24);
 	if ( !font ) {
 		std::cout << "Error loading font: " << TTF_GetError() << std::endl;
 		return false;
 	}
 
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
+	SDL_RenderSetLogicalSize(renderer, game_screen_width / 2, game_screen_height / 2);
+
 	// Start sending SDL_TextInput events
-	SDL_StartTextInput();
+//	SDL_StartTextInput();
 	
 	// Load Textures Into the Memory
 	R_InitTextures();
+
+	mode = dialog_mode;
 
 	return true;
 }

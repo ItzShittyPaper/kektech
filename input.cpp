@@ -1,6 +1,7 @@
 #include "libs.h"
 #include "input.h"
 #include "render.h"
+#include "main.h"
 
 /* 
 
@@ -52,16 +53,16 @@ void I_ProcessKeys() {
 		case SDLK_DOWN:
 			I_ProcessInput(10);
 			break;
-		case SDLK_w:
+		case SDLK_a:
 			I_ProcessInput(7);
 			break;
-		case SDLK_a:
+		case SDLK_d:
 			I_ProcessInput(8);
 			break;
-		case SDLK_s:
+		case SDLK_w:
 			I_ProcessInput(9);
 			break;
-		case SDLK_d:
+		case SDLK_s:
 			I_ProcessInput(10);
 			break;
 
@@ -80,6 +81,16 @@ bool I_ProcessInput(int key_code) {
 	switch(key_code) {
 
 		case 0:
+			switch (mode) {
+
+				case 1:
+					dialog.target_num++;
+					menu.is_selected = 1;
+					break;
+				default:
+					break;
+			}
+
 			std::cout << "Z pressed" << std::endl;
 			break;
 		case 1:
@@ -100,9 +111,27 @@ bool I_ProcessInput(int key_code) {
 			std::cout << "RIGHT / D pressed" << std::endl;
 			break;
 	        case 9:
+			switch (mode) {
+
+				case 1:
+					menu.option--;
+					break;
+				default:
+					break;
+			}
+
 			std::cout << "UP / W pressed" << std::endl;
 			break;
 	        case 10:
+			switch (mode) {
+
+				case 1:
+					menu.option++;
+					break;
+				default:
+					break;
+			}
+
 			std::cout << "DOWN / S pressed" << std::endl;
 			break;
 	}

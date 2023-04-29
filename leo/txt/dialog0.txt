@@ -1,0 +1,4 @@
+this is being read from a file. tomorrow ill make it so you can have full dialog trees
+this is the second line uwu
+third line
+#=#

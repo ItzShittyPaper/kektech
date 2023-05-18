@@ -10,7 +10,8 @@
 // definitions
 dialog_file dialog;
 dialog_menu menu;
-modes mode;
+player_ent  player;
+modes       mode;
 
 /* ANIMATION PLAYERS */
 int animplayer0 = 0;
@@ -18,7 +19,9 @@ int animplayer1 = 0;
 int animplayer2 = 0;
 int animplayer3 = 0;
 int animplayer4 = 0;
+/* reserved for the player (and party) world animations */
 int animplayer5 = 0;
+/* reserved for ui animations */
 int animplayer6 = 0;
 int animplayer7 = 0;
 
@@ -31,7 +34,46 @@ MISC FUNCTIONS
 
 */
 
-/* HERE BE DRAGONS FOR NOW */
+void RNG_Init() {
+
+	srand(time(0));	
+
+}
+
+int RNG_GenSeed(int rand_min, int rand_max) {
+
+	int i;
+	int num = (rand() %
+	(rand_max - rand_min + 1)) + rand_min;
+	std::cout << num << std::endl;
+	return num;
+}
+
+void PLAYER_Init() {
+
+	player.collider.x = 0;
+	player.collider.y = 0;
+	player.collider.w = 16;
+	player.collider.h = 16;
+
+}
+
+void PLAYER_Move() {
+
+	//Move the dot left or right
+	player.pos_x += player.vel_x;
+	player.collider.x = player.pos_x;
+    
+ 	//Move the dot up or down
+	player.pos_y += player.vel_y;
+	player.collider.y = player.pos_y;
+
+	/* stop and start the animation depending on the player movement */
+	/* i know that i should use the || (OR) operator here, but it doesnt fucking work */
+	if (player.vel_y != 0) { player.is_moving = 1; }
+	else if (player.vel_x != 0) { player.is_moving = 1; }
+	else { player.is_moving = 0; animplayer5 = 0; }
+}
 
 /* ============================= */
 
@@ -58,6 +100,8 @@ bool loop() {
 	SDL_Rect dest;
 
 	R_Clear();
+	SDL_RenderSetLogicalSize(renderer, game_screen_width / 2, game_screen_height / 2);
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
 
 	// Event loop
 	while ( SDL_PollEvent( &e ) != 0 ) {
@@ -70,17 +114,26 @@ bool loop() {
 				textbox_input += e.text.text;
 				break;
 			case SDL_KEYDOWN:
+				if (e.key.repeat == 0) {
+					if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
+						textbox_input.pop_back();
+					} else {
+						I_ProcessKeyDownEvent();
+					}
+				} break;
+			case SDL_KEYUP:
 				if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
 					textbox_input.pop_back();
 				} else {
-					I_ProcessKeys();
+					I_ProcessKeyUpEvent();
 				} break;
-
 		}
 	}
 
+	PLAYER_Move();
 	M_ReadMapFile("leo/ds/test.ds");
-	UI_Dialog("leo/txt/dialog0.txt");
+	R_DrawPlayer(leo_sheet, player.direction);
+//	UI_Dialog("leo/txt/dialog0.txt");
 
 	// Update window
 	SDL_RenderPresent( renderer );
@@ -138,16 +191,19 @@ bool init() {
 		return false;
 	}
 
-	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
-	SDL_RenderSetLogicalSize(renderer, game_screen_width / 2, game_screen_height / 2);
-
 	// Start sending SDL_TextInput events
 //	SDL_StartTextInput();
 	
+	// Initialize the random number generator
+	RNG_Init();
+
 	// Load Textures Into the Memory
 	R_InitTextures();
 
-	mode = dialog_mode;
+	// Initialize the player entity
+	PLAYER_Init();
+
+	mode = main_mode;
 
 	return true;
 }

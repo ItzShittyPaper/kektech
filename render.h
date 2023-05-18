@@ -1,5 +1,4 @@
 #include "libs.h"
-
 #define RENDER_SCALE 1
 
 #ifndef RENDER_H_INCLUDED
@@ -8,6 +7,8 @@ bool R_Clear();
 void ToggleFullscreen(SDL_Window* Window);
 void R_InitTextures();
 void R_DrawCharacterPortrait(int pos_x, int pos_y, SDL_Texture* texture_index);
+
+void R_DrawPlayer(SDL_Texture* texture_index, int direction);
 
 /* TEXTURE PATH INDEX */
 static const char* const values[] {
@@ -18,6 +19,40 @@ static const char* const values[] {
 
 	"leo/bmp/characters/leolaus.png"
 };
+
+extern struct CharacterPortrait {
+
+	SDL_Rect srcrect;
+	SDL_Rect dstrect;
+
+} charportraitbuf;
+
+extern struct CharacterWorldSprite {
+
+	SDL_Rect srcrect;
+	SDL_Rect dstrect;
+
+	/* higher = faster */
+	int anim_speed = 1;
+
+	enum CharacterDirectionIndex {
+
+		left = 62,
+		right = 62,
+		up = 95,
+		down = 78 
+
+	} directionindex;
+
+	enum CharacterAnimIndex {
+
+		frame1 = 80,
+		frame2 = 96,
+		idle = 112
+
+	} animindex;
+
+} playerworldsprite;
 
 /* TEXTURE DEFINITIONS */
 extern SDL_Texture* glaggle;

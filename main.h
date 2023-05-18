@@ -46,6 +46,36 @@ struct dialog_menu {
 
 } extern menu;
 
+/*
+
+PLAYER
+
+*/
+
+struct player_ent {
+
+	/* higher is slower */
+	int speed = 16;
+
+	int pos_x = 0;
+	int pos_y = 0;
+	int vel_x = 0;
+	int vel_y = 0;
+
+	/* PLAYERS FACING DIRECTION
+		0 = LEFT
+		1 = RIGHT
+		2 = UP
+		3 = DOWN
+	*/
+	int direction = 0;
+	int is_moving = 0;
+
+	SDL_Rect collider;
+
+} extern player;
+
+
 /* 
 
 COLOR DEFINITIONS

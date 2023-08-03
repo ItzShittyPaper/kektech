@@ -80,10 +80,18 @@ bool I_ProcessInput(int key_code) {
 
 		case 0:
 			switch (mode) {
+				case 0:
+					is_interacting = 1;
+					break;
 				case 1:
 					dialog.target_num++;
 					menu.is_selected = 1;
 					break;
+
+				/* main menu */
+				case 255:
+					mode = main_mode;
+
 				default: break;
 			}
 
@@ -171,4 +179,5 @@ bool I_ProcessInput(int key_code) {
 
 			std::cout << "DOWN / S released" << std::endl; break;
 	}
+	return true;
 }

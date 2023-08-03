@@ -9,13 +9,35 @@ bool loop();
 /*
 
 GAME MODES / SCREENS
+customizing those is advised
 
 */
 
-enum modes {
+enum modes {	
 	main_mode = 0,
-	dialog_mode = 1
+	dialog_mode = 1,
+
+	kkui_crash = 254,
+	kkui_dashboard = 255
 } extern mode;
+
+struct game_manager {
+
+	char currentmap[128];
+	int map_is_initialized;
+
+} extern gamemgr;
+
+// game-specific variables
+extern const char *game_name;
+extern const char *game_version;
+extern const char *game_creator;
+extern const char *game_info;
+extern const char *game_url;
+
+//Screen dimension constants
+extern const int game_screen_width;
+extern const int game_screen_height;
 
 /*
 
@@ -30,6 +52,8 @@ struct dialog_file {
 	char* tag;
 
 	char* file_buffer;
+
+	char* current_dialog;
 
 	bool is_triggered = false;
 	int  is_menu      = 1;
@@ -54,6 +78,8 @@ PLAYER
 
 struct player_ent {
 
+	bool is_alive = false;
+
 	/* higher is slower */
 	int speed = 16;
 
@@ -75,6 +101,48 @@ struct player_ent {
 
 } extern player;
 
+/*
+
+NPC
+
+*/
+
+/* global variable checking if the player is interacting with an NPC */
+extern int is_interacting;
+/* npc interaction check code */
+void NPC_HelperActivate(SDL_Rect player_collider, SDL_Rect tile, char* dialog_path);
+void PLAYER_ResetVel();
+
+struct helper_ent {
+
+	/* the direction and position the npc is looking at */
+	int direction;
+	int pos_x;
+	int pos_y;
+
+	SDL_Rect srcrect;
+	SDL_Rect dstrect;
+	SDL_Rect intrect;
+
+	/* dialog file to refer to */
+	char* dialog;
+
+
+};
+
+/* 
+
+AUDIO ARCHITECTURE
+
+*/
+
+struct audio_arch {
+
+	/* a single music channel */
+	Mix_Music *music = NULL;
+
+
+} extern mixer;
 
 /* 
 

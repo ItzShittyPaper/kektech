@@ -7,10 +7,10 @@ CC = g++
 #COMPILER_FLAGS specifies the additional compilation options we're using
 # -w suppresses all warnings
 # -g add debug info
-COMPILER_FLAGS = -g
+COMPILER_FLAGS = -g `sdl2-config --cflags`
 
 #LINKER_FLAGS specifies the libraries we're linking against
-LINKER_FLAGS = -lSDL2 -lSDL2_ttf -lSDL2_image
+LINKER_FLAGS = -lstdc++ -lSDL2_mixer_ext -lSDL2 -lSDL2_ttf -lSDL2_image -logg -lmodplug -lopusfile -lopus `sdl2-config --libs`
 
 #OBJ_NAME specifies the name of our exectuable
 OBJ_NAME = kektech

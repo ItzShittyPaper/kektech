@@ -13,30 +13,18 @@ struct Tile {
 
 FILE *map_file;
 
-int file_x;
-int file_y;
-int i2 = 0;
+/*
 
-bool is_lined = false;
-int line_number = 1;
-int list_offset = 0;
-int no_collide = 0;
+DATADESK (.ds) SPECIFICATION
 
-bool is_comment_check = false;
+	- each object has a place on the map
+	- everything is being read line by line ig
+	- fuck niggers
 
-int rec_y1;
-int rec_x1;
-int rec_y2;
-int rec_x2;
-int line_length;
+*/
 
-char chunk[128];
- 
-char *ye;
-char *ye2;
-char *ye_rec;
-char *ye_list;
-char *ye_attr;
+game_texture* currentmgr;
+map_dsdata map;
 
 bool M_CheckCollision(SDL_Rect a, SDL_Rect b) {
 
@@ -68,22 +56,47 @@ bool M_CheckCollision(SDL_Rect a, SDL_Rect b) {
 	return true;
 }
 
-void M_PlayerCollide(SDL_Rect player_collider, SDL_Rect tile) {
+void M_PlayerBorderCollide(SDL_Rect player_collider) {
 
-	/* "640" is the width of the screen, i'll have to fix it */
-	if( ( player.pos_x < 0 ) || ( player.pos_x + 16 > 512 / 2) || M_CheckCollision(player_collider, tile) ) {
+	if( ( player.pos_y < 0 ) || ( player.pos_y + 16 > game_screen_height / 2)) {
+		//move back
+		player.pos_y -= player.vel_y;
+		player.collider.y = player.pos_y;
+	}
+
+	if( ( player.pos_x < 0 ) || ( player.pos_x + 16 > game_screen_width / 2)) {
 		//move back
 		player.pos_x -= player.vel_x;    
 		player.collider.x = player.pos_x;
 	}
 
-	/* "576" is the width of the screen, i'll have to fix it */
-	if( ( player.pos_y < 0 ) || ( player.pos_y + 16 > 448 / 2) || M_CheckCollision(player_collider, tile) ) {
+}
+
+void M_PlayerTileCollide(SDL_Rect player_collider, SDL_Rect tile) {
+
+	if(M_CheckCollision(player_collider, tile)) {
 		//move back
 		player.pos_y -= player.vel_y;
 		player.collider.y = player.pos_y;
 	}
+
+	if(M_CheckCollision(player_collider, tile)) {
+		//move back
+		player.pos_x -= player.vel_x;    
+		player.collider.x = player.pos_x;
+	}
+
 }
+
+void M_PlayerCollidePortal(SDL_Rect player_collider, SDL_Rect tile, char* path) {
+
+	/* Portal-specific collision function, could do this smarter, but it basically changes the level being loaded if they're colliding with a portal. */
+	if(M_CheckCollision(player_collider, tile) ) {
+		strcpy(gamemgr.currentmap, path);
+		gamemgr.map_is_initialized = 0;
+	}
+}
+
 
 void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index) {
 
@@ -97,28 +110,27 @@ void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index)
 	SDL_RenderCopy(renderer, texture_index, NULL, &bgtile.rect); 
 
 	/* COLLISION DETECTION */
-	if (no_collide == 0) {
-		M_PlayerCollide(player.collider, bgtile.rect);
+	if (map.no_collide == 0) {
+		M_PlayerTileCollide(player.collider, bgtile.rect);
 	}
+
 }
 
-void M_DrawTileHLine(int pos_x, int pos_y, int num_x, int tile_size, SDL_Texture* texture_index) {
+void M_DrawPortal(int pos_x, int pos_y, int tile_size, char* path) {
 
-	for (int i1 = 0; i1 < num_x; i1++) {
+	Tile bgtile;
 
-		M_DrawTile(pos_x + i1, pos_y, tile_size, texture_index);
+	bgtile.rect.x = pos_x * tile_size * RENDER_SCALE;
+	bgtile.rect.y = pos_y * tile_size * RENDER_SCALE;
+	bgtile.rect.w = tile_size * RENDER_SCALE;
+	bgtile.rect.h = tile_size * RENDER_SCALE;
 
-	}	
+	SDL_RenderCopy(renderer, glaggle, NULL, &bgtile.rect); 
+
+	M_PlayerCollidePortal(player.collider, bgtile.rect, path);
+
 }
 
-void M_DrawTileVLine(int pos_x, int pos_y, int num_y, int tile_size, SDL_Texture* texture_index) {
-
-	for (int i1 = 0; i1 < num_y; i1++) {
-
-		M_DrawTile(pos_x, pos_y + i1, tile_size, texture_index);
-
-	}	
-}
 
 void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, SDL_Texture* texture_index) {
 
@@ -131,110 +143,197 @@ void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, S
 	}
 }
 
-void commentcheck(int i) {
+int commandcheck() {
 
-  ye = strstr(chunk, "/*");
-  if (ye != NULL) { is_comment_check = true; }
+	/* these two-liners check for commands like /r */	
+	/* rectanngles of tiled sprites */
+	map.ye_rec = strstr(map.chunk, "/r");
+	if (map.ye_rec != NULL) { map.i = 3; return 1; }
 
-  ye = strstr(chunk, "*/");
-  if (ye != NULL && is_comment_check == true) { is_comment_check = false; i--; }
+	/* no-collide entity */
+	map.ye = strstr(map.chunk, "/n");
+        if (map.ye != NULL) { map.no_collide = 1; map.i--; return 4; }	
+
+	/* helper-type npc, you can talk to him. that's it */
+	map.ye = strstr(map.chunk, "/h");
+        if (map.ye != NULL) { map.no_collide = 1; map.i = 11; return 6; }
+
+	/* level portal */
+	map.ye = strstr(map.chunk, "/p");
+        if (map.ye != NULL) { map.i = 14; return 2; }
+
+	/* background music set entity */
+	map.ye = strstr(map.chunk, "/m");
+        if (map.ye != NULL) { map.i = 10; return 5; }
+
+	//map.ye = strstr(map.chunk, "/t");
+        //if (map.ye != NULL) { map.i = 10; return 5; }
+
+
+	return 0;
 
 }
 
-SDL_Texture* M_TextureAssign(const char* texture) {
+SDL_Texture* M_TextureAssign(char* texture) {
 
-	SDL_Texture* temp_tex;
+	// sanitize to get rid of \n
+	texture[strcspn(texture, "\n")] = 0;
 
-	if(strcmp(texture, "glaggle\n") == 0) {temp_tex = glaggle;}
-	if(strcmp(texture, "leadpipe\n") == 0) {temp_tex = leadpipe;}
-	if(strcmp(texture, "branch\n") == 0) {temp_tex = branch;}
-	if(strcmp(texture, "bare_hands\n") == 0) {temp_tex = bare_hands;}
+	SDL_Texture* temp_tex{};
+
+	temp_tex = R_GetMaterial(currentmgr, texture);
+
+	//if(strcmp(texture, "glaggle\n") == 0) {temp_tex = glaggle;}
+	//if(strcmp(texture, "leadpipe\n") == 0) {temp_tex = leadpipe;}
+	//if(strcmp(texture, "branch\n") == 0) {temp_tex = branch;}
+	//if(strcmp(texture, "bare_hands\n") == 0) {temp_tex = bare_hands;}
+
+	//if(strcmp(texture, "zlew_sheet\n") == 0) {temp_tex = zlew_sheet;}
 
 	return temp_tex;
-	SDL_DestroyTexture(temp_tex);
-
 }
 
-int M_ReadMapFile(const char* map) {
+int M_InitCMD(FILE* map_file) {
 
-	map_file = fopen(map, "r");
-	int i = -3;
+	char *head = strtok(map.chunk, "; ");
+	char *initbuf = (char*)malloc(sizeof(char) * 64);
+	player.is_alive = false;
+
+	while (head != NULL) {
+
+		if(strstr(head, "SPAWN_X:") != NULL) { initbuf = strchr( head, ':' ); player.pos_x = atoi(initbuf + 1) * 16; player.collider.x = player.pos_x; }
+		if(strstr(head, "SPAWN_Y:") != NULL) { initbuf = strchr( head, ':' ); player.pos_y = atoi(initbuf + 1) * 16; player.collider.y = player.pos_y; }
+		if(strstr(head, "SPAWNPLAYER") != NULL) { player.is_alive = true; }
+
+		printf("'%s'\n", head);
+		head = strtok(NULL, ";");
+	}	
+
+	//player.pos_x = file_x * 16;
+	//player.pos_y = file_y * 16;
+	gamemgr.map_is_initialized = 1;
+	//free(initbuf);
+	return 0;
+}
+
+int M_ReadMapFile(const char* map_path, game_texture* texture) {
+	currentmgr = texture;
+	map_file = fopen(map_path, "r");
+	if (map_file == NULL) { printf("fuck\n\nCRITICAL MAP LOADING ERROR\nMAP PATH: %s\n\nFUCK YOU!!!\n\n", map_path); }
+	map.i = -1;
+
+	/* reading the map header */
+
+	if (gamemgr.map_is_initialized == 0) {
+		fgets(map.chunk, sizeof(map.chunk), map_file);
+		map.ye = strstr(map.chunk, "DSHEADER");
+		if (map.ye != NULL ) {
+			M_InitCMD(map_file);
+		}
+	}
+
+	/* check if the player collides with the border of the screen */
+	M_PlayerBorderCollide(player.collider);
 
 	/* parsing the .ds file */
-	while(fgets(chunk, sizeof(chunk), map_file) != NULL) {
+	while(fgets(map.chunk, sizeof(map.chunk), map_file) != NULL) {
 
- 		if (chunk[0] != '\n') {
-			commentcheck(i);
+		if (map.chunk[0] != '\n' && gamemgr.map_is_initialized == 1) {
+			map.chkrgstr = strstr(map.chunk, "//");
+			if (map.chkrgstr != NULL) { goto skip; }
+
 
 			/* this is the parse routine */
-			switch(i) {
+			switch(map.i) {
 
-				default:
-					break;
-	
+				default: 
+
 				case 0:
-					/* read the y coordinate                           */
-					if (ye_rec == NULL) { sscanf(chunk, "%d", &file_y); }
+					/* read the x coordinate                           */
+					sscanf(map.chunk, "%d", &map.file_x);
 					break;
 				case 1:
-					/* second pass: read the x coordinate              */
-					sscanf(chunk, "%d", &file_x);
+					/* second pass: read the y coordinate              */
+					sscanf(map.chunk, "%d", &map.file_y);
 					break;
 				case 2:
-	
-					/* these commands check for commands like /r */
-					ye_rec = strstr(chunk, "/r");
-					if (ye_rec != NULL) { i = 3; break; }
 
-					/* lines, horizontal and vertical */
-					ye = strstr(chunk, "/h");
-					if (ye != NULL) { i = 6; break; }
-	
-					ye = strstr(chunk, "/v");
-        				if (ye != NULL) { i = 8; break; }
-
-					ye = strstr(chunk, "/n");
-        				if (ye != NULL) { no_collide = 1; i--; break; }
-	
+					map.command_index = commandcheck();
+					if (map.command_index != 0) {
+						break;
+					}
         				else {
-						M_DrawTile(file_y, file_x, 16, M_TextureAssign(chunk)); 
-						no_collide = 0;
-						i = -1; break; 
+						M_DrawTile(map.file_x, map.file_y, 16, M_TextureAssign(map.chunk)); 
+						map.no_collide = 0;
+						map.i = -1; break; 
 					}
 
 				/* RECTANGLE DRAWING ROUTINE */
 				case 4:
-					sscanf(chunk, "%d", &rec_y2);
+					sscanf(map.chunk, "%d", &map.rec_y2);
 					break;
 				case 5:
-					sscanf(chunk, "%d", &rec_x2);
+					sscanf(map.chunk, "%d", &map.rec_x2);
 					break;
 				case 6:
-					ye_rec = strstr(chunk, "/e");
-					M_DrawTileRect(file_y, file_x, rec_y2, rec_x2, 16, M_TextureAssign(chunk));
+					M_DrawTileRect(map.file_x, map.file_y, map.rec_x2, map.rec_y2, 16, M_TextureAssign(map.chunk));
 
-					if (ye_rec != NULL) { i = -1; ye_rec = NULL; break; }
+					map.i = -1; strcpy(map.ye_rec, "\0"); break;
 
-				/* HORIZONTAL LINE DRAWING ROUTINE */
-				case 7:
-					sscanf(chunk, "%d", &line_length);
-					M_DrawTileHLine(file_y, file_x, line_length, 16, M_TextureAssign(chunk));
-					break;
-				case 8:
-					i = -1;
+				/* BACKGROUND MUSIC SWITCH / INCLUDE ROUTINE */
+				case 11:
+					if (mixer.music == NULL) {
+						char* musptr = (char*)malloc(256);
+						sscanf(map.chunk, "%s", musptr);
+						mixer.music = Mix_LoadMUS( musptr);
+						//printf(chunk);
+						free(musptr);
+					}
+					map.i = -1;
 					break;
 
-				/* VERTICAL LINE DRAWING ROUTINE */
-				case 9:
-					sscanf(chunk, "%d", &line_length);
-					M_DrawTileVLine(file_y, file_x, line_length, 16, M_TextureAssign(chunk));
+				/* HELPER NPC SPAWN */
+				case 12:
+					/* pass on the spritesheet info */
+					sscanf(map.chunk, "%d", &map.npc_direct);
+//					puts("1");
 					break;
-				case 10:
-					i = -1;
+				case 13:
+					/* pass on the dialog */
+					sscanf(map.chunk, "%s", map.npc_dialog);
+					//strcpy(npc_dialog, chunk);
+//					puts("2");
 					break;
+				case 14:
+					/* pass on the direction info */
+					/* 0 - left
+					   1 - right
+					   2 - down
+					   3 - up */
+					//NPC_DrawEntity(zlew_sheet, file_x, file_y, atoi(chunk), "leo/txt/dialog0.txt", 0);
+					NPC_DrawEntity(M_TextureAssign(map.chunk), map.file_x, map.file_y, map.npc_direct, map.npc_dialog, 0);
+
+					//npc_dialog = NULL;
+					map.npc_direct = 0;
+//					puts("5");
+//					free(npctex);
+					map.i = -1; break;
+
+				/* LEVEL PORTAL */
+				case 15:
+					sscanf(map.chunk, "%s", map.portptr);
+					//printf("%s\n", portptr);
+					break;
+				case 16:
+					M_DrawPortal(map.file_x, map.file_y, 16, map.portptr);
+					map.i = -1; break;
+
 			}
-			i++;
+			map.i++;
 		}
+		skip:
+			continue;
 	}
 	fclose(map_file);
+	return 0;
 }

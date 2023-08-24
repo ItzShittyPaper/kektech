@@ -16,6 +16,7 @@ customizing those is advised
 enum modes {	
 	main_mode = 0,
 	dialog_mode = 1,
+	loading_mode = 2,
 
 	kkui_crash = 254,
 	kkui_dashboard = 255
@@ -26,6 +27,12 @@ struct game_manager {
 	char currentmap[128];
 	int map_is_initialized;
 
+	bool is_paused = false;
+
+	uint64_t frame_starttime;
+	uint64_t frame_endtime;
+	uint64_t frame_deltatime;
+
 } extern gamemgr;
 
 // game-specific variables
@@ -34,6 +41,9 @@ extern const char *game_version;
 extern const char *game_creator;
 extern const char *game_info;
 extern const char *game_url;
+
+extern const int game_viewport_width;
+extern const int game_viewport_height;
 
 //Screen dimension constants
 extern const int game_screen_width;
@@ -48,15 +58,22 @@ DIALOG
 struct dialog_file {
 
 	FILE* ptr;
-	char ch[256];
-	char* tag;
+	char ch[512];
+	char *tag;
 
 	char* file_buffer;
 
-	char* current_dialog;
+	char* current_dialog = (char*)malloc(sizeof(char) * 16);
+	char current_character[64];
+	char character0[64];
+	char character1[64];
+	char character2[64];
+	char character3[64];
+	int character_count = 1;
+	bool render_characters = false;
 
 	bool is_triggered = false;
-	int  is_menu      = 1;
+	bool is_menu = false;
 
 	int target_num = 1;
 	int line_num = 1;
@@ -132,41 +149,8 @@ struct helper_ent {
 
 /* 
 
-AUDIO ARCHITECTURE
-
-*/
-
-struct audio_arch {
-
-	/* a single music channel */
-	Mix_Music *music = NULL;
-
-
-} extern mixer;
-
-/* 
-
 COLOR DEFINITIONS
 
-*/
-
-/*
-extern SDL_Color color0  = { 255, 255, 255 };
-extern SDL_Color color1  = { 255, 255, 255 };
-extern SDL_Color color2  = { 255, 255, 255 };
-extern SDL_Color color3  = { 255, 255, 255 };
-extern SDL_Color color4  = { 255, 255, 255 };
-extern SDL_Color color5  = { 255, 255, 255 };
-extern SDL_Color color6  = { 255, 255, 255 };
-extern SDL_Color color7  = { 255, 255, 255 };
-extern SDL_Color color8  = { 255, 255, 255 };
-extern SDL_Color color9  = { 255, 255, 255 };
-extern SDL_Color color10 = { 255, 255, 255 };
-extern SDL_Color color11 = { 255, 255, 255 };
-extern SDL_Color color12 = { 255, 255, 255 };
-extern SDL_Color color13 = { 255, 255, 255 };
-extern SDL_Color color14 = { 255, 255, 255 };
-extern SDL_Color color15 = { 255, 255, 255 };
 */
 
 /*
@@ -175,11 +159,6 @@ ANIMATION PLAYERS
 
 */
 
-extern int animplayer0;
-extern int animplayer1;
-extern int animplayer2;
-extern int animplayer3;
-extern int animplayer4;
 extern int animplayer5;
 extern int animplayer6;
 extern int animplayer7;

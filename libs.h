@@ -3,6 +3,7 @@
 #include <time.h>
 #include <string>
 #include <vector>
+#include <alloca.h>
 
 #include <SDL2/SDL.h>
 #include <SDL_image.h>

@@ -1,0 +1,74 @@
+/0# JA
+dobra odpalmy to
+/1# OTIS
+tak jest! *uruchamia instalator i ustawia konfiguracje*
+/0# JA
+dobra to jaki jest nasz plan? zainstalowanie tego, ustawienie uzytkownikow, podlaczenie portalu i to tyle?
+/2# MCAT I OTIS
+no chyba
+/0# JA
+to gowno jest popierdolone szczerze, czego rury tak wlasciwie chca od tego projektu?
+/1# OTIS
+a chuj wie, my tu tylko i tak wykonujemy brudna robote. nie podoba mi sie to wszystko. w ogole serek wie o czymkolwiek?
+/2# MCAT
+kto wie?
+/0# JA
+ja jestem po prostu przerazony. czemu sie w ogole zapisalem na to wszystko? w teorii dla kasy, ale gdybym wiedzial ze mam odpierdalac takie gowno... jest szansa ze w ogole z tej symulacji nie wroce. w pewnym sensie wlasnie szykujemy tutaj moja potencjalna smierc. tutaj, w laboratorium fundowanym przez nie wiadomo kogo gdzie nikt mnie nawet nie znajdzie.
+/1# OTIS
+popatrz na to z drugiej strony stary: jesli przezyjesz i wrocisz, posiedzimy tu jeszcze rok az projekt wypali, wszystko ucichnie i wysla nas na jakies hawaje
+rurom mozna zaufac, czy kiedykolwiek cie oklamal?
+/2# MCAT
+rury, rury.
+rury tez pracuja dla kogos w sejmie, albo w ogole dla jakiejs elity. sa tylko marionetka kontrolowana przez innych. ja to wiem, ty to wiesz, kazdy to wie - tylko po prostu udaje ze tak nie jest. zostalismy tu wciagnieci i nawet nie wiemy kto tu rzadzi.
+/0# JA
+co?
+/2# MCAT
+no. takie zycie.
+/1# OTIS
+dobra przestancie pierdolic, a ty to w ogole skoncz z tym udawaniem paranoika. gramy jutro w dooma?
+/2# MCAT
+chetnie, troche szkoda ze donixa z nami raczej nie bedzie.
+/0# JA
+miejmy nadzieje ze wroce.
+dobra co tu mozemy zrobic z tym.
+/1# OTIS
+czekaj daj mi to. *zabiera mi myszke*
+ehhh... adduser balkanica
+pelna nazwa: balkanica... numer pokoju? hmmmmmm 2137... huehuehuehuehue. haslo?, dajmy "krzyzyknadroge"
+/0# JA I MCAT
+krzyzyk na droge?
+/1# OTIS
+taki smieszny zart.
+dobra mysterious cat, pojdziesz podlaczyc portal do serwera?
+/2# MCAT
+niech ci bedzie *idzie, znikajac na pare minut*
+/1# OTIS
+napilbym sie czegos. chcesz piwko?
+/0# JA
+a no dobra chetnie sie napije przy debianku
+/1# OTIS
+no i tak trzymac, to sie nazywa dobry humor *wyciaga dwie butelki z leszkiem (sponsoring nie intended)*
+/0# JA
+*popijam sobie piwko i odpakowywuje na biurko czipsy jako zagryzke* pije piwo, jem cziperki, tylko brakuje zony do bicia
+oczywiscie kablem displayport 1.2, no bo czym innym
+/1# OTIS
+bicie zony zajebista rzecz
+/2# MCAT
+wrocilem, powinno sie zaraz pojawic na ekranie
+/3# KOMPUTER
+=== PODLACZONO URZADZENIE WEJSCIA === === TWOJA STARA ZAPIERDALA ELECTRONIC DATA IMPORTER ===
+/3-
+/0# JA
+kto to tak kurwa nazwal xd
+rury co ty odpierdalasz z tym sprzetem, moze nie powinienem sie nad tym zastanawiac
+/1# OTIS
+xddddddddddd zajebiste urzadzenie
+/2# MCAT
+srednio dojrzala nazwa jak na taki sprzet
+/0# JA
+dobra walic to zawolajmy rury
+RURYRYYYYYYYRYRYYYYYRYRYRYRYYYY KURWA NO CHODŹ TU
+/0-
+/1-
+/2-
+/=== leo/ds/server1.ds

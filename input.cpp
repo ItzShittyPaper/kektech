@@ -1,6 +1,8 @@
 #include "libs.h"
 #include "input.h"
 #include "render.h"
+#include "audio.h"
+#include "ui.h"
 #include "main.h"
 
 /* 
@@ -43,16 +45,25 @@ void I_ProcessKeyDownEvent() {
 		case SDLK_RIGHT: I_ProcessInput(8); break;
 		case SDLK_UP: I_ProcessInput(9); break;
 		case SDLK_DOWN: I_ProcessInput(10); break;
-		case SDLK_a: I_ProcessInput(7); break;
-		case SDLK_d: I_ProcessInput(8); break;
-		case SDLK_w: I_ProcessInput(9); break;
-		case SDLK_s: I_ProcessInput(10); break;
+//		case SDLK_a: I_ProcessInput(7); break;
+//		case SDLK_d: I_ProcessInput(8); break;
+//		case SDLK_w: I_ProcessInput(9); break;
+//		case SDLK_s: I_ProcessInput(10); break;
 
 		/* fullscreen toggle */
 		case SDLK_F11: ToggleFullscreen(window); break;
 
 		default: return;
 	}
+}
+
+void I_ProcessPauseEvent() {
+
+	if (e.key.keysym.sym == SDLK_F10) {
+		/* pause */
+		if (gamemgr.is_paused == false) { PLAYER_ResetVel(); gamemgr.is_paused = true; PLAYER_ResetVel(); } else { gamemgr.is_paused = false; PLAYER_ResetVel(); }
+	}
+
 }
 
 void I_ProcessKeyUpEvent() {
@@ -64,10 +75,10 @@ void I_ProcessKeyUpEvent() {
 		case SDLK_RIGHT: I_ProcessInput(12); break;
 		case SDLK_UP: I_ProcessInput(13); break;
 		case SDLK_DOWN: I_ProcessInput(14); break;
-		case SDLK_a: I_ProcessInput(11); break;
-		case SDLK_d: I_ProcessInput(12); break;
-		case SDLK_w: I_ProcessInput(13); break;
-		case SDLK_s: I_ProcessInput(14); break;
+//		case SDLK_a: I_ProcessInput(11); break;
+//		case SDLK_d: I_ProcessInput(12); break;
+//		case SDLK_w: I_ProcessInput(13); break;
+//		case SDLK_s: I_ProcessInput(14); break;
 
 		default: return;
 	}
@@ -75,6 +86,8 @@ void I_ProcessKeyUpEvent() {
 
 
 bool I_ProcessInput(int key_code) {
+
+	if (gamemgr.is_paused == true) { goto skip; }
 
 	switch(key_code) {
 
@@ -90,13 +103,31 @@ bool I_ProcessInput(int key_code) {
 
 				/* main menu */
 				case 255:
-					mode = main_mode;
+					mode = loading_mode;
+					gamemgr.map_is_initialized = 0;
+					//SDL_DestroyTexture(UI_dashboard.menu_background);
+					break;
 
 				default: break;
 			}
 
+			Mix_PlayChannel( -1, A_GetSoundEffect(sfxmgr, "select"), 0);
 			std::cout << "Z pressed" << std::endl; break;
 		case 1:
+
+			switch (mode) {
+
+				/* main menu */
+				case 255:
+					UI_dashboard.menu_background = IMG_LoadTexture(renderer, "leo/bmp/about.png");
+					//SDL_DestroyTexture(UI_dashboard.menu_background);
+					break;
+
+				default: break;
+			}
+
+
+
 			std::cout << "X pressed" << std::endl; break;
 		case 2:
 			std::cout << "C pressed" << std::endl; break;
@@ -179,5 +210,6 @@ bool I_ProcessInput(int key_code) {
 
 			std::cout << "DOWN / S released" << std::endl; break;
 	}
+	skip:
 	return true;
 }

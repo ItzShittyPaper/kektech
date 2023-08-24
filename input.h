@@ -1,4 +1,5 @@
 void I_ProcessKeyDownEvent();
+void I_ProcessPauseEvent();
 void I_ProcessKeyUpEvent();
 bool I_ProcessInput(int key_code);
 

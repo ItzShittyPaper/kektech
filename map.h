@@ -28,7 +28,6 @@ struct map_dsdata {
 
 	int i = -3;
 
-	bool is_lined = false;
 	int line_number = 1;
 	int no_collide = 0;
 
@@ -38,24 +37,25 @@ struct map_dsdata {
 	int rec_x1;
 	int rec_y2;
 	int rec_x2;
-	int line_length;
 
 	char chunk[LINE_BUF];
 
 	/* i know the ye thing is confusing, it's just a register name in DS22 */
-	char *chkrgstr;
-
-	char *ye;
-	char *ye2;
-	char *ye_rec;
-	char *ye_list;
+	char* chkrgstr;
+	char* charrgstr = (char*)malloc(4096 * sizeof(char));
+	char* musptr = (char*)malloc(256 * sizeof(char));
+	char* dialogptr = (char*)malloc(256 * sizeof(char));
+	char* ye;
+	char* ye2;
+	char* ye_rec;
 
 	/* separate argument buffers */
 	char npc_texarg[255];
 	char npc_dialog[255];
-	int   npc_direct;	
+	int  npc_direct;	
 	char portptr[255];
 
+	bool is_uielement;
 
 } extern map;
 

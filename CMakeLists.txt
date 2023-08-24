@@ -31,7 +31,7 @@ set(SDL_MIXER_X_STATIC  ON)
 set(SDL_MIXER_X_SHARED  OFF)
 
 # Create executable and source files
-add_executable (kektech main.cpp main.h config.h input.h input.cpp libs.h map.h map.cpp render.h render.cpp ui.h ui.cpp vector.h)
+add_executable (kektech main.cpp main.h config.h input.h input.cpp libs.h map.h map.cpp render.h render.cpp audio.h audio.cpp ui.h ui.cpp save.h save.cpp vector.h)
 
 # Let's link finally.
 target_link_libraries(kektech SDL2::SDL2main SDL2::SDL2-static SDL2_image::SDL2_image-static SDL2_ttf::SDL2_ttf-static SDL2_mixer_ext_Static ogg modplug opus)

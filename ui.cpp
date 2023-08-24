@@ -8,8 +8,32 @@ game_ui UI;
 ui_log UI_log;
 ui_dashboard UI_dashboard;
 ui_nsod UI_nsod;
+ui_rgbcolor UI_rgbcolor;
 
 // Pointers to our window, renderer, texture, and font
+
+ui_rgbcolor UI_RGBColorReturn(char* chunk) {
+
+	ui_rgbcolor rgb;
+
+	char *head = strtok(chunk, "; ");
+	char *rgbbuf = (char*)malloc(sizeof(char) * 64);
+
+	while (head != NULL) {
+
+		if(strstr(head, "RED:") != NULL) { rgbbuf = strchr( head, ':' ); rgb.r = atoi(rgbbuf + 1); }
+		if(strstr(head, "GREEN:") != NULL) { rgbbuf = strchr( head, ':' ); rgb.g = atoi(rgbbuf + 1); }
+		if(strstr(head, "BLUE:") != NULL) { rgbbuf = strchr( head, ':' ); rgb.b = atoi(rgbbuf + 1); }
+
+		//printf("'%s'\n", head);
+
+		head = strtok(NULL, ";");
+	}
+
+	//free(rgbbuf);
+	return rgb;
+
+}
 
 void UI_TextBox() {
 
@@ -37,10 +61,38 @@ void UI_TextLabel(int pos_x, int pos_y, const char *label, int wrap_length) {
 	SDL_Surface* text_surf = TTF_RenderText_Solid_Wrapped(font, label, foreground, wrap_length);
 
 	UI.text = SDL_CreateTextureFromSurface(renderer, text_surf);
-	dest.x = pos_x;
-	dest.y = pos_y;
-	dest.w = text_surf->w;
-	dest.h = text_surf->h;
+	dest.x = pos_x * UI_SCALE;
+	dest.y = pos_y * UI_SCALE;
+	dest.w = text_surf->w * UI_SCALE;
+	dest.h = text_surf->h * UI_SCALE;
+
+	SDL_RenderCopy(renderer, UI.text, NULL, &dest);
+
+	SDL_DestroyTexture(UI.text);
+	SDL_FreeSurface(text_surf);
+
+}
+
+void UI_TextLabelEx(int pos_x, int pos_y, uint8_t r, uint8_t g, uint8_t b, const char *label, int wrap_length, bool is_scaled) {
+
+	SDL_Color foreground = { r, g, b };
+	
+	SDL_Surface* text_surf = TTF_RenderText_Solid_Wrapped(font, label, foreground, wrap_length);
+
+	UI.text = SDL_CreateTextureFromSurface(renderer, text_surf);
+
+	if (is_scaled == true) {
+		dest.x = pos_x * UI_SCALE;
+		dest.y = pos_y * UI_SCALE;
+		dest.w = text_surf->w * UI_SCALE;
+		dest.h = text_surf->h * UI_SCALE;
+	} else {
+		dest.x = pos_x;
+		dest.y = pos_y;
+		dest.w = text_surf->w;
+		dest.h = text_surf->h;
+	}
+
 	SDL_RenderCopy(renderer, UI.text, NULL, &dest);
 
 	SDL_DestroyTexture(UI.text);
@@ -122,10 +174,10 @@ void UI_Rect(int pos_x, int pos_y, int width, int height, bool is_animated) {
 //	animplayer7 = 0;
 
 	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
-	rect.w = width;
-	rect.h = height;
+	rect.x = pos_x * UI_SCALE;
+	rect.y = pos_y * UI_SCALE;
+	rect.w = width * UI_SCALE;
+	rect.h = height * UI_SCALE;
 
 	if (is_animated == false) {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 128, 255);
@@ -148,10 +200,10 @@ void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated
 //	animplayer7 = 0;
 
 	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
-	rect.w = width;
-	rect.h = height;
+	rect.x = pos_x * UI_SCALE;
+	rect.y = pos_y * UI_SCALE;
+	rect.w = width * UI_SCALE;
+	rect.h = height * UI_SCALE;
 
 	if (is_animated == false) {
 		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
@@ -169,16 +221,15 @@ void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated
 	
 }
 
-
 void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated) {
 
 //	animplayer6 = 0;
 
 	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
-	rect.w = width;
-	rect.h = height;
+	rect.x = pos_x * UI_SCALE;
+	rect.y = pos_y * UI_SCALE;
+	rect.w = width * UI_SCALE;
+	rect.h = height * UI_SCALE;
 
 	if (is_animated == false) {
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 224);
@@ -197,6 +248,33 @@ void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated) 
 	
 }
 
+void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated) {
+
+//	animplayer6 = 0;
+
+	SDL_Rect rect;
+	rect.x = pos_x;
+	rect.y = pos_y;
+	rect.w = width * UI_SCALE;
+	rect.h = height * UI_SCALE;
+
+	if (is_animated == false) {
+		SDL_SetRenderDrawColor(renderer, r, g, b, 224);
+	} else {
+
+		if (animplayer6 > 255) {
+			animplayer6 = 255;
+		}
+
+		SDL_SetRenderDrawColor(renderer, r, g, b, 0 + animplayer6);
+		animplayer6 = animplayer6 + 8;
+	}
+
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+	SDL_RenderFillRect(renderer, &rect);
+	
+}
+
 void UI_CrashScreen(const char *label) {
 
 	char* crashbuf = (char*)malloc(sizeof(char) * 4096);
@@ -206,93 +284,148 @@ void UI_CrashScreen(const char *label) {
 	SDL_SetRenderDrawColor(renderer, 0, 0, 128, 255);
 
 	SDL_RenderFillRect(renderer, NULL);
-	UI_TextLabel(2, 2, crashbuf, game_screen_width / 2);
+	UI_TextLabel(2, 2, crashbuf, game_screen_width);
 
 	free(crashbuf);
 
 }
 
-void UI_DialogBox(bool is_animated, const char* file) {
+int UI_DialogBox(bool is_animated, const char* file) {
 
-	//printf("%s\n", file);
-	
 	if (mode == dialog_mode) {
 
+		/* reset the players velocity */
 		PLAYER_ResetVel();
-		/* animation code */
-		if (is_animated == true) {
-			UI_FillRect(2, 222 - 72, 252, 72, true);
-			UI_Rect(2, 222 - 72, 252, 72, true);
-		} else {
-			UI_FillRect(2, 222 - 72, 252, 72, false);
-			UI_Rect(2, 222 - 72, 252, 72, false);
+
+		if (dialog.is_triggered == false) {
+			dialog.target_num = 1;
+			dialog.line_num = 1;
+			dialog.ptr = fopen(file, "r");
+			dialog.is_triggered = true;
 		}
 
-		/* displaying the text after finishing the animation */
-		if (animplayer6 > 256 && animplayer7 > 256) {
+		if (dialog.line_num <= dialog.target_num) {
+			read:
+			fgets(dialog.ch, sizeof(dialog.ch), dialog.ptr);
 
-			if (dialog.is_triggered == false) {
+			if (strstr(dialog.ch, "/===") != NULL) {
 
-				dialog.target_num = 1;
-				dialog.line_num = 1;
-				dialog.ptr = fopen(file, "r");
+				strcpy(dialog.ch, strchr(dialog.ch, ' '));
+				strcpy(dialog.ch, dialog.ch + 1);
+				dialog.ch[strcspn(dialog.ch, "\n")] = 0;
 
-				dialog.is_triggered = true;
+				strncpy(gamemgr.currentmap, dialog.ch, 64); 
 
+				UI_dashboard.animplayer = 255;
+				animplayer6 = 0; animplayer7 = 0;
+				dialog.character_count = 1;
+				dialog.is_triggered = false;
+				gamemgr.map_is_initialized = 0;
+				mode = loading_mode;
+				return 0;
 			}
 
-			for (dialog.line_num; dialog.line_num <= dialog.target_num; dialog.line_num++) {
+			else if (strstr(dialog.ch, "/0#") != NULL) {
+				strncpy(dialog.character0, dialog.ch, 64);
+				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
 
-				dialog_start:
-				fgets(dialog.ch, sizeof(dialog.ch), dialog.ptr);
+				R_ResetPortraitAnim();
+				goto read;
+			} 
+			else if (strstr(dialog.ch, "/1#") != NULL) {
+				strncpy(dialog.character1, dialog.ch, 64);
+				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
 
-				/* CHECK FOR DIALOG END */
-				dialog.tag = strstr(dialog.ch, "#=#");
-				if (dialog.tag != NULL) {
+				R_ResetPortraitAnim();
+				goto read;
+			}
+			else if (strstr(dialog.ch, "/2#") != NULL) {
+				strncpy(dialog.character2, dialog.ch, 64);
+				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
 
-					fclose(dialog.ptr);
-					dialog.target_num = 1;
-					dialog.line_num = 1;
-					animplayer6 = 0;
-					animplayer7 = 0;
+				R_ResetPortraitAnim();
+				goto read;
+			} 
+			else if (strstr(dialog.ch, "/3#") != NULL) {
+				strncpy(dialog.character3, dialog.ch, 64);
+				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
 
-					dialog.is_triggered = false;
+				R_ResetPortraitAnim();
+				goto read;
+			} 
 
-					mode = main_mode; break;
-				}
+			else if (strstr(dialog.ch, "/0-") != NULL) { strncpy(dialog.character0, " ", 64); goto read; }
+			else if (strstr(dialog.ch, "/1-") != NULL) { strncpy(dialog.character1, " ", 64); goto read; }
+			else if (strstr(dialog.ch, "/2-") != NULL) { strncpy(dialog.character2, " ", 64); goto read; }
+			else if (strstr(dialog.ch, "/3-") != NULL) { strncpy(dialog.character3, " ", 64); goto read; }
 
-				dialog.tag = strstr(dialog.ch, "##");
-				if (dialog.tag != NULL) {
-				
-					dialog.tag = strchr(dialog.ch, ' ');
-					//dialog.tag = dialog.tag + 1;
-					printf("character: %s", dialog.tag);
-					goto dialog_start;
+			else if (strstr(dialog.ch, "/=m=") != NULL) {
 
-				}
+				char *head = strtok(dialog.ch, "; ");
+				char *initbuf = (char*)malloc(sizeof(char) * 64);
+
+				while (head != NULL) {
+
+					if(strstr(head, "BACKGROUND:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; UI_dashboard.menu_background = IMG_LoadTexture(renderer, initbuf + 1); printf("%s\n", initbuf + 1); }
+
+					printf("'%s'\n", head);
+					head = strtok(NULL, ";");
+				}	
+
+				free(head);
+				goto read;
 
 			}
+ 
+			dialog.line_num++;
+		}
+	
+		if (animplayer6 > 254 && animplayer7 > 254 && dialog.render_characters == true ) {
+			/* character shit */
+			if (strstr(dialog.character0, "CYGAR") != NULL || strstr(dialog.character1, "CYGAR") != NULL || strstr(dialog.character2, "CYGAR") != NULL || strstr(dialog.character3, "CYGAR") != NULL) {
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "cygar_sheet")); dialog.character_count++;
+			}
+			if (strstr(dialog.character0, "RURY") != NULL || strstr(dialog.character1, "RURY") != NULL || strstr(dialog.character2, "RURY") != NULL || strstr(dialog.character3, "RURY") != NULL) {
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "rury_sheet")); dialog.character_count++;
+			}
+			if (strstr(dialog.character0, "DONIX") != NULL || strstr(dialog.character1, "DONIX") != NULL || strstr(dialog.character2, "DONIX") != NULL || strstr(dialog.character3, "DONIX") != NULL) {
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "donix_sheet")); dialog.character_count++;
+			}
+			if (strstr(dialog.character0, "OTIS") != NULL || strstr(dialog.character1, "OTIS") != NULL || strstr(dialog.character2, "OTIS") != NULL || strstr(dialog.character3, "OTIS") != NULL) {
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "otis_sheet")); dialog.character_count++;
+			}
+			if (strstr(dialog.character0, "MCAT") != NULL || strstr(dialog.character1, "MCAT") != NULL || strstr(dialog.character2, "MCAT") != NULL || strstr(dialog.character3, "MCAT") != NULL) {
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "mcat_sheet")); dialog.character_count++;
+			}
 
-			if (dialog.tag != " LEO\n") { R_DrawCharacterPortrait(244, 222 - 72, leo_sheet); }
+			dialog.character_count = 1;
+		}
 
-			UI_TextLabel(4, 222 - 72, dialog.ch, 250);
-//			UI_TextLabel(8, 214, "hellodsadasd", 244);
+		/* the main dialog box */
+		UI_FillRect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
+		UI_Rect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
+
+		/* the character name box */
+		UI_FillRect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
+		UI_Rect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
+
+		/* the label */
+		if (animplayer6 > 254 && animplayer7 > 254) {
+			UI_TextLabelEx(2 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, 255, 255, 255, dialog.ch, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
+			UI_TextLabelEx(10 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 84, 255, 255, 255, dialog.current_character, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
 		}
 	}
+	return 0;
 }
 
 char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const char* path_1, const char* path_2) {
 
 	if (mode == dialog_mode) {
 
+		PLAYER_ResetVel();
 		/* animated rectangle code */
-		if (is_animated == true) {
-			UI_FillRect(4, 212, 312, 72, true);
-			UI_Rect(4, 212, 312, 72, true);
-		} else {
-			UI_FillRect(4, 212, 312, 72, false);
-			UI_Rect(4, 212, 312, 72, false);
-		}
+		UI_FillRect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
+		UI_Rect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
 
 		if (menu.option > 1)
 			menu.option = 0;
@@ -305,12 +438,12 @@ char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const 
 
 				case 0:
 					printf("%s\n", path_1);
-					dialog.is_menu = 0;
+					dialog.is_menu = false;
 					return (char*)path_1;
 					break;
 				case 1:
 					printf("%s\n", path_2);
-					dialog.is_menu = 0;
+					dialog.is_menu = false;
 					return (char*)path_2;
 					break;
 				default:
@@ -335,18 +468,19 @@ char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const 
 			}
 		}
 	}
+
+	return NULL;
+
 }
 
-//void UI_Dialog(char* buffer) {
+void UI_Dialog(char* buffer) {
 
-//	PLAYER_ResetVel();
+	PLAYER_ResetVel();
 
-//	if (dialog.is_menu == 0) {
-//		UI_DialogBox(true, dialog.file_buffer);
-//	}
-
-//	if (dialog.is_menu == 1) {
-//		dialog.file_buffer = UI_Menu(true, "h", "not h", "leo/txt/menu_test/dialog1.txt", "leo/txt/menu_test/dialog2.txt");
-//	}
-
-//}
+	if (dialog.is_menu == true) {
+		dialog.current_dialog = UI_Menu(true, "h", "not h", "leo/txt/menu_test/dialog1.txt", "leo/txt/menu_test/dialog2.txt");
+	}
+	else {
+		UI_DialogBox(true, dialog.current_dialog);
+	}
+}

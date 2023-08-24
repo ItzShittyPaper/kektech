@@ -10,19 +10,16 @@ SDL_Renderer* renderer;
 SDL_Texture* texture;
 TTF_Font* font;
 
-SDL_Texture* glaggle;
-SDL_Texture* leadpipe;
-SDL_Texture* branch;
-SDL_Texture* bare_hands;
-
-/* character spritesheet */
-SDL_Texture* leo_sheet;
-SDL_Texture* zlew_sheet;
+game_texture* texturemgr;
 
 /* active dialog character portrait buffer */
 //CharacterPortrait charportraitbuf;
 /* initializing player sprite struct */
 CharacterWorldSprite playerworldsprite;
+
+CharacterPortrait portrait;
+
+int animplayer_character = 0;
 
 void R_FreeMaterial(game_texture* manager)
 {
@@ -74,7 +71,7 @@ void R_RemoveMaterial(game_texture* manager, MaterialDefinition* definition)
 void R_LoadMaterials(game_texture* manager, char* path)
 {
 	FILE* file = fopen(path, "r");
-	if (file == NULL) { printf("\n\nCRITICAL MATERIAL LOADING ERROR\nMAT PATH: %s\n\n", path); return; }
+	if (file == NULL) { snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING MATERIAL DEFINITIONS, FILE DOES NOT EXIST / PERMISSION DENIED\nMAT PATH: %s\n"); mode = kkui_crash; return; }
 
 	char matChunk[LINE_BUF];
 	/* parse line by line */
@@ -99,7 +96,6 @@ void R_LoadMaterials(game_texture* manager, char* path)
 
 }
 
-
 SDL_Texture* R_GetMaterial(game_texture* manager, const char* material)
 {
 	for (int i = 0; i < manager->cachedMaterials.size(); i++)
@@ -115,39 +111,62 @@ SDL_Texture* R_GetMaterial(game_texture* manager, const char* material)
 	
 void R_InitTextures(game_texture* manager) {
 	R_LoadMaterials(manager, "leo/mat/game.mat");
-
-	glaggle =    IMG_LoadTexture(renderer, values[0]);
-	leadpipe =   IMG_LoadTexture(renderer, values[1]);
-	branch =     IMG_LoadTexture(renderer, values[2]);
-	bare_hands = IMG_LoadTexture(renderer, values[3]);
-
-	leo_sheet =  IMG_LoadTexture(renderer, values[4]);
-	zlew_sheet = IMG_LoadTexture(renderer, values[5]);
-
 }
 
 bool R_Clear() {
 
-	// Clear the window to white
-	SDL_SetRenderDrawColor( renderer, 255, 255, 255, 255 );
+	// Clear the window to black
+	SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
 	SDL_RenderClear( renderer );		
 	return true;
 
 };
 
-void R_DrawCharacterPortrait(int pos_x, int pos_y, SDL_Texture* texture_index) {
+void R_ResetPortraitAnim() {
 
-	CharacterPortrait portrait;
+	portrait.animplayer = 0;
+
+}
+
+void R_DrawBackground() {
+
+	if (UI_dashboard.animplayer < 255) {
+		/* render the map background */
+		SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
+		UI_dashboard.animplayer += 8;
+		if (UI_dashboard.animplayer >= 255) { UI_dashboard.animplayer = 255; }
+	}
+	SDL_RenderCopy(renderer, UI_dashboard.menu_background, NULL, NULL);
+
+}
+
+void R_FadeOutBackground() {
+
+	if (UI_dashboard.animplayer > 0) {
+		/* render the map background */
+		SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
+		UI_dashboard.animplayer -= 8;
+	}
+	SDL_RenderCopy(renderer, UI_dashboard.menu_background, NULL, NULL);
+
+}
+
+void R_DrawCharacterPortrait(SDL_Texture* texture_index) {
 
 	portrait.srcrect.x = 0;
-	portrait.srcrect.y = 64;
-	portrait.srcrect.w = 64;
-	portrait.srcrect.h = 64;
+	portrait.srcrect.y = 0;
+	portrait.srcrect.w = 214;
+	portrait.srcrect.h = 464;
 	
-	portrait.dstrect.x = pos_x;
-	portrait.dstrect.y = pos_y;
-	portrait.dstrect.w = 64;
-	portrait.dstrect.h = 64;
+	portrait.dstrect.x = 214 * dialog.character_count;
+	portrait.dstrect.y = game_viewport_height - 464 - 72;
+	portrait.dstrect.w = 214;
+	portrait.dstrect.h = 464;
+
+	if (portrait.animplayer < 255) {
+		SDL_SetTextureAlphaMod(texture_index, portrait.animplayer);
+		portrait.animplayer += 16;
+	}
 
 	SDL_RenderCopy(renderer, texture_index, &portrait.srcrect, &portrait.dstrect); 
 

@@ -2,10 +2,11 @@
 
 #include "main.h"
 #include "render.h"
-#include "input.h"
-#include "ui.h"
+#include "audio.h"
 #include "map.h"
-#include "render.h"
+#include "ui.h"
+#include "input.h"
+#include "save.h"
 
 // definitions
 dialog_file dialog;
@@ -13,15 +14,8 @@ dialog_menu menu;
 player_ent  player;
 modes       mode;
 game_manager gamemgr;
-audio_arch mixer;
-game_texture* texturemgr;
 
 /* ANIMATION PLAYERS */
-int animplayer0 = 0;
-int animplayer1 = 0;
-int animplayer2 = 0;
-int animplayer3 = 0;
-int animplayer4 = 0;
 /* reserved for the player (and party) world animations */
 int animplayer5 = 0;
 /* reserved for ui animations */
@@ -38,9 +32,12 @@ const char *game_creator = "sexo";
 const char *game_info = "a kektech game";
 const char *game_url = "https://makulaturka.tk";
 
+const int game_viewport_width = 1280;
+const int game_viewport_height = 720;
+
 //Screen dimension constants
-const int game_screen_width = 512;
-const int game_screen_height = 448;
+const int game_screen_width = game_viewport_width * RENDER_SCALE;
+const int game_screen_height = game_viewport_height * RENDER_SCALE;
 
 // Pointers to our window, renderer, texture, and font
 SDL_Rect dest;
@@ -50,16 +47,6 @@ SDL_Rect dest;
 MISC FUNCTIONS
 
 */
-
-int A_AudioUpdateEvent() {
-
-	//If there is no music playing
-	if( Mix_PlayingMusic() == 0 ) {
-		//Play the music
-		Mix_PlayMusic( mixer.music, -1 );
-	}
-	return 0;
-}
 
 void RNG_Init() {
 
@@ -113,11 +100,8 @@ void PLAYER_ResetVel() {
 void NPC_HelperActivate(SDL_Rect player_collider, SDL_Rect tile, char* dialog_path) {
 
 	if (M_CheckCollision(player_collider, tile) && is_interacting == 1) {
-
 		dialog.current_dialog = dialog_path;
 		mode = dialog_mode;
-//		printf("sexo\n");
-
 	}
 
 }
@@ -133,11 +117,22 @@ int main(int argc, char** args) {
 
 	while ( loop() ) {
 		// wait before processing the next frame
-		SDL_Delay(10); 
+		if (gamemgr.frame_deltatime > (1000 / TARGET_FPS)) { } else {
+			SDL_Delay((1000 / TARGET_FPS) - gamemgr.frame_deltatime);
+		}
 	}
 
 	kill();
 	return 0;
+}
+
+bool ProcessInput() {
+
+	if (player.is_alive == true)
+		PLAYER_Move();
+
+	return true;
+
 }
 
 // MAIN GAME LOOP
@@ -147,11 +142,13 @@ bool loop() {
 		SETUP
 	*/
 
+	gamemgr.frame_starttime = SDL_GetTicks64();
+
 	static const unsigned char* keys = SDL_GetKeyboardState( NULL );
 	SDL_Rect dest;
 	is_interacting = 0;
 
-	SDL_RenderSetLogicalSize(renderer, game_screen_width / 2, game_screen_height / 2);
+	SDL_RenderSetLogicalSize(renderer, game_viewport_width, game_viewport_height);
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
 	R_Clear();
 
@@ -167,33 +164,36 @@ bool loop() {
 			case SDL_TEXTINPUT:
 				textbox_input += e.text.text;
 				break;
+			case SDL_KEYUP:
+				if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
+					textbox_input.pop_back();
+				} else if (gamemgr.is_paused == false) {
+					I_ProcessKeyUpEvent();
+				} break;
 			case SDL_KEYDOWN:
 				if (e.key.repeat == 0) {
 					if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
 						textbox_input.pop_back();
-					} else {
+					} else if (gamemgr.is_paused == false) {
+						I_ProcessPauseEvent();
 						I_ProcessKeyDownEvent();
+					} else {
+						I_ProcessPauseEvent();
 					}
-				} break;
-			case SDL_KEYUP:
-				if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
-					textbox_input.pop_back();
-				} else {
-					I_ProcessKeyUpEvent();
 				} break;
 		}
 	}
 
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
-	if (mode != kkui_dashboard && mode != kkui_crash) {
+	if (mode == main_mode || mode == dialog_mode) {
 		/*
 			GAME LOGIC
 		*/
 
-		if (player.is_alive == true)
-			PLAYER_Move();
-		A_AudioUpdateEvent();
+		if (gamemgr.is_paused == false)
+			ProcessInput();
+		A_MusicUpdateEvent();
 
 		/* ------------------------- */
 
@@ -201,13 +201,10 @@ bool loop() {
 			DRAWING
 		*/
 
-		//printf("%s\n", gamemgr.currentmap);
 		M_ReadMapFile(gamemgr.currentmap, texturemgr);
 
 		if (player.is_alive == true)
-			R_DrawPlayer(leo_sheet, player.direction);
-
-		//NPC_DrawEntity(zlew_sheet, 128, 64, 2, "leo/txt/dialog0.txt", 0);
+			R_DrawPlayer(R_GetMaterial(texturemgr, "leo_sheet"), player.direction);
 
 		/* ------------------------- */
 
@@ -218,40 +215,65 @@ bool loop() {
 		/* show the game log on the top-left */
 		UI_ShowLog(UI_log.logbuffer);
 
+		printf(dialog.tag);
+
 		/* mode checks i guess */
-		UI_DialogBox(true, dialog.current_dialog);
+		UI_Dialog(dialog.current_dialog);
 
 		/* ------------------------ */
-		
-		// Update window
-		SDL_RenderPresent(renderer);
 
-		return true;
 	}
 	else {
 
 		/* a switch for special modes that arent the main game */
 		switch(mode) {
 
-			/* kkui_dashboard (game's main menu) */
-			case 255:
-				SDL_RenderCopy(renderer, UI_dashboard.menu_background, NULL, NULL);
+			case 2:
+				if (UI_dashboard.animplayer > 0) {
+					/* render the map background */
+					SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
+					UI_dashboard.animplayer -= 16;
+				}
+				if (UI_dashboard.animplayer <= 0 ) {
+					mode = main_mode;
+				}
 
-			//	UI_SendLog("the menu");
 				UI_ShowLog(UI_log.logbuffer);	
 
-				SDL_RenderPresent(renderer);
+				SDL_RenderCopy(renderer, UI_dashboard.menu_background, NULL, NULL);
+				break;
+
+			/* kkui_dashboard (game's main menu) */
+			case 255:
+				M_ReadMapFile("leo/ds/kkui_dashboard/dashboard.ds", texturemgr);
+
+				UI_ShowLog(UI_log.logbuffer);	
 				break;
 			/* kkui_crash (the so called "NSOD" (nerd screen of death)) */
 			case 254:
-				UI_nsod.crash_logbuffer = "Oh hewwo! So, back in 1963, a vewy important event happened. It was the assassination of JFK, which stands fow John F. Kennedy. Owo. On November 22nd, JFK was in Dawwas, Texas, attending a motorcade, which is like a pwocession in a car. Suddenly, a man named Lee Harvey Oswald shot him while he was riding in a convertible. It was a vewy sad day fow the United States and the wowld. o(TwTo)o JFK was the 35th Pwesident of the United States, and he was loved by many people. His death caused a wave of shock and gweat sadness. Investigations took place to find out who was wesponsible fow the assassination. Lee Harvey Oswald, the man who shot JFK, was later captured but was killed two days after the assassination, so he could not be twied in couwt. There awe still debates and conspiracy theories suwounding the events of that day, but it wemains a twagic moment in histowy. The assassination of JFK had a pwofound impact on the United States and the wowld. It changed the course of histowy and left a lasting legacy. It will always be wemembered as a significant event in the lives of many people. uwu";
 				UI_CrashScreen(UI_nsod.crash_logbuffer);
-				SDL_RenderPresent(renderer);
 				break;
-
 		}
-
 	}
+
+	/*
+		PAUSE CHECK
+	*/
+
+	if (gamemgr.is_paused == true) {
+		UI_FillRectEx(2, game_viewport_height / UI_SCALE - 20, game_viewport_width / UI_SCALE, 20, 255, 255, 255, true);
+		UI_TextLabelEx(2,  game_viewport_height / UI_SCALE / 2 - 20 / UI_SCALE, 0, 0, 0, "THE GAME IS PAUSED, PRESS F10 TO RESUME IT\nWARNING: MOVING WHILE PAUSED CAN CAUSE ISSUES", game_viewport_width / UI_SCALE, true);
+	}
+
+	/* UPDATE WINDOW AT THE END */
+	SDL_RenderPresent(renderer);
+
+	/*
+		WRAP-UP
+	*/
+
+	gamemgr.frame_endtime = SDL_GetTicks64();
+	gamemgr.frame_deltatime = gamemgr.frame_endtime - gamemgr.frame_starttime;
 
 	/* do nothing if you're in the menu */
 	return true;
@@ -290,51 +312,43 @@ bool init() {
 
 	//Initialize SDL_mixer
 	if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
-		return false;    
+		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
 	}	
-
-	SDL_Surface* buffer = IMG_Load("leo/bmp/leadpipe.png");
-	if ( !buffer ) {
-		std::cout << "Error loading image leadpipe.png: " << SDL_GetError() << std::endl;
-		return false;
-	}
-
-	texture = SDL_CreateTextureFromSurface( renderer, buffer );
-	SDL_FreeSurface( buffer );
-	buffer = NULL;
-	if ( !texture ) {
-		std::cout << "Error creating texture: " << SDL_GetError() << std::endl;
-		return false;
-	}
 
 	/* load the font data */
 	font = TTF_OpenFont("leo/res/slkscr.ttf", 8);
 	if ( !font ) {
-		std::cout << "Error loading font: " << TTF_GetError() << std::endl;
-		return false;
+		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING FONT, FILE DOES NOT EXIST / PERMISSION DENIED"); mode = kkui_crash; return false;
 	}
 
 	// initialize texture manager - tijon
 	texturemgr = new game_texture();
 	texturemgr->cachedMaterials = std::vector<MaterialDefinition*>();
+
+	sfxmgr = new game_sfx();
+	sfxmgr->cachedSounds = std::vector<SoundDefinition*>();
+
 	/* start sending SDL_TextInput events */
 //	SDL_StartTextInput();
 
+	UI_nsod.crash_logbuffer = (char*)malloc(1024 * sizeof(char*));
+
 	UI_InitLog();
-	
 	/* initialize the random number generator */
 	RNG_Init();
 
-	/* load textures into the memory */
+	/* load textures and sound effects into our memory */
 	R_InitTextures(texturemgr);
-	UI_dashboard.menu_background = IMG_LoadTexture(renderer, "leo/res/bg.png");
-
+	A_InitSoundEffects(sfxmgr);
 	/* initialize the player entity */
 	PLAYER_Init();
 
-	//mode = kkui_dashboard;
 	mode = kkui_dashboard;
-	strcpy(gamemgr.currentmap, "leo/ds/test.ds");
+	strcpy(gamemgr.currentmap, "leo/ds/server1.ds");
+
+	//SAVE_InitSaveOperation();
+	//SAVE_WriteKeyToFile("omg", "haii");
+	//SAVE_ReadKeyFromFile();
 
 	UI_SendLog("Welcome to ze game!");
 	return true;
@@ -344,6 +358,8 @@ void kill() {
 	R_FreeMaterial(texturemgr);
 
 	SDL_StopTextInput();
+
+	free(UI_nsod.crash_logbuffer);
 
 	//Free the music
 	Mix_FreeMusic(mixer.music);

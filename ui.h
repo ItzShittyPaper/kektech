@@ -6,6 +6,9 @@
 
 #include "libs.h"
 
+#define UI_SCALE 2
+#define STANDARD_PADDING 2
+
 struct game_ui {
 
 	SDL_Texture *text;
@@ -32,17 +35,29 @@ struct ui_nsod {
 
 struct ui_dashboard {
 	SDL_Texture* menu_background;
+	int animplayer;
 } extern UI_dashboard;
+
+struct ui_rgbcolor {
+
+	int r;
+	int g;
+	int b;
+
+};
 
 void UI_SendLog(const char* text);
 void UI_InitLog();
 void UI_ShowLog(const char* text);
 void UI_TextBox();
+ui_rgbcolor UI_RGBColorReturn(char* chunk);
 void UI_TextLabel(int pos_x, int pos_y, const char *label, int wrap_length);
+void UI_TextLabelEx(int pos_x, int pos_y, uint8_t r, uint8_t g, uint8_t b,  const char *label, int wrap_length, bool is_scaled);
 void UI_Rect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated);
-void UI_DialogBox(bool is_animated, const char* file);
+void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
+int UI_DialogBox(bool is_animated, const char* file);
 char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const char* path_1, const char* path_2);
 void UI_Dialog(char* buffer);
 

@@ -1,0 +1,12 @@
+/0# JA
+ehhh, is this it?
+im... alive?
+i thought it was going to be worse. but ok.
+now i just need to fucking get up, aaand i don't want to.
+well...
+fuuuuck aaaaa~~
+ehhhh... ok, so now after i have beat my laziness i have to get to work.
+*opens a bag of chips just laying on the desk*
+nice, it's already here and ready, somehow.
+/0-
+/=m= TEXT_1:eat a chip;TEXT_2:leave the chips alone and go to the bathroom;PATH_1:leo/txt/room11.txt;PATH_2:leo/txt/room12.txt

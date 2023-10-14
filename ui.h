@@ -9,6 +9,8 @@
 #define UI_SCALE 2
 #define STANDARD_PADDING 2
 
+#define LOG_SHOW_LENGTH 320
+
 struct game_ui {
 
 	SDL_Texture *text;
@@ -55,12 +57,10 @@ void UI_TextLabel(int pos_x, int pos_y, const char *label, int wrap_length);
 void UI_TextLabelEx(int pos_x, int pos_y, uint8_t r, uint8_t g, uint8_t b,  const char *label, int wrap_length, bool is_scaled);
 void UI_Rect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated);
+void UI_SelectRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
 void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
-int UI_DialogBox(bool is_animated, const char* file);
-char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const char* path_1, const char* path_2);
-void UI_Dialog(char* buffer);
-
+void UI_WindowFrameEx(int pos_x, int pos_y, int width, int height, uint8_t r_bg, uint8_t g_bg, uint8_t b_bg, uint8_t r_text, uint8_t g_text, uint8_t b_text, const char* title);
 void UI_CrashScreen(const char *label);
 
 #endif // UI_H_INCLUDED 

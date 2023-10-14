@@ -8,7 +8,6 @@
 struct Tile {
 
 	SDL_Rect rect;
-
 	SDL_Rect getBox();
 
 };
@@ -176,17 +175,23 @@ int M_InitCMD(FILE* map_file) {
 	player.is_alive = false;
 	map.is_uielement = false;
 	dialog.render_characters = false;
+	dialog.current_dialog = NULL;
 	UI_dashboard.menu_background = NULL;
 
 	while (head != NULL) {
 
-		if(strstr(head, "SPAWNPLAYER") != NULL) { player.is_alive = true; }
 		if(strstr(head, "MENUMODE") != NULL) { map.is_uielement = true; }
+		if(strstr(head, "CREDITMODE") != NULL) { mode = kkui_credit; /* change mode to credits */ }
 		if(strstr(head, "RENDERCHARACTERS") != NULL) { dialog.render_characters = true; }
 		if(strstr(head, "BACKGROUND:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; UI_dashboard.menu_background = IMG_LoadTexture(renderer, initbuf + 1); printf("%s\n", initbuf + 1); }
-		if(strstr(head, "MUSIC:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; Mix_HaltMusic();  mixer.music = Mix_LoadMUS(initbuf + 1); printf("%s\n", initbuf + 1); }
-		if(strstr(head, "SPAWN_X:") != NULL) { initbuf = strchr( head, ':' ); player.pos_x = atoi(initbuf + 1) * 16; player.collider.x = player.pos_x; }
-		if(strstr(head, "SPAWN_Y:") != NULL) { initbuf = strchr( head, ':' ); player.pos_y = atoi(initbuf + 1) * 16; player.collider.y = player.pos_y; }
+		
+		if(strstr(head, "MUSIC:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; Mix_HaltMusic(); mixer.music = Mix_LoadMUS(initbuf + 1); printf("%s\n", initbuf + 1); }
+		/* NOT VISUAL NOVEL RELATED, NOT USEFUL IN KEKTECH_ZDS */
+
+
+		//if(strstr(head, "SPAWNPLAYER") != NULL) { player.is_alive = true; }
+		//if(strstr(head, "SPAWN_X:") != NULL) { initbuf = strchr( head, ':' ); player.pos_x = atoi(initbuf + 1) * 16; player.collider.x = player.pos_x; }
+		//if(strstr(head, "SPAWN_Y:") != NULL) { initbuf = strchr( head, ':' ); player.pos_y = atoi(initbuf + 1) * 16; player.collider.y = player.pos_y; }
 
 		printf("'%s'\n", head);
 		head = strtok(NULL, ";");
@@ -314,7 +319,9 @@ int M_ReadMapFile(const char* map_path, game_texture* texture) {
 				/* AUTO-DIALOG */
 				case 19:
 					sscanf(map.chunk, "%s", map.npc_dialog);
-					dialog.current_dialog = map.npc_dialog;
+					if (dialog.current_dialog == NULL)  {
+						dialog.current_dialog = map.npc_dialog;
+					}
 					mode = dialog_mode;
 					map.i = -1; break;
 

@@ -9,17 +9,7 @@ SDL_Window* window;
 SDL_Renderer* renderer;
 SDL_Texture* texture;
 TTF_Font* font;
-
 game_texture* texturemgr;
-
-/* active dialog character portrait buffer */
-//CharacterPortrait charportraitbuf;
-/* initializing player sprite struct */
-CharacterWorldSprite playerworldsprite;
-
-CharacterPortrait portrait;
-
-int animplayer_character = 0;
 
 void R_FreeMaterial(game_texture* manager)
 {
@@ -122,12 +112,6 @@ bool R_Clear() {
 
 };
 
-void R_ResetPortraitAnim() {
-
-	portrait.animplayer = 0;
-
-}
-
 void R_DrawBackground() {
 
 	if (UI_dashboard.animplayer < 255) {
@@ -151,142 +135,6 @@ void R_FadeOutBackground() {
 
 }
 
-void R_DrawCharacterPortrait(SDL_Texture* texture_index) {
-
-	portrait.srcrect.x = 0;
-	portrait.srcrect.y = 0;
-	portrait.srcrect.w = 214;
-	portrait.srcrect.h = 464;
-	
-	portrait.dstrect.x = 214 * dialog.character_count;
-	portrait.dstrect.y = game_viewport_height - 464 - 72;
-	portrait.dstrect.w = 214;
-	portrait.dstrect.h = 464;
-
-	if (portrait.animplayer < 255) {
-		SDL_SetTextureAlphaMod(texture_index, portrait.animplayer);
-		portrait.animplayer += 16;
-	}
-
-	SDL_RenderCopy(renderer, texture_index, &portrait.srcrect, &portrait.dstrect); 
-
-}
-
-void R_DrawPlayer(SDL_Texture* texture_index, int direction) {
-
-	//UI_FillRect(player.pos_x, player.pos_y, 16, 16, false);
-	playerworldsprite.srcrect.w = 16;
-	playerworldsprite.srcrect.h = 16;
-
-	switch (direction) {
-
-		case 0:
-			playerworldsprite.srcrect.x = 112;
-			playerworldsprite.srcrect.y = playerworldsprite.left;
-			break;
-
-		case 1:	
-			playerworldsprite.srcrect.x = 112;
-			playerworldsprite.srcrect.y = playerworldsprite.right;
-			break;
-
-		case 2:	
-			playerworldsprite.srcrect.x = 112;
-			playerworldsprite.srcrect.y = playerworldsprite.up;
-			break;
-
-		case 3:	
-			playerworldsprite.srcrect.x = 112;
-			playerworldsprite.srcrect.y = playerworldsprite.down;
-			break;
-	
-	}
-
-	/* weird animation code, it's not the perfect solution but animation code is hard and i don't want to do it */
-	if (animplayer5 >= 1) { playerworldsprite.srcrect.x = playerworldsprite.frame1; }
-	if (animplayer5 >= 16) { playerworldsprite.srcrect.x = playerworldsprite.idle; }
-	if (animplayer5 >= 32) { playerworldsprite.srcrect.x = playerworldsprite.frame2; }
-	if (animplayer5 >= 48) { playerworldsprite.srcrect.x = playerworldsprite.idle; }
-	if (animplayer5 >= 64) { animplayer5 = 0; }
-
-	/* setting destination coordinates */
-	playerworldsprite.dstrect.x = player.pos_x;
-	playerworldsprite.dstrect.y = player.pos_y;
-	playerworldsprite.dstrect.w = 16;
-	playerworldsprite.dstrect.h = 16;
-
-	/* direction check flipping the sprite horizontally if needed */
-	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect); }
-	else { SDL_RenderCopyEx(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
-
-	/* animation controller check */
-	if (player.is_moving == 1) {
-		animplayer5 = animplayer5 + 1 * playerworldsprite.anim_speed;
-	}
-
-}
-
-void NPC_DrawEntity(SDL_Texture* texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type) {
-
-	helper_ent npc;
-
-	//UI_FillRect(player.pos_x, player.pos_y, 16, 16, false);
-	npc.srcrect.w = 16;
-	npc.srcrect.h = 16;
-
-	npc.dialog = dialog_path;
-
-	switch (direction) {
-
-		case 0:
-			npc.srcrect.x = 0;
-			npc.srcrect.y = 0;
-			break;
-
-		case 1:	
-			npc.srcrect.x = 0;
-			npc.srcrect.y = 0;
-			break;
-
-		case 2:	
-			npc.srcrect.x = 0;
-			npc.srcrect.y = 16;
-			break;
-
-		case 3:	
-			npc.srcrect.x = 0;
-			npc.srcrect.y = 32;
-			break;
-
-		default:
-			npc.srcrect.x = 0;
-			npc.srcrect.y = 0;
-			break;
-
-	
-
-	}
-
-	/* setting destination coordinates */
-	npc.dstrect.x = pos_x * 16;
-	npc.dstrect.y = pos_y * 16;
-	npc.dstrect.w = 16;
-	npc.dstrect.h = 16;
-
-	npc.intrect.x = (pos_x * 16) - 2;
-	npc.intrect.y = (pos_y * 16) - 2;
-	npc.intrect.w = 20;
-	npc.intrect.h = 20;
-
-	/* perform collision checks */
-	M_PlayerTileCollide(npc.dstrect, player.collider);
-	NPC_HelperActivate(player.collider, npc.intrect, npc.dialog);
-
-	/* direction check flipping the sprite horizontally if needed */
-	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &npc.srcrect, &npc.dstrect);  }
-	else { SDL_RenderCopyEx(renderer, texture_index, &npc.srcrect, &npc.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
-
-}
 
 void ToggleFullscreen(SDL_Window* Window) {
 

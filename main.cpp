@@ -1,5 +1,7 @@
+/* basic APIs */
 #include "libs.h"
 
+/* base kektech */
 #include "main.h"
 #include "render.h"
 #include "audio.h"
@@ -63,56 +65,19 @@ int RNG_GenSeed(int rand_min, int rand_max) {
 	return num;
 }
 
-void PLAYER_Init() {
+/* ======================== */
 
-	player.collider.x = 0;
-	player.collider.y = 0;
-	player.collider.w = 16;
-	player.collider.h = 16;
-
-}
-
-void PLAYER_Move() {
-
-	//Move the dot left or right
-	player.pos_x += player.vel_x;
-	player.collider.x = player.pos_x;
-    
- 	//Move the dot up or down
-	player.pos_y += player.vel_y;
-	player.collider.y = player.pos_y;
-
-	/* stop and start the animation depending on the player movement */
-	/* i know that i should use the || (OR) operator here, but it doesnt fucking work */
-	if (player.vel_y != 0) { player.is_moving = 1; }
-	else if (player.vel_x != 0) { player.is_moving = 1; }
-	else { player.is_moving = 0; animplayer5 = 0; }
-}
-
-void PLAYER_ResetVel() {
-
-	player.is_moving = 0;
-	player.vel_y = 0;
-	player.vel_x = 0;
-
-}
-
-void NPC_HelperActivate(SDL_Rect player_collider, SDL_Rect tile, char* dialog_path) {
-
-	if (M_CheckCollision(player_collider, tile) && is_interacting == 1) {
-		dialog.current_dialog = dialog_path;
-		mode = dialog_mode;
-	}
-
-}
-
-/* ============================= */
-
-int main(int argc, char** args) {
+int main(int argc, char *argv[]) {
 
 	if ( !init() ) {
-		system("pause");
+		printf("KEKTECH FAILED TO START\nCHECK YOUR SDL LIBRARY AND CONTACT THE DISTRIBUTOR OF THE GAME\n");
 		return 1;
+	}
+
+	if (argc == 2) {
+		mode = main_mode;
+		/* the limit is 128 - the prefix */
+		snprintf(gamemgr.currentmap, 128, "%s/%s", "leo/ds", argv[1]);
 	}
 
 	while ( loop() ) {
@@ -124,15 +89,6 @@ int main(int argc, char** args) {
 
 	kill();
 	return 0;
-}
-
-bool ProcessInput() {
-
-	if (player.is_alive == true)
-		PLAYER_Move();
-
-	return true;
-
 }
 
 // MAIN GAME LOOP
@@ -184,43 +140,13 @@ bool loop() {
 		}
 	}
 
+	A_MusicUpdateEvent();
+
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
-	if (mode == main_mode || mode == dialog_mode) {
-		/*
-			GAME LOGIC
-		*/
+	if (mode < 250) {
 
-		if (gamemgr.is_paused == false)
-			ProcessInput();
-		A_MusicUpdateEvent();
-
-		/* ------------------------- */
-
-		/*
-			DRAWING
-		*/
-
-		M_ReadMapFile(gamemgr.currentmap, texturemgr);
-
-		if (player.is_alive == true)
-			R_DrawPlayer(R_GetMaterial(texturemgr, "leo_sheet"), player.direction);
-
-		/* ------------------------- */
-
-		/*
-			UI
-		*/
-
-		/* show the game log on the top-left */
-		UI_ShowLog(UI_log.logbuffer);
-
-		printf(dialog.tag);
-
-		/* mode checks i guess */
-		UI_Dialog(dialog.current_dialog);
-
-		/* ------------------------ */
+		ClientGameLoop();
 
 	}
 	else {
@@ -228,17 +154,10 @@ bool loop() {
 		/* a switch for special modes that arent the main game */
 		switch(mode) {
 
-			case 2:
-				if (UI_dashboard.animplayer > 0) {
-					/* render the map background */
-					SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
-					UI_dashboard.animplayer -= 16;
-				}
-				if (UI_dashboard.animplayer <= 0 ) {
-					mode = main_mode;
-				}
+			/* loading transitions */
+			case 252:
 
-				UI_ShowLog(UI_log.logbuffer);	
+				ClientLoadingAnim();
 
 				SDL_RenderCopy(renderer, UI_dashboard.menu_background, NULL, NULL);
 				break;
@@ -246,12 +165,17 @@ bool loop() {
 			/* kkui_dashboard (game's main menu) */
 			case 255:
 				M_ReadMapFile("leo/ds/kkui_dashboard/dashboard.ds", texturemgr);
-
+				UI_WindowFrameEx(6, 82, 240, 72, 0, 0, 0, 224, 112, 224, "WITAMY W DEMIE ZDS!!!");
+				UI_TextLabelEx(8, 98, 224, 112, 224, "AKTUALIZACJA 1.0.2: SNAKE MINIGIERKA DOSTEPNA POD KLAWISZEM V, NOWA WERSJA SILNIKA, AKTUALIZACJE INTERFEJSU POD MASKA, OGOLNE POPRAWKI. DZIEKUJE ZA WSZELKIE WSPARCIE - m4kulatura", 238, true);
 				UI_ShowLog(UI_log.logbuffer);	
 				break;
 			/* kkui_crash (the so called "NSOD" (nerd screen of death)) */
 			case 254:
 				UI_CrashScreen(UI_nsod.crash_logbuffer);
+				break;
+			/* kkui_credit (the credits screen showed at the end of the game) */
+			case 253:
+				M_ReadMapFile(gamemgr.currentmap, texturemgr);
 				break;
 		}
 	}
@@ -282,6 +206,9 @@ bool loop() {
 
 bool init() {
 
+	/* allocate the crash log buffer so windows doesnt complain when shit inevitably fucks itself (:3) */
+	UI_nsod.crash_logbuffer = (char*)malloc(1024 * sizeof(char*));
+
 	if ( SDL_Init( SDL_INIT_EVERYTHING ) < 0 ) {
 		std::cout << "Error initializing SDL: " << SDL_GetError() << std::endl;
 		return false;
@@ -310,16 +237,16 @@ bool init() {
 		return false;
 	}
 
-	//Initialize SDL_mixer
-	if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
-		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
-	}	
-
 	/* load the font data */
 	font = TTF_OpenFont("leo/res/slkscr.ttf", 8);
 	if ( !font ) {
 		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING FONT, FILE DOES NOT EXIST / PERMISSION DENIED"); mode = kkui_crash; return false;
 	}
+
+	//Initialize SDL_mixer
+	if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
+		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
+	}	
 
 	// initialize texture manager - tijon
 	texturemgr = new game_texture();
@@ -331,7 +258,7 @@ bool init() {
 	/* start sending SDL_TextInput events */
 //	SDL_StartTextInput();
 
-	UI_nsod.crash_logbuffer = (char*)malloc(1024 * sizeof(char*));
+	//dialog.is_menu = false;
 
 	UI_InitLog();
 	/* initialize the random number generator */
@@ -341,16 +268,20 @@ bool init() {
 	R_InitTextures(texturemgr);
 	A_InitSoundEffects(sfxmgr);
 	/* initialize the player entity */
-	PLAYER_Init();
+//	PLAYER_Init();
 
 	mode = kkui_dashboard;
-	strcpy(gamemgr.currentmap, "leo/ds/server1.ds");
+	strcpy(gamemgr.currentmap, "leo/ds/start.ds");
 
 	//SAVE_InitSaveOperation();
 	//SAVE_WriteKeyToFile("omg", "haii");
 	//SAVE_ReadKeyFromFile();
 
-	UI_SendLog("Welcome to ze game!");
+	ClientInit();
+
+	/* you HAVE to send something, for some reason. will move to UI_InitLog() because of that */
+	UI_SendLog(" ");
+
 	return true;
 }
 

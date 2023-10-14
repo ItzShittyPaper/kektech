@@ -5,6 +5,8 @@
 #include "ui.h"
 #include "main.h"
 
+//#include "client_main.h"
+
 /* 
 
 == KEYCODES ==
@@ -89,127 +91,8 @@ bool I_ProcessInput(int key_code) {
 
 	if (gamemgr.is_paused == true) { goto skip; }
 
-	switch(key_code) {
+	ClientInput(key_code);
 
-		case 0:
-			switch (mode) {
-				case 0:
-					is_interacting = 1;
-					break;
-				case 1:
-					dialog.target_num++;
-					menu.is_selected = 1;
-					break;
-
-				/* main menu */
-				case 255:
-					mode = loading_mode;
-					gamemgr.map_is_initialized = 0;
-					//SDL_DestroyTexture(UI_dashboard.menu_background);
-					break;
-
-				default: break;
-			}
-
-			Mix_PlayChannel( -1, A_GetSoundEffect(sfxmgr, "select"), 0);
-			std::cout << "Z pressed" << std::endl; break;
-		case 1:
-
-			switch (mode) {
-
-				/* main menu */
-				case 255:
-					UI_dashboard.menu_background = IMG_LoadTexture(renderer, "leo/bmp/about.png");
-					//SDL_DestroyTexture(UI_dashboard.menu_background);
-					break;
-
-				default: break;
-			}
-
-
-
-			std::cout << "X pressed" << std::endl; break;
-		case 2:
-			std::cout << "C pressed" << std::endl; break;
-		case 3:
-			std::cout << "V pressed" << std::endl; break;
-			
-		case 7:
-			switch (mode) {
-				case 0:
-            				player.vel_x -= 16 / player.speed; player.direction = 0; break;
-				default: break;
-			}
-
-			std::cout << "LEFT / A pressed" << std::endl; break;
-		case 8:
-			switch (mode) {
-				case 0:
-            				player.vel_x += 16 / player.speed; player.direction = 1; break;
-				default: break;
-			}
-
-			std::cout << "RIGHT / D pressed" << std::endl; break;
-	        case 9:
-			switch (mode) {
-				case 0:
-            				player.vel_y -= 16 / player.speed; player.direction = 2; break;
-				case 1:
-					menu.option--;
-					break;
-				default: break;
-			}
-
-			std::cout << "UP / W pressed" << std::endl; break;
-	        case 10:
-			switch (mode) {
-				case 0:
-					player.vel_y += 16 / player.speed; player.direction = 3; break;
-				case 1:
-					menu.option++;
-					break;
-				default: break;
-			}
-
-			std::cout << "DOWN / S pressed" << std::endl; break;
-
-		/* 
-		MOVEMENT KEY RELEASES
-		*/
-
-		case 11:
-			switch (mode) {
-				case 0:
-            				player.vel_x += 16 / player.speed; break;
-				default: break;
-			}
-
-			std::cout << "LEFT / A released" << std::endl; break;
-		case 12:
-			switch (mode) {
-				case 0:
-            				player.vel_x -= 16 / player.speed; break;
-				default: break;
-			}
-
-			std::cout << "RIGHT / D released" << std::endl; break;
-	        case 13:
-			switch (mode) {
-				case 0:
-            				player.vel_y += 16 / player.speed; break;
-				default: break;
-			}
-
-			std::cout << "UP / W released" << std::endl; break;
-	        case 14:
-			switch (mode) {
-				case 0:
-					player.vel_y -= 16 / player.speed; break;
-				default: break;
-			}
-
-			std::cout << "DOWN / S released" << std::endl; break;
-	}
 	skip:
 	return true;
 }

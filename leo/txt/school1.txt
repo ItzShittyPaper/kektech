@@ -1,0 +1,32 @@
+/0# JA
+no dobra, dotarlem do tej szkoly. w koncu. wydawalo mi sie ze jest to ta krotsza droga, no ale jak widac moglo byc lepiej. albo to po prostu moj zegar biologiczny sie pierdoli. cholera wie, a ja nie cholera
+lecimy z tym koksem.
+dzien dobry!
+/1# PORTIERKA
+dzien dobryy?
+/1-
+/0# JA
+czas wejsc teraz na gore...
+zmierzanie sie ze schodami to zawsze jest koszmar, za kazdym razem co godzine sie wchodzilo 3 pietra tymi schodami, zawsze byly one oczywiscie zatloczone. no bo jak inaczej.
+z czasem wyrobily sie niepisane schodowe zasady, inne w kazdej szkole.
+troche tesknie za tym, ale to mniejsza. czas wejsc na te schody
+/=== leo/ds/stairs.ds
+*krok*
+*krok*
+*krok*
+ehhhh...
+*krok*
+*krok*
+/1# KTOSIEK
+siema donix, juz myslelismy ze cie nie bedzie, pani zapomniala w ogole o tobie w klasie.
+/0# JA
+czekaj jak to?
+/1# KTOSIEK
+no nie wiem, nie moja sprawa, chodz do kibla - pokaze ci cos fajnego.
+/0# JA
+niech ci bedzie, troche czasu mam
+*casualowo wstepuje do kibla szkolnego*
+/3-
+/2-
+/0-
+/=== leo/ds/school2.ds

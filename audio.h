@@ -1,6 +1,8 @@
 #ifndef AUDIO_H_INCLUDED
 #define AUDIO_H_INCLUDED
 
+#define OPENMPT_MODULE_RENDER_INTERPOLATIONFILTER_LENGTH 1
+
 #include "libs.h"
 #include <vector>
 

@@ -56,7 +56,7 @@ void UI_TextBox() {
 
 void UI_TextLabel(int pos_x, int pos_y, const char *label, int wrap_length) {
 
-	SDL_Color foreground = { 255, 0, 255 };
+	SDL_Color foreground = { 255, 255, 255 };
 	
 	SDL_Surface* text_surf = TTF_RenderText_Solid_Wrapped(font, label, foreground, wrap_length);
 
@@ -160,7 +160,7 @@ void UI_InitLog() {
 }
 
 void UI_ShowLog(const char* text) {
-	if (UI_log.logtextanimation < 72) {
+	if (UI_log.logtextanimation < LOG_SHOW_LENGTH) {
 
 		/* bruh */
 		UI_TextLabel(2, 2, text, game_screen_width);
@@ -221,6 +221,32 @@ void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated
 	
 }
 
+void UI_SelectRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated) {
+
+//	animplayer7 = 0;
+
+	SDL_Rect rect;
+	rect.x = pos_x * UI_SCALE;
+	rect.y = pos_y * UI_SCALE;
+	rect.w = width * UI_SCALE;
+	rect.h = height * UI_SCALE;
+
+	if (is_animated == false) {
+		SDL_SetRenderDrawColor(renderer, r, g, b, 255);
+	} else {
+
+		if (animplayer7 > 255) {
+			animplayer7 = 255;
+		}
+
+		SDL_SetRenderDrawColor(renderer, r, g, b, 0 + animplayer7);
+		animplayer7 = animplayer7 + 8;
+	}
+
+	SDL_RenderDrawRect(renderer, &rect);
+	
+}
+
 void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated) {
 
 //	animplayer6 = 0;
@@ -235,8 +261,8 @@ void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated) 
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 224);
 	} else {
 
-		if (animplayer6 > 255) {
-			animplayer6 = 255;
+		if (animplayer6 > 224) {
+			animplayer6 = 224;
 		}
 
 		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0 + animplayer6);
@@ -253,8 +279,8 @@ void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8
 //	animplayer6 = 0;
 
 	SDL_Rect rect;
-	rect.x = pos_x;
-	rect.y = pos_y;
+	rect.x = pos_x * UI_SCALE;
+	rect.y = pos_y * UI_SCALE;
 	rect.w = width * UI_SCALE;
 	rect.h = height * UI_SCALE;
 
@@ -290,197 +316,13 @@ void UI_CrashScreen(const char *label) {
 
 }
 
-int UI_DialogBox(bool is_animated, const char* file) {
+void UI_WindowFrameEx(int pos_x, int pos_y, int width, int height, uint8_t r_bg, uint8_t g_bg, uint8_t b_bg, uint8_t r_text, uint8_t g_text, uint8_t b_text, const char* title) {
 
-	if (mode == dialog_mode) {
+	int y_content_offset = 8;
 
-		/* reset the players velocity */
-		PLAYER_ResetVel();
+	/* DRAW THE WINDOW ITSELF */
+	UI_FillRectEx(pos_x, pos_y, width, height, r_bg, g_bg, b_bg, true);
+	UI_SelectRectEx(pos_x, pos_y, width, height, r_text, g_text, b_text, true);
+	UI_TextLabelEx(pos_x + 2, pos_y + 2, r_text, g_text, b_text, title, width, true);
 
-		if (dialog.is_triggered == false) {
-			dialog.target_num = 1;
-			dialog.line_num = 1;
-			dialog.ptr = fopen(file, "r");
-			dialog.is_triggered = true;
-		}
-
-		if (dialog.line_num <= dialog.target_num) {
-			read:
-			fgets(dialog.ch, sizeof(dialog.ch), dialog.ptr);
-
-			if (strstr(dialog.ch, "/===") != NULL) {
-
-				strcpy(dialog.ch, strchr(dialog.ch, ' '));
-				strcpy(dialog.ch, dialog.ch + 1);
-				dialog.ch[strcspn(dialog.ch, "\n")] = 0;
-
-				strncpy(gamemgr.currentmap, dialog.ch, 64); 
-
-				UI_dashboard.animplayer = 255;
-				animplayer6 = 0; animplayer7 = 0;
-				dialog.character_count = 1;
-				dialog.is_triggered = false;
-				gamemgr.map_is_initialized = 0;
-				mode = loading_mode;
-				return 0;
-			}
-
-			else if (strstr(dialog.ch, "/0#") != NULL) {
-				strncpy(dialog.character0, dialog.ch, 64);
-				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
-
-				R_ResetPortraitAnim();
-				goto read;
-			} 
-			else if (strstr(dialog.ch, "/1#") != NULL) {
-				strncpy(dialog.character1, dialog.ch, 64);
-				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
-
-				R_ResetPortraitAnim();
-				goto read;
-			}
-			else if (strstr(dialog.ch, "/2#") != NULL) {
-				strncpy(dialog.character2, dialog.ch, 64);
-				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
-
-				R_ResetPortraitAnim();
-				goto read;
-			} 
-			else if (strstr(dialog.ch, "/3#") != NULL) {
-				strncpy(dialog.character3, dialog.ch, 64);
-				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 64);
-
-				R_ResetPortraitAnim();
-				goto read;
-			} 
-
-			else if (strstr(dialog.ch, "/0-") != NULL) { strncpy(dialog.character0, " ", 64); goto read; }
-			else if (strstr(dialog.ch, "/1-") != NULL) { strncpy(dialog.character1, " ", 64); goto read; }
-			else if (strstr(dialog.ch, "/2-") != NULL) { strncpy(dialog.character2, " ", 64); goto read; }
-			else if (strstr(dialog.ch, "/3-") != NULL) { strncpy(dialog.character3, " ", 64); goto read; }
-
-			else if (strstr(dialog.ch, "/=m=") != NULL) {
-
-				char *head = strtok(dialog.ch, "; ");
-				char *initbuf = (char*)malloc(sizeof(char) * 64);
-
-				while (head != NULL) {
-
-					if(strstr(head, "BACKGROUND:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; UI_dashboard.menu_background = IMG_LoadTexture(renderer, initbuf + 1); printf("%s\n", initbuf + 1); }
-
-					printf("'%s'\n", head);
-					head = strtok(NULL, ";");
-				}	
-
-				free(head);
-				goto read;
-
-			}
- 
-			dialog.line_num++;
-		}
-	
-		if (animplayer6 > 254 && animplayer7 > 254 && dialog.render_characters == true ) {
-			/* character shit */
-			if (strstr(dialog.character0, "CYGAR") != NULL || strstr(dialog.character1, "CYGAR") != NULL || strstr(dialog.character2, "CYGAR") != NULL || strstr(dialog.character3, "CYGAR") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "cygar_sheet")); dialog.character_count++;
-			}
-			if (strstr(dialog.character0, "RURY") != NULL || strstr(dialog.character1, "RURY") != NULL || strstr(dialog.character2, "RURY") != NULL || strstr(dialog.character3, "RURY") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "rury_sheet")); dialog.character_count++;
-			}
-			if (strstr(dialog.character0, "DONIX") != NULL || strstr(dialog.character1, "DONIX") != NULL || strstr(dialog.character2, "DONIX") != NULL || strstr(dialog.character3, "DONIX") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "donix_sheet")); dialog.character_count++;
-			}
-			if (strstr(dialog.character0, "OTIS") != NULL || strstr(dialog.character1, "OTIS") != NULL || strstr(dialog.character2, "OTIS") != NULL || strstr(dialog.character3, "OTIS") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "otis_sheet")); dialog.character_count++;
-			}
-			if (strstr(dialog.character0, "MCAT") != NULL || strstr(dialog.character1, "MCAT") != NULL || strstr(dialog.character2, "MCAT") != NULL || strstr(dialog.character3, "MCAT") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "mcat_sheet")); dialog.character_count++;
-			}
-
-			dialog.character_count = 1;
-		}
-
-		/* the main dialog box */
-		UI_FillRect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
-		UI_Rect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
-
-		/* the character name box */
-		UI_FillRect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
-		UI_Rect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
-
-		/* the label */
-		if (animplayer6 > 254 && animplayer7 > 254) {
-			UI_TextLabelEx(2 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, 255, 255, 255, dialog.ch, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
-			UI_TextLabelEx(10 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 84, 255, 255, 255, dialog.current_character, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
-		}
-	}
-	return 0;
-}
-
-char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const char* path_1, const char* path_2) {
-
-	if (mode == dialog_mode) {
-
-		PLAYER_ResetVel();
-		/* animated rectangle code */
-		UI_FillRect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
-		UI_Rect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
-
-		if (menu.option > 1)
-			menu.option = 0;
-		else if (menu.option < 0)
-			menu.option = 0;
-		
-		/* check for selection */
-		if (menu.is_selected == 1) {
-			switch (menu.option) {
-
-				case 0:
-					printf("%s\n", path_1);
-					dialog.is_menu = false;
-					return (char*)path_1;
-					break;
-				case 1:
-					printf("%s\n", path_2);
-					dialog.is_menu = false;
-					return (char*)path_2;
-					break;
-				default:
-					printf("uhmmm wtf\n");
-					exit(1);
-			}
-		}
-
-		/* displaying the text after finishing the animation */
-		if (animplayer6 > 256 && animplayer7 > 256) {
-			for (int i = 0; i < 2; i++) {
-				UI_FillRect(6, 214 + i * 35, 308, 33, false);
-
-				if (i == menu.option) { UI_SelectRect(6, 214 + i * 35, 308, 33, false); }
-				else { UI_Rect(6, 214 + i * 35, 308, 33, false); }
-				
-				if (i == 0) {
-					UI_TextLabel(8, 214, label_1, 244);
-				} else {
-					UI_TextLabel(8, 214 + i * 35, label_2, 244);
-				}
-			}
-		}
-	}
-
-	return NULL;
-
-}
-
-void UI_Dialog(char* buffer) {
-
-	PLAYER_ResetVel();
-
-	if (dialog.is_menu == true) {
-		dialog.current_dialog = UI_Menu(true, "h", "not h", "leo/txt/menu_test/dialog1.txt", "leo/txt/menu_test/dialog2.txt");
-	}
-	else {
-		UI_DialogBox(true, dialog.current_dialog);
-	}
 }

@@ -1,41 +1,42 @@
 /0# CYGAR
-co tu sie kurwa odpierdala
-smrod i brud tu
-nic tylko nasrac na srodku
+what the fuck is going on here
+it stinks and is filthy over here
+nothing to do else other than shit in the middle
 /1# MCAT
-no pracujemy nad tym tutaj z donixem
+we are working on it here with donix
 /2# JA
-no, juz od godziny sprzatamy
+yeah, we were cleaning for over a hour now
 /0# CYGAR
-wlasnie widac, wszedzie tutaj nasrane, kable, caly pokoj jest nie przygotowany. a telewizor to w ogole na podlodze, krzesla tez nie sa rozstawione tak jak powinny.
-co ja kurwa mam na podlodze ogladac? moze jeszcze nasyp tu zwirem dla efektu to bedzie kurwa kino plenerowe
-nie mam na was czasu spierdalam
+i can see, there is shit everywhere, cables, the whole room is not prepared. and this tv is on the fucking floor, the chairs are also not spaced as they should be.
+im i suposed to watch tv on fucking floor? maybe add some gravel here for effect, it will be a fucking outdoor cinema
+i dont have time for ya'll, im getting the fuck out
 /0-
 /2# JA
 ehhhhhh...
 /1# MCAT
-nie przejmuj sie on zawsze taki jest surowy
-wiem ze dupna sytuacja bo mamy tylko 2 godziny ale wiesz maraton filmowy ma byc dopiety na ostatni guzik. musimy tylko posortowac kable i telewizje zamontowac, krzesla sie potem wezmie
+dont worry, he's always so strict
+i know that its a shitty situation because we only have like 2 hour, but you know, a movie marathon has to be perfect. we just have to sort the cables and install the tv, we'll space the chairs later
 /0# RURY
-no koledzy koledzy co my tu mamy, wieczor filmowy...
+so my friends, what do we have here, movie marathon...
 /3# OTIS
-co sie tu dzieje?
+what is going on here?
 /0# RURY
-niestety musze oglosic ze sraka z waszym wieczorkiem milo spedzonym, a to dlatego poniewaz mamy wazniejszy projekt.
-konkretnie dzisiaj startujemy test symulacji projektu "balkanica". sprzet jest w stu procentach ustawiony i gotowy. tym razem chlodzenie dziala i nie dojdzie to wybuchu
+sadly i have to announce that your movie marathong wont work, because we have a more important project.
+to be exact we're starting a simulation test of the "balkanica" project. the equipment is one hundred percent set and ready. this time the cooling works and it wont blow up
 /3# OTIS I JA
-wybuchu?
+blow up?
 /0# RURY
-spokojnie nie martwcie sie nic takiego sie nie stalo. zainstalowalem wam tam debiana abyscie mogli zaczac pracowac. ja sie nie znam na tym linuxie wy jajoglowi sie powinniscie tym zajac.
-mysterious cat, ty sie zajmij bezpieczenstwem projektu, nic nie moze wyjsc na swiatlo dzienne, rozumiemy sie?
-otis, milego ustawiania tego deboma czy czego tam. a ty donix, well. wchodzisz do symulacji.
+chill out, nothing really happened. i installed debian on there so you can start the work. i know shit about linux, you eggheads should start working on it.
+mysterious cat, you better start working on the projects safety, nothing here can see the daylight, you guys understand?
+otis, good luck setting up this deboma or whatever its called. and you donix, well. you're going into the simulation.
 /2# JA
-cos popieprzylo cie?
-czemu ja w ogole?
+you're joking right?
+why me in the first place huh?
 /0# RURY
-tak, ty lecisz. nie bede z toba na ten temat dyskutowal. bedziesz pierwsza osoba tutaj ktora przejdzie do historii, wchodzac w symulowany swiat. twoim zadaniem jest przetestowanie wszystkiego. kazdy czlowiek powinien sie zachowywac tak jak powinien, i swiat powinien sie nie roznic od tego w ktorym zyjemy.
-daj znac jesli cos jest bardzo nie tak.
-do zobaczenia, i widzimy sie wieczorem. macie tylko niecaly dzien a zegar tyka.
+you're going, period. im not going to discuss it with you. you're going to be the first person that'll go to history, going into a simulated world. your task is to test everything. every person has to behave like a human, and the world should not be different from the one that we live in.
+
+let me know if something is very wrong.
+See you later, and I'll see you in the evening. You only have less than a day and the clock is ticking.
 /0-
 /1-
 /2-

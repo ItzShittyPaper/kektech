@@ -27,20 +27,20 @@ let's go there now with donix. just wait for me since we'll have to bring our st
 *pulls books out of a backpack, packing them on the windowsill so that no one takes them*
 can someone write to askel? it would be nice if someone would do that crap. but fuck it, he's probably not coming anyway.
 
-wchodzimy, obrysujemy plan calego miejsca, i na koniec zabieramy ze soba wszystko co mozemy, taka okazja sie nam nie przytrafi mi sie wydaje, takze no.
-kto sie z was chce o cos zapytac, albo sie stresuje?
+we go in, then make a plan of this place, and in the end we steal everything we can, I don't think such an opportunity will happen to us, so yeah.
+does anyone have any questions, or is stressed?
 /3# JALAPENO
-no przyznam sie ze pojebany pomysl to troche, no ale mysle ze przezyjemy.
-potem jesli sie uda to dawajcie idziemy do mnie, pogramy sobie troche w dooma 2. mam dla was specjalnego wada nad ktorym troche pracowalem.
+Not going to lie this is kind of a fucked up plan, but i think we'll do it.
+after we do it lets go to my place, we'll play some doom 2. i have a special WAD for you that i worked on.
 /2# FLORYDA
-swietny pomysl, tam sie rozpakujemy rozplanujemy nasz nastepny ruch. w skrocie sa to nasze najlepsze wagary na jakie kiedykolwiek pojdziemy.
-no to donix, nie zostawilem ci chyba tu duzo wyboru ale...
+great idea, we'll unpack there and plan our next move. in short these will be our best truancy that we'll ever go on.
+well donix, I guess I didn't leave you much choice here but...
 /0# JA
-no?
+yeah?
 /2# FLORYDA
-piszesz sie na to?
+you in?
 /3-
 /2-
 /1-
 /0-
-/=m= TEXT_1:no dobra, ide;TEXT_2:hmmm a moze zostane;PATH_1:leo/txt/school21.txt;PATH_2:leo/txt/school22.txt
+/=m= TEXT_1:Fuck it, im in B);TEXT_2:huh, i think i'll stay;PATH_1:leo/txt/school21.txt;PATH_2:leo/txt/school22.txt

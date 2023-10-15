@@ -1,11 +1,11 @@
 /0# JA
-ehhhh szczerze wolalbym zostac
+ehhhh i would rather stay
 /1# FLORYDA
-cykasz sie?
+you afraid?
 /0# JA
-no ta, a nie mozna niby?
+maybe, can i be scared?
 /1# FLORYDA
-nie XD lecisz z nami
+no XD you're going with us
 /1-
 /0-
 /=== leo/ds/school3.ds

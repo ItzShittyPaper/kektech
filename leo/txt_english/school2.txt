@@ -2,30 +2,31 @@
 /1# KTOSIEK
 /2# FLORYDA
 /3# KAZDY
-elo
+hi
 /0# JA
-dobra ktosiek, co macie takiego ciekawego tutaj
+ok ktosiek, what do you have here that's so important.
 /3# JALAPENO
-otoz to *pokazuje klucz*
+this little thing right here *shows me a key*
 /0# JA
-no i? zwykly klucz
+what? it's a fucking key
 /2# FLORYDA
-to nie lada klucz, to klucz do szkolnego magazynu
+this is THE key to the school's underground warehouse
 /0# JA
-no i gdzie go kurwa znalezliscie niby? (nie podoba mi sie to...)
+aaand where did you find it? (this doesn't look good...)
 /3# JALAPENO
-no sprzataczka jakas zostawila go na parapecie, no to zajebalismy na wszelki wypadek
+the janitor just left it on a desk, so we took it "just in case"
 /0# JA
-no dobra niech wam bedzie, i co. wejdziemy tam?
+aaand now you want me to go there with you, yeah?
 /2# FLORYDA
-no a czemu nie? *dzwoni dzwonek*
-dobra, przerwa sie skonczyla. tym razem zaczkajcie-
+yeah, why not? *the bell rings*
+okay, the break is over. but don't go to class now-
 /1# KTOSIEK
 huh?
 /2# FLORYDA
-lecimy kurwa zaraz tam z donixem, tylko poczekajcie bo pewnie cos ze soba zabierzemy. musze oczyscic plecak.
-*wyciaga z plecaka ksiazki pakujac je na parapet tak aby nikt ich nie zabral*
-napisze ktos do askela? fajnie by bylo aby ktos to popilnowal. no ale dobra jebac to on i tak zapewne nie przyjdzie.
+let's go there now with donix. just wait for me since we'll have to bring our stuff with us.
+*pulls books out of a backpack, packing them on the windowsill so that no one takes them*
+can someone write to askel? it would be nice if someone would do that crap. but fuck it, he's probably not coming anyway.
+
 wchodzimy, obrysujemy plan calego miejsca, i na koniec zabieramy ze soba wszystko co mozemy, taka okazja sie nam nie przytrafi mi sie wydaje, takze no.
 kto sie z was chce o cos zapytac, albo sie stresuje?
 /3# JALAPENO

@@ -1,4 +1,0 @@
-this is the option that is not h
-it FINALLY works
-now im going to do that player / camera thing now
-#=#

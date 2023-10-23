@@ -165,8 +165,8 @@ bool loop() {
 			/* kkui_dashboard (game's main menu) */
 			case 255:
 				M_ReadMapFile("leo/ds/kkui_dashboard/dashboard.ds", texturemgr);
-				UI_WindowFrameEx(6, 82, 240, 72, 0, 0, 0, 224, 112, 224, "WITAMY W DEMIE ZDS!!!");
-				UI_TextLabelEx(8, 98, 224, 112, 224, "AKTUALIZACJA 1.0.2: SNAKE MINIGIERKA DOSTEPNA POD KLAWISZEM V, NOWA WERSJA SILNIKA, AKTUALIZACJE INTERFEJSU POD MASKA, OGOLNE POPRAWKI. DZIEKUJE ZA WSZELKIE WSPARCIE - m4kulatura", 238, true);
+/*				UI_WindowFrameEx(6, 82, 240, 72, 0, 0, 0, 224, 112, 224, "WITAMY W DEMIE ZDS!!!");
+				UI_TextLabelEx(8, 98, 224, 112, 224, "AKTUALIZACJA 1.0.2: SNAKE MINIGIERKA DOSTEPNA POD KLAWISZEM V, NOWA WERSJA SILNIKA, AKTUALIZACJE INTERFEJSU POD MASKA, OGOLNE POPRAWKI. DZIEKUJE ZA WSZELKIE WSPARCIE - m4kulatura", 238, true); */
 				UI_ShowLog(UI_log.logbuffer);	
 				break;
 			/* kkui_crash (the so called "NSOD" (nerd screen of death)) */

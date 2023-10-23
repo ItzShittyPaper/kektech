@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/glfont.dir/glfont.c.o -o ../../bin/glfont  /usr/lib64/libOpenGL.so ../../lib/libSDL2_ttf.a ../../lib/libSDL2main.a ../../lib/libSDL2.a -lm -pthread /usr/lib64/libfreetype.so 

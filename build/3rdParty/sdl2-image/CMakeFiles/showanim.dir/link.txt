@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG CMakeFiles/showanim.dir/showanim.c.o -o ../../bin/showanim  ../../lib/libSDL2_image.a ../../lib/libSDL2main.a ../../lib/libSDL2.a -lm -pthread 

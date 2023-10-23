@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_framing.dir/src/framing.c.o -o ../../bin/test_framing 

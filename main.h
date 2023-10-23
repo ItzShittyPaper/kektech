@@ -14,10 +14,10 @@ customizing those is advised
 */
 
 enum modes {	
-	main_mode = 0,
+	main_mode = 8,
 	dialog_mode = 1,
 	
-	snake_minigame = 8,
+	snake_minigame = 0,
 
 	loading_mode = 252,
 	kkui_credit = 253,

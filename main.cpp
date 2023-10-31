@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 	if (argc == 2) {
 		mode = main_mode;
 		/* the limit is 128 - the prefix */
-		snprintf(gamemgr.currentmap, 128, "%s/%s", "leo/ds", argv[1]);
+		snprintf(gamemgr.currentmap, 128, "%s/%s", "data/ds", argv[1]);
 	}
 
 	while ( loop() ) {
@@ -164,7 +164,7 @@ bool loop() {
 
 			/* kkui_dashboard (game's main menu) */
 			case 255:
-				M_ReadMapFile("leo/ds/kkui_dashboard/dashboard.ds", texturemgr);
+				M_ReadMapFile("data/ds/kkui_dashboard/dashboard.ds", texturemgr);
 /*				UI_WindowFrameEx(6, 82, 240, 72, 0, 0, 0, 224, 112, 224, "WITAMY W DEMIE ZDS!!!");
 				UI_TextLabelEx(8, 98, 224, 112, 224, "AKTUALIZACJA 1.0.2: SNAKE MINIGIERKA DOSTEPNA POD KLAWISZEM V, NOWA WERSJA SILNIKA, AKTUALIZACJE INTERFEJSU POD MASKA, OGOLNE POPRAWKI. DZIEKUJE ZA WSZELKIE WSPARCIE - m4kulatura", 238, true); */
 				UI_ShowLog(UI_log.logbuffer);	
@@ -238,7 +238,7 @@ bool init() {
 	}
 
 	/* load the font data */
-	font = TTF_OpenFont("leo/res/slkscr.ttf", 8);
+	font = TTF_OpenFont("data/res/slkscr.ttf", 8);
 	if ( !font ) {
 		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING FONT, FILE DOES NOT EXIST / PERMISSION DENIED"); mode = kkui_crash; return false;
 	}
@@ -271,7 +271,7 @@ bool init() {
 //	PLAYER_Init();
 
 	mode = kkui_dashboard;
-	strcpy(gamemgr.currentmap, "leo/ds/start.ds");
+	strcpy(gamemgr.currentmap, "data/ds/start.ds");
 
 	//SAVE_InitSaveOperation();
 	//SAVE_WriteKeyToFile("omg", "haii");

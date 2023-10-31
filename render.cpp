@@ -100,7 +100,7 @@ SDL_Texture* R_GetMaterial(game_texture* manager, const char* material)
 }
 	
 void R_InitTextures(game_texture* manager) {
-	R_LoadMaterials(manager, "leo/mat/game.mat");
+	R_LoadMaterials(manager, "data/mat/game.mat");
 }
 
 bool R_Clear() {

@@ -39,3 +39,5 @@ add_library (client.o client/engine.h client/client_render.h client/client_rende
 # Let's link finally.
 target_link_libraries(kektech client.o SDL2::SDL2main SDL2::SDL2-static SDL2_image::SDL2_image-static SDL2_ttf::SDL2_ttf-static SDL2_mixer_ext_Static ogg modplug opus)
 target_link_libraries(client.o SDL2::SDL2main SDL2::SDL2-static SDL2_image::SDL2_image-static SDL2_ttf::SDL2_ttf-static SDL2_mixer_ext_Static ogg modplug opus)
+
+

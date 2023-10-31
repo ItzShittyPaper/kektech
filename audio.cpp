@@ -105,6 +105,6 @@ Mix_Chunk* A_GetSoundEffect(game_sfx* manager, const char* sound)
 }
 	
 void A_InitSoundEffects(game_sfx* manager) {
-	A_LoadSoundEffects(manager, "leo/mat/game.sfx");
+	A_LoadSoundEffects(manager, "data/mat/game.sfx");
 }
 

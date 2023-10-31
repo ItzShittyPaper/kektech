@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_opus_decode.dir/tests/test_opus_decode.c.o -o ../../bin/test_opus_decode  ../../lib/libopus.a -lm 

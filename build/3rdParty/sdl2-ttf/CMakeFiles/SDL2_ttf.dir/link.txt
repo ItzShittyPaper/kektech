@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libSDL2_ttf.a CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.o
-/usr/bin/ranlib ../../lib/libSDL2_ttf.a

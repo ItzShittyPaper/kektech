@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/showimage.dir/showimage.c.o -o ../../bin/showimage  ../../lib/libSDL2_image.a ../../lib/libSDL2main.a ../../lib/libSDL2.a -lm -pthread 

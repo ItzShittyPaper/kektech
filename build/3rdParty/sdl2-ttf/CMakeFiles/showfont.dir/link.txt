@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG CMakeFiles/showfont.dir/showfont.c.o -o ../../bin/showfont  ../../lib/libSDL2_ttf.a ../../lib/libSDL2main.a ../../lib/libSDL2.a -lm -pthread /usr/lib64/libfreetype.so 

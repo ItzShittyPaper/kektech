@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_opus_encode.dir/tests/test_opus_encode.c.o CMakeFiles/test_opus_encode.dir/tests/opus_encode_regressions.c.o -o ../../bin/test_opus_encode  ../../lib/libopus.a -lm 

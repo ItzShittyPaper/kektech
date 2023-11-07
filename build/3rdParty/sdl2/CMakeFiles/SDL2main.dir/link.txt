@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libSDL2main.a CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o
+/usr/bin/ranlib ../../lib/libSDL2main.a

@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/alloopback.dir/examples/alloopback.c.o -o ../../bin/alloopback  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin: -pthread ../../lib/libSDL2.a ../../lib/libex-common.a -lm -lm -pthread ../../bin/libopenal.so.1.23.1 -lrt 

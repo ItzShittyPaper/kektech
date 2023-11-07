@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/almultireverb.dir/examples/almultireverb.c.o -o ../../bin/almultireverb  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin: -pthread /usr/lib64/libsndfile.so ../../lib/libex-common.a -lm -lm ../../bin/libopenal.so.1.23.1 -lrt 

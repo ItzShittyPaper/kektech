@@ -17,6 +17,9 @@ struct audio_arch {
 	/* a single music channel */
 	Mix_Music* music = NULL;
 
+	ALCdevice* device = NULL; // select the "preferred device"
+	ALCcontext* context = NULL;
+
 } extern mixer;
 
 extern struct SoundDefinition
@@ -40,6 +43,9 @@ void A_ClearSoundEffects(game_sfx* manager);
 void A_RemoveSoundEffect(game_sfx* manager, SoundDefinition* definition);
 Mix_Chunk* A_GetSoundEffect(game_sfx* manager, const char* sound);
 void A_InitSoundEffects(game_sfx* manager);
+
+void A_StartAudioEngine();
+void A_KillAudioEngine();
 
 int A_MusicUpdateEvent();
 

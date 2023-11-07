@@ -15,6 +15,8 @@
 /* SDL_Mixer-X for audio code*/
 /* sudo64 note: its been fucking 40 minutes i'm trying get this fucking code to find this stupid library. */
 #include <SDL_mixer_ext/SDL_mixer_ext.h>
+#include <al.h>
+#include <alext.h>
 
 /* include your game source here */
 #include "client/client_main.h"

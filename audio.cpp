@@ -108,3 +108,34 @@ void A_InitSoundEffects(game_sfx* manager) {
 	A_LoadSoundEffects(manager, "data/mat/game.sfx");
 }
 
+void A_StartAudioEngine() {
+
+	mixer.device = alcOpenDevice(NULL); // select the "preferred device"
+	mixer.context = alcCreateContext(mixer.device,NULL);
+
+	if (mixer.device) {
+		mixer.context = alcCreateContext(mixer.device,NULL);
+		alcMakeContextCurrent(mixer.context);
+	} else { return; }
+
+	/* check for EAX 2.0 support */
+	//g_bEAX = alIsExtensionPresent("EAX2.0");
+
+	alGetError(); // clear error code
+
+	//if ((error = alGetError()) != AL_NO_ERROR) {
+	//	DisplayALError("alGenBuffers :", error); return;
+	//}
+
+}
+
+void A_KillAudioEngine() {
+
+	mixer.context = alcGetCurrentContext();
+	mixer.device = alcGetContextsDevice(mixer.context);
+	alcMakeContextCurrent(NULL);
+	alcDestroyContext(mixer.context);
+	alcCloseDevice(mixer.device);
+
+}
+

@@ -9314,3 +9314,173 @@ events:
         
       exitCode: 2
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "deps/sdl2-mixer-x/CMakeLists.txt:277 (try_compile)"
+    directories:
+      source: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+      binary: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89"
+      CMAKE_MODULE_PATH: "/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/find;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/src/codecs;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "STDCPP_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9a755/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9a755.dir/build.make CMakeFiles/cmTC_9a755.dir/build
+        gmake[1]: Entering directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_9a755.dir/dummy.c.o
+        /usr/bin/cc   -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -fPIE -o CMakeFiles/cmTC_9a755.dir/dummy.c.o -c /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c: In function ‘main’:
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c:2:2: warning: control reaches end of non-void function [-Wreturn-type]
+            2 | {}
+              |  ^
+        Linking C executable cmTC_9a755
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a755.dir/link.txt --verbose=1
+        /usr/bin/cc  -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -rdynamic CMakeFiles/cmTC_9a755.dir/dummy.c.o -o cmTC_9a755  -lstdc++ 
+        gmake[1]: Leaving directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "deps/sdl2-mixer-x/CMakeLists.txt:282 (try_compile)"
+    directories:
+      source: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+      binary: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89"
+      CMAKE_MODULE_PATH: "/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/find;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/src/codecs;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CPPABI_FOUND"
+      cached: true
+      stdout: |
+        Change Dir: '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e741d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e741d.dir/build.make CMakeFiles/cmTC_e741d.dir/build
+        gmake[1]: Entering directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_e741d.dir/dummy.c.o
+        /usr/bin/cc   -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -fPIE -o CMakeFiles/cmTC_e741d.dir/dummy.c.o -c /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c: In function ‘main’:
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/dummy.c:2:2: warning: control reaches end of non-void function [-Wreturn-type]
+            2 | {}
+              |  ^
+        Linking C executable cmTC_e741d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e741d.dir/link.txt --verbose=1
+        /usr/bin/cc  -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -rdynamic CMakeFiles/cmTC_e741d.dir/dummy.c.o -o cmTC_e741d  -lc++abi 
+        /usr/lib64/gcc/x86_64-suse-linux/13/../../../../x86_64-suse-linux/bin/ld: cannot find -lc++abi: No such file or directory
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_e741d.dir/build.make:99: cmTC_e741d] Error 1
+        gmake[1]: Leaving directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:127: cmTC_e741d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "deps/sdl2-mixer-x/cmake/CppNeedCheck.cmake:10 (try_compile)"
+      - "deps/sdl2-mixer-x/src/codecs/music_modplug.cmake:15 (cpp_needed)"
+      - "deps/sdl2-mixer-x/CMakeLists.txt:320 (include)"
+    directories:
+      source: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+      binary: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89"
+      CMAKE_MODULE_PATH: "/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/find;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/src/codecs;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "LIBRARY_WITH_STDCPP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d245e/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d245e.dir/build.make CMakeFiles/cmTC_d245e.dir/build
+        gmake[1]: Entering directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_d245e.dir/modplug.c.o
+        /usr/bin/cc -DMODPLUG_STATIC -I/home/m4kulatura/Documents/GitHub/kektech/deps/libmodplug -I/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp/m -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -fPIE -o CMakeFiles/cmTC_d245e.dir/modplug.c.o -c /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/cpp_needed/modplug.c
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/cpp_needed/modplug.c:4:10: fatal error: libmodplug/modplug.h: No such file or directory
+            4 | #include <libmodplug/modplug.h>
+              |          ^~~~~~~~~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_d245e.dir/build.make:78: CMakeFiles/cmTC_d245e.dir/modplug.c.o] Error 1
+        gmake[1]: Leaving directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:127: cmTC_d245e/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "deps/sdl2-mixer-x/cmake/CppNeedCheck.cmake:18 (try_compile)"
+      - "deps/sdl2-mixer-x/src/codecs/music_modplug.cmake:15 (cpp_needed)"
+      - "deps/sdl2-mixer-x/CMakeLists.txt:320 (include)"
+    directories:
+      source: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+      binary: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89"
+      CMAKE_MODULE_PATH: "/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/find;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/src/codecs;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "LIBRARY_WITHOUT_STDCPP"
+      cached: true
+      stdout: |
+        Change Dir: '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05b0f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_05b0f.dir/build.make CMakeFiles/cmTC_05b0f.dir/build
+        gmake[1]: Entering directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_05b0f.dir/modplug.c.o
+        /usr/bin/cc -DMODPLUG_STATIC -I/home/m4kulatura/Documents/GitHub/kektech/deps/libmodplug/src -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -fPIE -o CMakeFiles/cmTC_05b0f.dir/modplug.c.o -c /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/cpp_needed/modplug.c
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/cpp_needed/modplug.c:4:10: fatal error: libmodplug/modplug.h: No such file or directory
+            4 | #include <libmodplug/modplug.h>
+              |          ^~~~~~~~~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_05b0f.dir/build.make:78: CMakeFiles/cmTC_05b0f.dir/modplug.c.o] Error 1
+        gmake[1]: Leaving directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:127: cmTC_05b0f/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "deps/sdl2-mixer-x/src/codecs/music_modplug.cmake:22 (try_compile)"
+      - "deps/sdl2-mixer-x/CMakeLists.txt:320 (include)"
+    directories:
+      source: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+      binary: "/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89"
+      CMAKE_MODULE_PATH: "/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/find;/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/src/codecs;"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "MODPLUG_HAS_TELL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_42590/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_42590.dir/build.make CMakeFiles/cmTC_42590.dir/build
+        gmake[1]: Entering directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        Building C object CMakeFiles/cmTC_42590.dir/modplug_tell.c.o
+        /usr/bin/cc -DMODPLUG_STATIC -I/home/m4kulatura/Documents/GitHub/kektech/deps/libmodplug/src -DSDL_BUILD_MAJOR_VERSION=2 -DSDL_BUILD_MINOR_VERSION=7 -DSDL_BUILD_MICRO_VERSION=0 -Wall -Wextra -Wno-long-long -Wno-missing-field-initializers -std=c89  -fPIE -o CMakeFiles/cmTC_42590.dir/modplug_tell.c.o -c /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/modplug_tell.c
+        /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/cmake/tests/modplug_tell.c:4:10: fatal error: libmodplug/modplug.h: No such file or directory
+            4 | #include <libmodplug/modplug.h>
+              |          ^~~~~~~~~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_42590.dir/build.make:78: CMakeFiles/cmTC_42590.dir/modplug_tell.c.o] Error 1
+        gmake[1]: Leaving directory '/home/m4kulatura/Documents/GitHub/kektech/build/compile_tests/CMakeFiles/CMakeTmp'
+        gmake: *** [Makefile:127: cmTC_42590/fast] Error 2
+        
+      exitCode: 2
+...

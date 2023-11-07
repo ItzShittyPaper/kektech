@@ -299,6 +299,11 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o: \
  /home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2/include/SDL2/SDL_rwops.h \
  /home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2/include/SDL2/SDL_audio.h \
  /home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2/include/SDL2/SDL_endian.h \
+ /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
+ /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
+ /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
+ /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
+ /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
  /home/m4kulatura/Documents/GitHub/kektech/client/../client/client_main.h \
  /home/m4kulatura/Documents/GitHub/kektech/client/../client/engine.h \
  /home/m4kulatura/Documents/GitHub/kektech/client/../client/../libs.h \

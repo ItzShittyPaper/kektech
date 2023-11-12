@@ -185,7 +185,7 @@ int M_InitCMD(FILE* map_file) {
 		if(strstr(head, "RENDERCHARACTERS") != NULL) { dialog.render_characters = true; }
 		if(strstr(head, "BACKGROUND:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; UI_dashboard.menu_background = IMG_LoadTexture(renderer, initbuf + 1); printf("%s\n", initbuf + 1); }
 		
-		if(strstr(head, "MUSIC:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; Mix_HaltMusic(); mixer.music = Mix_LoadMUS(initbuf + 1); printf("%s\n", initbuf + 1); }
+//		if(strstr(head, "MUSIC:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; Mix_HaltMusic(); mixer.music = Mix_LoadMUS(initbuf + 1); printf("%s\n", initbuf + 1); }
 		/* NOT VISUAL NOVEL RELATED, NOT USEFUL IN KEKTECH_ZDS */
 
 

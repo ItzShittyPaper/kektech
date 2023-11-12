@@ -77,13 +77,12 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
   /home/m4kulatura/Documents/GitHub/kektech/main.h \
@@ -92,6 +91,7 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -106,12 +106,15 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -158,11 +161,13 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -219,8 +224,11 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -270,7 +278,9 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -347,6 +357,7 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -370,6 +381,7 @@ CMakeFiles/kektech.dir/audio.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/au
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -463,13 +475,12 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/input.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
@@ -480,6 +491,7 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -494,12 +506,15 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -546,11 +561,13 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -607,8 +624,11 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -658,7 +678,9 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -735,6 +757,7 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -758,6 +781,7 @@ CMakeFiles/kektech.dir/input.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/in
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -851,13 +875,12 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/input.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
@@ -870,6 +893,7 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -884,12 +908,15 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -936,11 +963,13 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -997,8 +1026,11 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -1048,7 +1080,9 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -1125,6 +1159,7 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -1148,6 +1183,7 @@ CMakeFiles/kektech.dir/main.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/mai
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -1241,13 +1277,12 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
   /home/m4kulatura/Documents/GitHub/kektech/main.h \
@@ -1258,6 +1293,7 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -1272,12 +1308,15 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -1324,11 +1363,13 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -1385,8 +1426,11 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -1436,7 +1480,9 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -1513,6 +1559,7 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -1536,6 +1583,7 @@ CMakeFiles/kektech.dir/map.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/map.
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -1628,13 +1676,12 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
   /home/m4kulatura/Documents/GitHub/kektech/main.h \
@@ -1646,6 +1693,7 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -1660,12 +1708,15 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -1712,11 +1763,13 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -1773,8 +1826,11 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -1824,7 +1880,9 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -1901,6 +1959,7 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -1924,6 +1983,7 @@ CMakeFiles/kektech.dir/render.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/r
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -2016,13 +2076,12 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
   /home/m4kulatura/Documents/GitHub/kektech/save.h \
@@ -2030,6 +2089,7 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -2044,12 +2104,15 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -2096,11 +2159,13 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -2157,8 +2222,11 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -2208,7 +2276,9 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -2285,6 +2355,7 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -2308,6 +2379,7 @@ CMakeFiles/kektech.dir/save.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/sav
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -2400,13 +2472,12 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /home/m4kulatura/Documents/GitHub/kektech/client/client_main.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h \
   /home/m4kulatura/Documents/GitHub/kektech/client/engine.h \
+  /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h \
-  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h \
   /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h \
   /home/m4kulatura/Documents/GitHub/kektech/libs.h \
   /home/m4kulatura/Documents/GitHub/kektech/main.h \
@@ -2416,6 +2487,7 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm/errno.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/cpu-set.h \
@@ -2430,12 +2502,15 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
+  /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
   /usr/include/bits/math-vector.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/mathcalls.h \
+  /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/posix2_lim.h \
   /usr/include/bits/pthread_stack_min-dynamic.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
@@ -2482,11 +2557,13 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/uio_lim.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
   /usr/include/bits/wchar.h \
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/bits/xopen_lim.h \
   /usr/include/c++/13/backward/binders.h \
   /usr/include/c++/13/bit \
   /usr/include/c++/13/bits/alloc_traits.h \
@@ -2543,8 +2620,11 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/include/c++/13/bits/stringfwd.h \
   /usr/include/c++/13/bits/utility.h \
   /usr/include/c++/13/bits/vector.tcc \
+  /usr/include/c++/13/cassert \
   /usr/include/c++/13/cctype \
   /usr/include/c++/13/cerrno \
+  /usr/include/c++/13/cfloat \
+  /usr/include/c++/13/climits \
   /usr/include/c++/13/clocale \
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/cstdio \
@@ -2594,7 +2674,9 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/inttypes.h \
+  /usr/include/limits.h \
   /usr/include/linux/errno.h \
+  /usr/include/linux/limits.h \
   /usr/include/locale.h \
   /usr/include/math.h \
   /usr/include/pthread.h \
@@ -2671,6 +2753,7 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h \
@@ -2694,6 +2777,7 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h \
+  /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h \
   /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h \
@@ -2768,6 +2852,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h:
 
+/usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h:
+
 /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h:
@@ -2818,8 +2904,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512ifmaintrin.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512fp16vlintrin.h:
-
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512dqintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512cdintrin.h:
@@ -2842,8 +2926,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/adxintrin.h:
 
-/usr/include/wchar.h:
-
 /usr/include/time.h:
 
 /usr/include/sys/types.h:
@@ -2856,11 +2938,29 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/strings.h:
 
+/usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h:
+
 /usr/include/string.h:
 
 /usr/include/stdlib.h:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/pthread.h:
+
+/usr/include/math.h:
+
+/usr/include/locale.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/inttypes.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/emmintrin.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
 
 /usr/include/bits/types/clock_t.h:
 
@@ -2902,12 +3002,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/c++/13/bits/requires_hosted.h:
 
-/usr/include/bits/types/error_t.h:
-
-/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512bwintrin.h:
-
-3rdParty/sdl2/include/SDL2/SDL_endian.h:
-
 /usr/include/bits/setjmp.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h:
@@ -2923,10 +3017,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 3rdParty/sdl2/include/SDL2/SDL_atomic.h:
 
 /usr/include/bits/pthreadtypes-arch.h:
-
-/usr/lib64/gcc/x86_64-suse-linux/13/include/emmintrin.h:
-
-/usr/include/gnu/stubs.h:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
@@ -2948,6 +3038,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/asm-generic/errno.h:
 
+/usr/include/bits/floatn-common.h:
+
 /usr/include/bits/endianness.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/raointintrin.h:
@@ -2960,13 +3052,13 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/c++/13/string:
 
+/usr/include/assert.h:
+
 /usr/include/bits/timesize.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_funcs.h:
 
 /usr/include/asm-generic/errno-base.h:
-
-/usr/include/bits/floatn-common.h:
 
 3rdParty/sdl2/include/SDL2/SDL_sensor.h:
 
@@ -3000,6 +3092,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 3rdParty/sdl2/include/SDL2/SDL_misc.h:
 
+/home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h:
+
 /usr/lib64/gcc/x86_64-suse-linux/13/include/x86gprintrin.h:
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/pconfigintrin.h:
@@ -3014,6 +3108,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 3rdParty/sdl2/include/SDL2/SDL_error.h:
 
+/usr/include/bits/posix2_lim.h:
+
 3rdParty/sdl2/include/SDL2/SDL_joystick.h:
 
 /usr/include/c++/13/bits/basic_string.tcc:
@@ -3024,8 +3120,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avxvnniint8intrin.h:
 
-/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h:
-
 /usr/include/c++/13/stdexcept:
 
 /usr/include/bits/mathcalls-narrow.h:
@@ -3035,6 +3129,10 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h:
 
 /usr/include/bits/types/clockid_t.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/usr/include/bits/atomic_wide_counter.h:
 
 3rdParty/sdl2/include/SDL2/SDL_system.h:
 
@@ -3069,6 +3167,16 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/bits/fp-logb.h:
 
 /usr/include/c++/13/typeinfo:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/wctype.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/fp-fast.h:
 
 /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h:
 
@@ -3110,11 +3218,13 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 3rdParty/sdl2/include/SDL2/SDL_video.h:
 
-/usr/include/bits/types/mbstate_t.h:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
-
 3rdParty/sdl2/include/SDL2/SDL_pixels.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512bwintrin.h:
+
+3rdParty/sdl2/include/SDL2/SDL_endian.h:
+
+/usr/include/bits/types/error_t.h:
 
 /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h:
 
@@ -3123,8 +3233,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/bits/long-double.h:
 
 /usr/include/c++/13/bits/exception_defines.h:
-
-/usr/include/math.h:
 
 3rdParty/sdl2/include/SDL2/SDL_render.h:
 
@@ -3158,11 +3266,11 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 3rdParty/sdl2/include/SDL2/SDL_blendmode.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h:
-
-/usr/include/bits/math-vector.h:
-
 3rdParty/sdl2/include/SDL2/SDL_mutex.h:
+
+/usr/lib64/gcc/x86_64-suse-linux/13/include/avx512fp16vlintrin.h:
+
+/usr/include/bits/local_lim.h:
 
 3rdParty/sdl2/include/SDL2/SDL_thread.h:
 
@@ -3210,6 +3318,16 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /home/m4kulatura/Documents/GitHub/kektech/main.h:
 
+/usr/lib64/gcc/x86_64-suse-linux/13/include/xsavecintrin.h:
+
+/usr/include/c++/13/bits/stl_function.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/bits/types/mbstate_t.h:
+
 /usr/lib64/gcc/x86_64-suse-linux/13/include/wbnoinvdintrin.h:
 
 /usr/include/bits/types/sigset_t.h:
@@ -3246,6 +3364,12 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/bits/uintn-identity.h:
 
+/usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h:
+
+/usr/include/bits/math-vector.h:
+
+/usr/include/bits/uio_lim.h:
+
 /usr/include/bits/wctype-wchar.h:
 
 /usr/include/stdio.h:
@@ -3259,6 +3383,10 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/c++/13/bits/streambuf_iterator.h:
 
 /usr/include/c++/13/ostream:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/c++/13/cmath:
 
 /usr/include/c++/13/bits/basic_ios.h:
 
@@ -3277,6 +3405,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/c++/13/cstdio:
 
 /home/m4kulatura/Documents/GitHub/kektech/map.h:
+
+/usr/include/c++/13/cassert:
 
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
@@ -3324,11 +3454,11 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/c++/13/bits/localefwd.h:
 
-/home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h:
-
 /home/m4kulatura/Documents/GitHub/kektech/ui.h:
 
 /usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/c++/13/cfloat:
 
 /usr/include/c++/13/bits/nested_exception.h:
 
@@ -3354,16 +3484,6 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/c++/13/bits/stl_construct.h:
 
-/usr/lib64/gcc/x86_64-suse-linux/13/include/xsavecintrin.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/c++/13/bits/stl_function.h:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/include/c++/13/bits/utility.h:
-
 /usr/include/c++/13/bits/new_allocator.h:
 
 /usr/include/c++/13/bits/stl_uninitialized.h:
@@ -3378,23 +3498,23 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 
 /usr/include/c++/13/bits/stringfwd.h:
 
+/usr/include/c++/13/climits:
+
 /usr/lib64/gcc/x86_64-suse-linux/13/include/avx512vbmi2vlintrin.h:
 
 /usr/include/c++/13/clocale:
-
-/usr/include/c++/13/cmath:
 
 3rdParty/sdl2/include/SDL2/SDL_keyboard.h:
 
 /usr/include/c++/13/cstdlib:
 
-/usr/include/gnu/stubs-64.h:
+/usr/include/linux/errno.h:
+
+/usr/include/c++/13/debug/debug.h:
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/c++/13/new:
-
-/usr/include/inttypes.h:
 
 /usr/include/c++/13/bits/stl_iterator.h:
 
@@ -3403,6 +3523,8 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/c++/13/ext/string_conversions.h:
 
 /usr/include/c++/13/ext/type_traits.h:
+
+/usr/include/limits.h:
 
 /usr/include/c++/13/initializer_list:
 
@@ -3447,17 +3569,3 @@ CMakeFiles/kektech.dir/ui.cpp.o: /home/m4kulatura/Documents/GitHub/kektech/ui.cp
 /usr/include/c++/13/x86_64-suse-linux/bits/os_defines.h:
 
 /usr/include/features-time64.h:
-
-/usr/include/c++/13/debug/debug.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/locale.h:
-
-/usr/include/pthread.h:
-
-/usr/include/wctype.h:
-
-/usr/include/bits/fp-fast.h:
-
-/usr/include/sched.h:

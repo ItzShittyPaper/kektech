@@ -68,10 +68,10 @@ all: CMakeFiles/client.o.dir/all
 all: 3rdParty/libmodplug/all
 all: 3rdParty/libogg/all
 all: 3rdParty/opus/all
+all: 3rdParty/libsndfile/all
 all: 3rdParty/sdl2/all
 all: 3rdParty/openal-soft/all
 all: 3rdParty/sdl2-image/all
-all: 3rdParty/sdl2-mixer-x/all
 all: 3rdParty/sdl2-ttf/all
 .PHONY : all
 
@@ -79,10 +79,10 @@ all: 3rdParty/sdl2-ttf/all
 preinstall: 3rdParty/libmodplug/preinstall
 preinstall: 3rdParty/libogg/preinstall
 preinstall: 3rdParty/opus/preinstall
+preinstall: 3rdParty/libsndfile/preinstall
 preinstall: 3rdParty/sdl2/preinstall
 preinstall: 3rdParty/openal-soft/preinstall
 preinstall: 3rdParty/sdl2-image/preinstall
-preinstall: 3rdParty/sdl2-mixer-x/preinstall
 preinstall: 3rdParty/sdl2-ttf/preinstall
 .PHONY : preinstall
 
@@ -92,10 +92,10 @@ clean: CMakeFiles/client.o.dir/clean
 clean: 3rdParty/libmodplug/clean
 clean: 3rdParty/libogg/clean
 clean: 3rdParty/opus/clean
+clean: 3rdParty/libsndfile/clean
 clean: 3rdParty/sdl2/clean
 clean: 3rdParty/openal-soft/clean
 clean: 3rdParty/sdl2-image/clean
-clean: 3rdParty/sdl2-mixer-x/clean
 clean: 3rdParty/sdl2-ttf/clean
 .PHONY : clean
 
@@ -160,6 +160,135 @@ clean: 3rdParty/sdl2-ttf/clean
 3rdParty/libogg/clean: 3rdParty/libogg/CMakeFiles/test_bitwise.dir/clean
 3rdParty/libogg/clean: 3rdParty/libogg/CMakeFiles/test_framing.dir/clean
 .PHONY : 3rdParty/libogg/clean
+
+#=============================================================================
+# Directory level rules for directory 3rdParty/libsndfile
+
+# Recursive "all" directory target.
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/make_sine.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/list_formats.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/generate.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/test_main.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/sfversion.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/error_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/command_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/locale_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/channel_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/header_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/misc_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/string_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/raw_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all
+3rdParty/libsndfile/all: 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all
+.PHONY : 3rdParty/libsndfile/all
+
+# Recursive "preinstall" directory target.
+3rdParty/libsndfile/preinstall:
+.PHONY : 3rdParty/libsndfile/preinstall
+
+# Recursive "clean" directory target.
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/make_sine.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/list_formats.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/generate.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/test_main.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/sfversion.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/error_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/command_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/locale_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/channel_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/header_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/misc_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/string_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/raw_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/clean
+3rdParty/libsndfile/clean: 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/clean
+.PHONY : 3rdParty/libsndfile/clean
 
 #=============================================================================
 # Directory level rules for directory 3rdParty/openal-soft
@@ -287,21 +416,6 @@ clean: 3rdParty/sdl2-ttf/clean
 .PHONY : 3rdParty/sdl2-image/clean
 
 #=============================================================================
-# Directory level rules for directory 3rdParty/sdl2-mixer-x
-
-# Recursive "all" directory target.
-3rdParty/sdl2-mixer-x/all: 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all
-.PHONY : 3rdParty/sdl2-mixer-x/all
-
-# Recursive "preinstall" directory target.
-3rdParty/sdl2-mixer-x/preinstall:
-.PHONY : 3rdParty/sdl2-mixer-x/preinstall
-
-# Recursive "clean" directory target.
-3rdParty/sdl2-mixer-x/clean: 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/clean
-.PHONY : 3rdParty/sdl2-mixer-x/clean
-
-#=============================================================================
 # Directory level rules for directory 3rdParty/sdl2-ttf
 
 # Recursive "all" directory target.
@@ -328,20 +442,20 @@ CMakeFiles/kektech.dir/all: CMakeFiles/client.o.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/libmodplug/CMakeFiles/modplug.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+CMakeFiles/kektech.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2main.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
-CMakeFiles/kektech.dir/all: 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all
 CMakeFiles/kektech.dir/all: 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kektech.dir/build.make CMakeFiles/kektech.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/kektech.dir/build.make CMakeFiles/kektech.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=59 "Built target kektech"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=45 "Built target kektech"
 .PHONY : CMakeFiles/kektech.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/kektech.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 88
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 75
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/kektech.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : CMakeFiles/kektech.dir/rule
@@ -362,20 +476,20 @@ CMakeFiles/kektech.dir/clean:
 CMakeFiles/client.o.dir/all: 3rdParty/libmodplug/CMakeFiles/modplug.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+CMakeFiles/client.o.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2main.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
-CMakeFiles/client.o.dir/all: 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all
 CMakeFiles/client.o.dir/all: 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.o.dir/build.make CMakeFiles/client.o.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.o.dir/build.make CMakeFiles/client.o.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=56 "Built target client.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=40 "Built target client.o"
 .PHONY : CMakeFiles/client.o.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/client.o.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 87
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 74
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/client.o.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : CMakeFiles/client.o.dir/rule
@@ -396,12 +510,12 @@ CMakeFiles/client.o.dir/clean:
 3rdParty/libmodplug/CMakeFiles/modplug.dir/all:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/libmodplug/CMakeFiles/modplug.dir/build.make 3rdParty/libmodplug/CMakeFiles/modplug.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/libmodplug/CMakeFiles/modplug.dir/build.make 3rdParty/libmodplug/CMakeFiles/modplug.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=60,61,62,63,64 "Built target modplug"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=48,49,50 "Built target modplug"
 .PHONY : 3rdParty/libmodplug/CMakeFiles/modplug.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/libmodplug/CMakeFiles/modplug.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libmodplug/CMakeFiles/modplug.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/libmodplug/CMakeFiles/modplug.dir/rule
@@ -1202,12 +1316,12 @@ test_bitwise: 3rdParty/libogg/CMakeFiles/test_bitwise.dir/rule
 3rdParty/libogg/CMakeFiles/test_framing.dir/all:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/libogg/CMakeFiles/test_framing.dir/build.make 3rdParty/libogg/CMakeFiles/test_framing.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/libogg/CMakeFiles/test_framing.dir/build.make 3rdParty/libogg/CMakeFiles/test_framing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=98 "Built target test_framing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target test_framing"
 .PHONY : 3rdParty/libogg/CMakeFiles/test_framing.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/libogg/CMakeFiles/test_framing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libogg/CMakeFiles/test_framing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/libogg/CMakeFiles/test_framing.dir/rule
@@ -1228,12 +1342,12 @@ test_framing: 3rdParty/libogg/CMakeFiles/test_framing.dir/rule
 3rdParty/opus/CMakeFiles/opus.dir/all:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/opus/CMakeFiles/opus.dir/build.make 3rdParty/opus/CMakeFiles/opus.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/opus/CMakeFiles/opus.dir/build.make 3rdParty/opus/CMakeFiles/opus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86 "Built target opus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Built target opus"
 .PHONY : 3rdParty/opus/CMakeFiles/opus.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/opus/CMakeFiles/opus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/opus/CMakeFiles/opus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/opus/CMakeFiles/opus.dir/rule
@@ -1259,7 +1373,7 @@ opus: 3rdParty/opus/CMakeFiles/opus.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/opus/CMakeFiles/test_opus_decode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/opus/CMakeFiles/test_opus_decode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_decode.dir/rule
@@ -1285,7 +1399,7 @@ test_opus_decode: 3rdParty/opus/CMakeFiles/test_opus_decode.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/opus/CMakeFiles/test_opus_padding.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/opus/CMakeFiles/test_opus_padding.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_padding.dir/rule
@@ -1311,7 +1425,7 @@ test_opus_padding: 3rdParty/opus/CMakeFiles/test_opus_padding.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/opus/CMakeFiles/test_opus_api.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/opus/CMakeFiles/test_opus_api.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_api.dir/rule
@@ -1332,12 +1446,12 @@ test_opus_api: 3rdParty/opus/CMakeFiles/test_opus_api.dir/rule
 3rdParty/opus/CMakeFiles/test_opus_encode.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/opus/CMakeFiles/test_opus_encode.dir/build.make 3rdParty/opus/CMakeFiles/test_opus_encode.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/opus/CMakeFiles/test_opus_encode.dir/build.make 3rdParty/opus/CMakeFiles/test_opus_encode.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=99 "Built target test_opus_encode"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=98 "Built target test_opus_encode"
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_encode.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/opus/CMakeFiles/test_opus_encode.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/opus/CMakeFiles/test_opus_encode.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_encode.dir/rule
@@ -1352,18 +1466,1677 @@ test_opus_encode: 3rdParty/opus/CMakeFiles/test_opus_encode.dir/rule
 .PHONY : 3rdParty/opus/CMakeFiles/test_opus_encode.dir/clean
 
 #=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=81,82,83,84,85,86,87,88,89,90 "Built target sndfile"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile.dir/rule
+
+# Convenience name for target.
+sndfile: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/rule
+.PHONY : sndfile
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=92 "Built target sndfile-info"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/rule
+
+# Convenience name for target.
+sndfile-info: 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/rule
+.PHONY : sndfile-info
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-play"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/rule
+
+# Convenience name for target.
+sndfile-play: 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/rule
+.PHONY : sndfile-play
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-convert"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/rule
+
+# Convenience name for target.
+sndfile-convert: 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/rule
+.PHONY : sndfile-convert
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-cmp"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/rule
+
+# Convenience name for target.
+sndfile-cmp: 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/rule
+.PHONY : sndfile-cmp
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=93 "Built target sndfile-metadata-set"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/rule
+
+# Convenience name for target.
+sndfile-metadata-set: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/rule
+.PHONY : sndfile-metadata-set
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-metadata-get"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/rule
+
+# Convenience name for target.
+sndfile-metadata-get: 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/rule
+.PHONY : sndfile-metadata-get
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-interleave"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/rule
+
+# Convenience name for target.
+sndfile-interleave: 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/rule
+.PHONY : sndfile-interleave
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-deinterleave"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/rule
+
+# Convenience name for target.
+sndfile-deinterleave: 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/rule
+.PHONY : sndfile-deinterleave
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=91 "Built target sndfile-concat"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/rule
+
+# Convenience name for target.
+sndfile-concat: 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/rule
+.PHONY : sndfile-concat
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-salvage"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/rule
+
+# Convenience name for target.
+sndfile-salvage: 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/rule
+.PHONY : sndfile-salvage
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=94 "Built target sndfile-to-text"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/rule
+
+# Convenience name for target.
+sndfile-to-text: 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/rule
+.PHONY : sndfile-to-text
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfile-loopify"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/rule
+
+# Convenience name for target.
+sndfile-loopify: 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/rule
+.PHONY : sndfile-loopify
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/make_sine.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/make_sine.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/make_sine.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/make_sine.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build.make 3rdParty/libsndfile/CMakeFiles/make_sine.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build.make 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target make_sine"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/make_sine.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/make_sine.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/make_sine.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/make_sine.dir/rule
+
+# Convenience name for target.
+make_sine: 3rdParty/libsndfile/CMakeFiles/make_sine.dir/rule
+.PHONY : make_sine
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/make_sine.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build.make 3rdParty/libsndfile/CMakeFiles/make_sine.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/make_sine.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sfprocess.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sfprocess"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sfprocess.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/rule
+
+# Convenience name for target.
+sfprocess: 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/rule
+.PHONY : sfprocess
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sfprocess.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/list_formats.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/list_formats.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/list_formats.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/list_formats.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build.make 3rdParty/libsndfile/CMakeFiles/list_formats.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build.make 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target list_formats"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/list_formats.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/list_formats.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/list_formats.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/list_formats.dir/rule
+
+# Convenience name for target.
+list_formats: 3rdParty/libsndfile/CMakeFiles/list_formats.dir/rule
+.PHONY : list_formats
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/list_formats.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build.make 3rdParty/libsndfile/CMakeFiles/list_formats.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/list_formats.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/generate.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/generate.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/generate.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/generate.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/generate.dir/build.make 3rdParty/libsndfile/CMakeFiles/generate.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/generate.dir/build.make 3rdParty/libsndfile/CMakeFiles/generate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=44 "Built target generate"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/generate.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/generate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/generate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/generate.dir/rule
+
+# Convenience name for target.
+generate: 3rdParty/libsndfile/CMakeFiles/generate.dir/rule
+.PHONY : generate
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/generate.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/generate.dir/build.make 3rdParty/libsndfile/CMakeFiles/generate.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/generate.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sndfilehandle"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/rule
+
+# Convenience name for target.
+sndfilehandle: 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/rule
+.PHONY : sndfilehandle
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/test_utils.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/test_utils.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/test_utils.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/test_utils.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_utils.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target test_utils"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/test_utils.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_utils.dir/rule
+
+# Convenience name for target.
+test_utils: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/rule
+.PHONY : test_utils
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/test_utils.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_utils.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_utils.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/test_main.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/test_main.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/test_main.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/test_main.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_main.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_main.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=96,97 "Built target test_main"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_main.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/test_main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 28
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/test_main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_main.dir/rule
+
+# Convenience name for target.
+test_main: 3rdParty/libsndfile/CMakeFiles/test_main.dir/rule
+.PHONY : test_main
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/test_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_main.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_main.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/test_main.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/sfversion.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/sfversion.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/sfversion.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/sfversion.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfversion.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target sfversion"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfversion.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/sfversion.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/sfversion.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfversion.dir/rule
+
+# Convenience name for target.
+sfversion: 3rdParty/libsndfile/CMakeFiles/sfversion.dir/rule
+.PHONY : sfversion
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/sfversion.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfversion.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/sfversion.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/error_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/error_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/error_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/error_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/error_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/error_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/error_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/error_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/error_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target error_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/error_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/error_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/error_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/error_test.dir/rule
+
+# Convenience name for target.
+error_test: 3rdParty/libsndfile/CMakeFiles/error_test.dir/rule
+.PHONY : error_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/error_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/error_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/error_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/error_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target ulaw_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/rule
+
+# Convenience name for target.
+ulaw_test: 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/rule
+.PHONY : ulaw_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/alaw_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target alaw_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/rule
+
+# Convenience name for target.
+alaw_test: 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/rule
+.PHONY : alaw_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/alaw_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target dwvw_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/rule
+
+# Convenience name for target.
+dwvw_test: 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/rule
+.PHONY : dwvw_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/command_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/command_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/command_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/command_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/command_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/command_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/command_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/command_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/command_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target command_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/command_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/command_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/command_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/command_test.dir/rule
+
+# Convenience name for target.
+command_test: 3rdParty/libsndfile/CMakeFiles/command_test.dir/rule
+.PHONY : command_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/command_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/command_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/command_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/command_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=43 "Built target floating_point_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/rule
+
+# Convenience name for target.
+floating_point_test: 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/rule
+.PHONY : floating_point_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/checksum_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target checksum_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/rule
+
+# Convenience name for target.
+checksum_test: 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/rule
+.PHONY : checksum_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/checksum_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target scale_clip_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/rule
+
+# Convenience name for target.
+scale_clip_test: 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/rule
+.PHONY : scale_clip_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/headerless_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target headerless_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/rule
+
+# Convenience name for target.
+headerless_test: 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/rule
+.PHONY : headerless_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/headerless_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=70 "Built target rdwr_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/rule
+
+# Convenience name for target.
+rdwr_test: 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/rule
+.PHONY : rdwr_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/locale_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/locale_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=46 "Built target locale_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/locale_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/locale_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/locale_test.dir/rule
+
+# Convenience name for target.
+locale_test: 3rdParty/libsndfile/CMakeFiles/locale_test.dir/rule
+.PHONY : locale_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/locale_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/locale_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/locale_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/cpp_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=42 "Built target cpp_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/rule
+
+# Convenience name for target.
+cpp_test: 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/rule
+.PHONY : cpp_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/cpp_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target external_libs_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/rule
+
+# Convenience name for target.
+external_libs_test: 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/rule
+.PHONY : external_libs_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/format_check_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target format_check_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/rule
+
+# Convenience name for target.
+format_check_test: 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/rule
+.PHONY : format_check_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/format_check_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/channel_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/channel_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target channel_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/channel_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/channel_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/channel_test.dir/rule
+
+# Convenience name for target.
+channel_test: 3rdParty/libsndfile/CMakeFiles/channel_test.dir/rule
+.PHONY : channel_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/channel_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/channel_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/channel_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/pcm_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=69 "Built target pcm_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/rule
+
+# Convenience name for target.
+pcm_test: 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/rule
+.PHONY : pcm_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/pcm_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/write_read_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=100 "Built target write_read_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/rule
+
+# Convenience name for target.
+write_read_test: 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/rule
+.PHONY : write_read_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/write_read_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target lossy_comp_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/rule
+
+# Convenience name for target.
+lossy_comp_test: 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/rule
+.PHONY : lossy_comp_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target peak_chunk_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/rule
+
+# Convenience name for target.
+peak_chunk_test: 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/rule
+.PHONY : peak_chunk_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/header_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/header_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/header_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/header_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/header_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/header_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/header_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/header_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/header_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target header_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/header_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/header_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/header_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/header_test.dir/rule
+
+# Convenience name for target.
+header_test: 3rdParty/libsndfile/CMakeFiles/header_test.dir/rule
+.PHONY : header_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/header_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/header_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/header_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/header_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/misc_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/misc_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=47 "Built target misc_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/misc_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/misc_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/misc_test.dir/rule
+
+# Convenience name for target.
+misc_test: 3rdParty/libsndfile/CMakeFiles/misc_test.dir/rule
+.PHONY : misc_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/misc_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/misc_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/misc_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/string_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/string_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/string_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/string_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/string_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/string_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/string_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/string_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/string_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target string_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/string_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/string_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/string_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/string_test.dir/rule
+
+# Convenience name for target.
+string_test: 3rdParty/libsndfile/CMakeFiles/string_test.dir/rule
+.PHONY : string_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/string_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/string_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/string_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/string_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target multi_file_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/rule
+
+# Convenience name for target.
+multi_file_test: 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/rule
+.PHONY : multi_file_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target aiff_rw_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/rule
+
+# Convenience name for target.
+aiff_rw_test: 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/rule
+.PHONY : aiff_rw_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/chunk_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target chunk_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/rule
+
+# Convenience name for target.
+chunk_test: 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/rule
+.PHONY : chunk_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/chunk_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target long_read_write_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/rule
+
+# Convenience name for target.
+long_read_write_test: 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/rule
+.PHONY : long_read_write_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/raw_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/raw_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target raw_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/raw_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/raw_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/raw_test.dir/rule
+
+# Convenience name for target.
+raw_test: 3rdParty/libsndfile/CMakeFiles/raw_test.dir/rule
+.PHONY : raw_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/raw_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/raw_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/raw_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target compression_size_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/rule
+
+# Convenience name for target.
+compression_size_test: 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/rule
+.PHONY : compression_size_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/ogg_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=52 "Built target ogg_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/rule
+
+# Convenience name for target.
+ogg_test: 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/rule
+.PHONY : ogg_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/ogg_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target ogg_opus_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/rule
+
+# Convenience name for target.
+ogg_opus_test: 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/rule
+.PHONY : ogg_opus_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=51 "Built target mpeg_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/rule
+
+# Convenience name for target.
+mpeg_test: 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/rule
+.PHONY : mpeg_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/stdin_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target stdin_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/rule
+
+# Convenience name for target.
+stdin_test: 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/rule
+.PHONY : stdin_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/stdin_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/stdout_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=95 "Built target stdout_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 27
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/rule
+
+# Convenience name for target.
+stdout_test: 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/rule
+.PHONY : stdout_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/stdout_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/stdio_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target stdio_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/rule
+
+# Convenience name for target.
+stdio_test: 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/rule
+.PHONY : stdio_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/stdio_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/pipe_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target pipe_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/rule
+
+# Convenience name for target.
+pipe_test: 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/rule
+.PHONY : pipe_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/pipe_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all: 3rdParty/libsndfile/CMakeFiles/test_utils.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target virtual_io_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/rule
+
+# Convenience name for target.
+virtual_io_test: 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/rule
+.PHONY : virtual_io_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/clean
+
+#=============================================================================
+# Target rules for target 3rdParty/libsndfile/CMakeFiles/g72x_test.dir
+
+# All Build rule for target.
+3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all: 3rdParty/libogg/CMakeFiles/ogg.dir/all
+3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all: 3rdParty/opus/CMakeFiles/opus.dir/all
+3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all: 3rdParty/libsndfile/CMakeFiles/sndfile.dir/all
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target g72x_test"
+.PHONY : 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all
+
+# Build rule for subdir invocation for target.
+3rdParty/libsndfile/CMakeFiles/g72x_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 26
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
+.PHONY : 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/rule
+
+# Convenience name for target.
+g72x_test: 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/rule
+.PHONY : g72x_test
+
+# clean rule for target.
+3rdParty/libsndfile/CMakeFiles/g72x_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/clean
+.PHONY : 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/clean
+
+#=============================================================================
 # Target rules for target 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir
 
 # All Build rule for target.
 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/all:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/build.make 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/build.make 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=87,88,89,90,91,92,93,94,95,96 "Built target sdl_headers_copy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=71,72,73,74,75,76,77,78,79 "Built target sdl_headers_copy"
 .PHONY : 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/rule
@@ -1389,7 +3162,7 @@ sdl_headers_copy: 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2/CMakeFiles/SDL2main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2/CMakeFiles/SDL2main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2/CMakeFiles/SDL2main.dir/rule
@@ -1410,12 +3183,12 @@ SDL2main: 3rdParty/sdl2/CMakeFiles/SDL2main.dir/rule
 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all: 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/build.make 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/build.make 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39 "Built target SDL2-static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31 "Built target SDL2-static"
 .PHONY : 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/rule
@@ -1436,12 +3209,12 @@ SDL2-static: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/rule
 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/all: 3rdParty/sdl2/CMakeFiles/sdl_headers_copy.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/build.make 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/build.make 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=50,51,52 "Built target SDL2_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=34,35 "Built target SDL2_test"
 .PHONY : 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2/CMakeFiles/SDL2_test.dir/rule
@@ -1488,7 +3261,7 @@ uninstall: 3rdParty/sdl2/CMakeFiles/uninstall.dir/rule
 3rdParty/openal-soft/CMakeFiles/common.dir/all:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/common.dir/build.make 3rdParty/openal-soft/CMakeFiles/common.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/common.dir/build.make 3rdParty/openal-soft/CMakeFiles/common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=57 "Built target common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=41 "Built target common"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/common.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1514,12 +3287,12 @@ common: 3rdParty/openal-soft/CMakeFiles/common.dir/rule
 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all: 3rdParty/openal-soft/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/build.make 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/build.make 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target OpenAL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target OpenAL"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/rule
@@ -1540,12 +3313,12 @@ OpenAL: 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/rule
 3rdParty/openal-soft/CMakeFiles/openal-info.dir/all: 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/openal-info.dir/build.make 3rdParty/openal-soft/CMakeFiles/openal-info.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/openal-info.dir/build.make 3rdParty/openal-soft/CMakeFiles/openal-info.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=65 "Built target openal-info"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target openal-info"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/openal-info.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/openal-info.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/openal-info.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/openal-info.dir/rule
@@ -1592,7 +3365,7 @@ uhjdecoder: 3rdParty/openal-soft/CMakeFiles/uhjdecoder.dir/rule
 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/all: 3rdParty/openal-soft/CMakeFiles/common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/build.make 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/build.make 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=100 "Built target uhjencoder"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=99 "Built target uhjencoder"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1618,12 +3391,12 @@ uhjencoder: 3rdParty/openal-soft/CMakeFiles/uhjencoder.dir/rule
 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all: 3rdParty/openal-soft/CMakeFiles/OpenAL.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/ex-common.dir/build.make 3rdParty/openal-soft/CMakeFiles/ex-common.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/ex-common.dir/build.make 3rdParty/openal-soft/CMakeFiles/ex-common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=58 "Built target ex-common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target ex-common"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/ex-common.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/ex-common.dir/rule
@@ -1645,12 +3418,12 @@ ex-common: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/rule
 3rdParty/openal-soft/CMakeFiles/altonegen.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/altonegen.dir/build.make 3rdParty/openal-soft/CMakeFiles/altonegen.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/altonegen.dir/build.make 3rdParty/openal-soft/CMakeFiles/altonegen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target altonegen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=39 "Built target altonegen"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/altonegen.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/altonegen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/altonegen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/altonegen.dir/rule
@@ -1677,7 +3450,7 @@ altonegen: 3rdParty/openal-soft/CMakeFiles/altonegen.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alrecord.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alrecord.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alrecord.dir/rule
@@ -1699,12 +3472,12 @@ alrecord: 3rdParty/openal-soft/CMakeFiles/alrecord.dir/rule
 3rdParty/openal-soft/CMakeFiles/alplay.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alplay.dir/build.make 3rdParty/openal-soft/CMakeFiles/alplay.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alplay.dir/build.make 3rdParty/openal-soft/CMakeFiles/alplay.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target alplay"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=38 "Built target alplay"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alplay.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alplay.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alplay.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alplay.dir/rule
@@ -1731,7 +3504,7 @@ alplay: 3rdParty/openal-soft/CMakeFiles/alplay.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alstream.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alstream.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alstream.dir/rule
@@ -1753,12 +3526,12 @@ alstream: 3rdParty/openal-soft/CMakeFiles/alstream.dir/rule
 3rdParty/openal-soft/CMakeFiles/alreverb.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alreverb.dir/build.make 3rdParty/openal-soft/CMakeFiles/alreverb.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alreverb.dir/build.make 3rdParty/openal-soft/CMakeFiles/alreverb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=55 "Built target alreverb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target alreverb"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alreverb.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alreverb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alreverb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alreverb.dir/rule
@@ -1780,12 +3553,12 @@ alreverb: 3rdParty/openal-soft/CMakeFiles/alreverb.dir/rule
 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/build.make 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/build.make 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=54 "Built target almultireverb"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target almultireverb"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/rule
@@ -1812,7 +3585,7 @@ almultireverb: 3rdParty/openal-soft/CMakeFiles/almultireverb.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/allatency.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/allatency.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/allatency.dir/rule
@@ -1834,12 +3607,12 @@ allatency: 3rdParty/openal-soft/CMakeFiles/allatency.dir/rule
 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/build.make 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/build.make 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target alhrtf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=37 "Built target alhrtf"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/rule
@@ -1866,7 +3639,7 @@ alhrtf: 3rdParty/openal-soft/CMakeFiles/alhrtf.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alstreamcb.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alstreamcb.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alstreamcb.dir/rule
@@ -1889,12 +3662,12 @@ alstreamcb: 3rdParty/openal-soft/CMakeFiles/alstreamcb.dir/rule
 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/all: 3rdParty/openal-soft/CMakeFiles/ex-common.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/build.make 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/build.make 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=53 "Built target alconvolve"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target alconvolve"
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/rule
@@ -1922,7 +3695,7 @@ alconvolve: 3rdParty/openal-soft/CMakeFiles/alconvolve.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/openal-soft/CMakeFiles/alloopback.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 51
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 41
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/openal-soft/CMakeFiles/alloopback.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/openal-soft/CMakeFiles/alloopback.dir/rule
@@ -1943,12 +3716,12 @@ alloopback: 3rdParty/openal-soft/CMakeFiles/alloopback.dir/rule
 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/build.make 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/build.make 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=40,41,42,43 "Built target SDL2_image"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=32,33 "Built target SDL2_image"
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 41
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 33
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/rule
@@ -1971,12 +3744,12 @@ SDL2_image: 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/rule
 3rdParty/sdl2-image/CMakeFiles/showanim.dir/all: 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/showanim.dir/build.make 3rdParty/sdl2-image/CMakeFiles/showanim.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/showanim.dir/build.make 3rdParty/sdl2-image/CMakeFiles/showanim.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=97 "Built target showanim"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target showanim"
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/showanim.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-image/CMakeFiles/showanim.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 33
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-image/CMakeFiles/showanim.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/showanim.dir/rule
@@ -1999,12 +3772,12 @@ showanim: 3rdParty/sdl2-image/CMakeFiles/showanim.dir/rule
 3rdParty/sdl2-image/CMakeFiles/showimage.dir/all: 3rdParty/sdl2-image/CMakeFiles/SDL2_image.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/showimage.dir/build.make 3rdParty/sdl2-image/CMakeFiles/showimage.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/showimage.dir/build.make 3rdParty/sdl2-image/CMakeFiles/showimage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target showimage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=80 "Built target showimage"
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/showimage.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-image/CMakeFiles/showimage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 41
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 34
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-image/CMakeFiles/showimage.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/showimage.dir/rule
@@ -2019,45 +3792,18 @@ showimage: 3rdParty/sdl2-image/CMakeFiles/showimage.dir/rule
 .PHONY : 3rdParty/sdl2-image/CMakeFiles/showimage.dir/clean
 
 #=============================================================================
-# Target rules for target 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir
-
-# All Build rule for target.
-3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2main.dir/all
-3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
-	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build.make 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/depend
-	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build.make 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=44,45,46,47,48,49 "Built target SDL2_mixer_ext_Static"
-.PHONY : 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all
-
-# Build rule for subdir invocation for target.
-3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 43
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
-.PHONY : 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/rule
-
-# Convenience name for target.
-SDL2_mixer_ext_Static: 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/rule
-.PHONY : SDL2_mixer_ext_Static
-
-# clean rule for target.
-3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/clean:
-	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build.make 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/clean
-.PHONY : 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/clean
-
-#=============================================================================
 # Target rules for target 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir
 
 # All Build rule for target.
 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/all: 3rdParty/sdl2/CMakeFiles/SDL2-static.dir/all
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/build.make 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/depend
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/build.make 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num= "Built target SDL2_ttf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=36 "Built target SDL2_ttf"
 .PHONY : 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/all
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/rule
@@ -2085,7 +3831,7 @@ SDL2_ttf: 3rdParty/sdl2-ttf/CMakeFiles/SDL2_ttf.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-ttf/CMakeFiles/glfont.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-ttf/CMakeFiles/glfont.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-ttf/CMakeFiles/glfont.dir/rule
@@ -2113,7 +3859,7 @@ glfont: 3rdParty/sdl2-ttf/CMakeFiles/glfont.dir/rule
 
 # Build rule for subdir invocation for target.
 3rdParty/sdl2-ttf/CMakeFiles/showfont.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3rdParty/sdl2-ttf/CMakeFiles/showfont.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles 0
 .PHONY : 3rdParty/sdl2-ttf/CMakeFiles/showfont.dir/rule

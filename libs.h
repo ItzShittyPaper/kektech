@@ -1,8 +1,12 @@
 #include <iostream>
+#include <cfloat>
 #include <cstdlib>
+#include <cassert>
+#include <climits>
 #include <time.h>
 #include <string>
 #include <vector>
+#include <bit>
 #ifndef _WIN32
 #include <alloca.h>
 #else
@@ -12,9 +16,9 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
+#include <sndfile.h>
 /* SDL_Mixer-X for audio code*/
 /* sudo64 note: its been fucking 40 minutes i'm trying get this fucking code to find this stupid library. */
-#include <SDL_mixer_ext/SDL_mixer_ext.h>
 #include <al.h>
 #include <alext.h>
 

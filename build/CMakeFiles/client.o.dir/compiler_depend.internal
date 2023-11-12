@@ -90,18 +90,18 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /home/m4kulatura/Documents/GitHub/kektech/client/dialog.h
  /home/m4kulatura/Documents/GitHub/kektech/client/engine.h
  /home/m4kulatura/Documents/GitHub/kektech/client/snake.h
+ /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
  /usr/include/asm/errno.h
+ /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/cpu-set.h
@@ -116,12 +116,15 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/include/bits/iscanonical.h
  /usr/include/bits/libc-header-start.h
  /usr/include/bits/libm-simd-decl-stubs.h
+ /usr/include/bits/local_lim.h
  /usr/include/bits/locale.h
  /usr/include/bits/long-double.h
  /usr/include/bits/math-vector.h
  /usr/include/bits/mathcalls-helper-functions.h
  /usr/include/bits/mathcalls-narrow.h
  /usr/include/bits/mathcalls.h
+ /usr/include/bits/posix1_lim.h
+ /usr/include/bits/posix2_lim.h
  /usr/include/bits/pthread_stack_min-dynamic.h
  /usr/include/bits/pthreadtypes-arch.h
  /usr/include/bits/pthreadtypes.h
@@ -168,11 +171,13 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/include/bits/types/wint_t.h
  /usr/include/bits/typesizes.h
  /usr/include/bits/uintn-identity.h
+ /usr/include/bits/uio_lim.h
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
  /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
+ /usr/include/bits/xopen_lim.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit
  /usr/include/c++/13/bits/alloc_traits.h
@@ -229,8 +234,11 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/include/c++/13/bits/stringfwd.h
  /usr/include/c++/13/bits/utility.h
  /usr/include/c++/13/bits/vector.tcc
+ /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/cfloat
+ /usr/include/c++/13/climits
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/cstdio
@@ -280,7 +288,9 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/limits.h
  /usr/include/linux/errno.h
+ /usr/include/linux/limits.h
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/pthread.h
@@ -357,6 +367,7 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h
@@ -380,6 +391,7 @@ CMakeFiles/client.o.dir/client/client_main.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h
@@ -483,18 +495,18 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /home/m4kulatura/Documents/GitHub/kektech/ui.h
  /home/m4kulatura/Documents/GitHub/kektech/client/client_render.h
  /home/m4kulatura/Documents/GitHub/kektech/client/engine.h
+ /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
  /usr/include/asm/errno.h
+ /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/cpu-set.h
@@ -509,12 +521,15 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/include/bits/iscanonical.h
  /usr/include/bits/libc-header-start.h
  /usr/include/bits/libm-simd-decl-stubs.h
+ /usr/include/bits/local_lim.h
  /usr/include/bits/locale.h
  /usr/include/bits/long-double.h
  /usr/include/bits/math-vector.h
  /usr/include/bits/mathcalls-helper-functions.h
  /usr/include/bits/mathcalls-narrow.h
  /usr/include/bits/mathcalls.h
+ /usr/include/bits/posix1_lim.h
+ /usr/include/bits/posix2_lim.h
  /usr/include/bits/pthread_stack_min-dynamic.h
  /usr/include/bits/pthreadtypes-arch.h
  /usr/include/bits/pthreadtypes.h
@@ -561,11 +576,13 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/include/bits/types/wint_t.h
  /usr/include/bits/typesizes.h
  /usr/include/bits/uintn-identity.h
+ /usr/include/bits/uio_lim.h
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
  /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
+ /usr/include/bits/xopen_lim.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit
  /usr/include/c++/13/bits/alloc_traits.h
@@ -622,8 +639,11 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/include/c++/13/bits/stringfwd.h
  /usr/include/c++/13/bits/utility.h
  /usr/include/c++/13/bits/vector.tcc
+ /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/cfloat
+ /usr/include/c++/13/climits
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/cstdio
@@ -673,7 +693,9 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/limits.h
  /usr/include/linux/errno.h
+ /usr/include/linux/limits.h
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/pthread.h
@@ -750,6 +772,7 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h
@@ -773,6 +796,7 @@ CMakeFiles/client.o.dir/client/client_render.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h
@@ -875,18 +899,18 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /home/m4kulatura/Documents/GitHub/kektech/save.h
  /home/m4kulatura/Documents/GitHub/kektech/ui.h
  /home/m4kulatura/Documents/GitHub/kektech/client/engine.h
+ /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
  /usr/include/asm/errno.h
+ /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/cpu-set.h
@@ -901,12 +925,15 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/include/bits/iscanonical.h
  /usr/include/bits/libc-header-start.h
  /usr/include/bits/libm-simd-decl-stubs.h
+ /usr/include/bits/local_lim.h
  /usr/include/bits/locale.h
  /usr/include/bits/long-double.h
  /usr/include/bits/math-vector.h
  /usr/include/bits/mathcalls-helper-functions.h
  /usr/include/bits/mathcalls-narrow.h
  /usr/include/bits/mathcalls.h
+ /usr/include/bits/posix1_lim.h
+ /usr/include/bits/posix2_lim.h
  /usr/include/bits/pthread_stack_min-dynamic.h
  /usr/include/bits/pthreadtypes-arch.h
  /usr/include/bits/pthreadtypes.h
@@ -953,11 +980,13 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/include/bits/types/wint_t.h
  /usr/include/bits/typesizes.h
  /usr/include/bits/uintn-identity.h
+ /usr/include/bits/uio_lim.h
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
  /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
+ /usr/include/bits/xopen_lim.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit
  /usr/include/c++/13/bits/alloc_traits.h
@@ -1014,8 +1043,11 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/include/c++/13/bits/stringfwd.h
  /usr/include/c++/13/bits/utility.h
  /usr/include/c++/13/bits/vector.tcc
+ /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/cfloat
+ /usr/include/c++/13/climits
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/cstdio
@@ -1065,7 +1097,9 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/limits.h
  /usr/include/linux/errno.h
+ /usr/include/linux/limits.h
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/pthread.h
@@ -1142,6 +1176,7 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h
@@ -1165,6 +1200,7 @@ CMakeFiles/client.o.dir/client/dialog.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h
@@ -1268,18 +1304,18 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /home/m4kulatura/Documents/GitHub/kektech/ui.h
  /home/m4kulatura/Documents/GitHub/kektech/client/engine.h
  /home/m4kulatura/Documents/GitHub/kektech/client/snake.h
+ /home/m4kulatura/Documents/GitHub/kektech/deps/libsndfile/include/sndfile.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/al.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alc.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/alext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/openal-soft/include/AL/efx.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-image/SDL_image.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer.h
- /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-mixer-x/include/SDL_mixer_ext/SDL_mixer_ext.h
  /home/m4kulatura/Documents/GitHub/kektech/deps/sdl2-ttf/SDL_ttf.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h
  /usr/include/asm-generic/errno.h
  /usr/include/asm/errno.h
+ /usr/include/assert.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
  /usr/include/bits/cpu-set.h
@@ -1294,12 +1330,15 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/include/bits/iscanonical.h
  /usr/include/bits/libc-header-start.h
  /usr/include/bits/libm-simd-decl-stubs.h
+ /usr/include/bits/local_lim.h
  /usr/include/bits/locale.h
  /usr/include/bits/long-double.h
  /usr/include/bits/math-vector.h
  /usr/include/bits/mathcalls-helper-functions.h
  /usr/include/bits/mathcalls-narrow.h
  /usr/include/bits/mathcalls.h
+ /usr/include/bits/posix1_lim.h
+ /usr/include/bits/posix2_lim.h
  /usr/include/bits/pthread_stack_min-dynamic.h
  /usr/include/bits/pthreadtypes-arch.h
  /usr/include/bits/pthreadtypes.h
@@ -1346,11 +1385,13 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/include/bits/types/wint_t.h
  /usr/include/bits/typesizes.h
  /usr/include/bits/uintn-identity.h
+ /usr/include/bits/uio_lim.h
  /usr/include/bits/waitflags.h
  /usr/include/bits/waitstatus.h
  /usr/include/bits/wchar.h
  /usr/include/bits/wctype-wchar.h
  /usr/include/bits/wordsize.h
+ /usr/include/bits/xopen_lim.h
  /usr/include/c++/13/backward/binders.h
  /usr/include/c++/13/bit
  /usr/include/c++/13/bits/alloc_traits.h
@@ -1407,8 +1448,11 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/include/c++/13/bits/stringfwd.h
  /usr/include/c++/13/bits/utility.h
  /usr/include/c++/13/bits/vector.tcc
+ /usr/include/c++/13/cassert
  /usr/include/c++/13/cctype
  /usr/include/c++/13/cerrno
+ /usr/include/c++/13/cfloat
+ /usr/include/c++/13/climits
  /usr/include/c++/13/clocale
  /usr/include/c++/13/cmath
  /usr/include/c++/13/cstdio
@@ -1458,7 +1502,9 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/include/gnu/stubs-64.h
  /usr/include/gnu/stubs.h
  /usr/include/inttypes.h
+ /usr/include/limits.h
  /usr/include/linux/errno.h
+ /usr/include/linux/limits.h
  /usr/include/locale.h
  /usr/include/math.h
  /usr/include/pthread.h
@@ -1535,6 +1581,7 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/ia32intrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/immintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/keylockerintrin.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/limits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lwpintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/lzcntintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/mm_malloc.h
@@ -1558,6 +1605,7 @@ CMakeFiles/client.o.dir/client/snake.cpp.o
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdarg.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stddef.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/stdint.h
+ /usr/lib64/gcc/x86_64-suse-linux/13/include/syslimits.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tbmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tmmintrin.h
  /usr/lib64/gcc/x86_64-suse-linux/13/include/tsxldtrkintrin.h

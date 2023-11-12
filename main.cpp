@@ -140,7 +140,7 @@ bool loop() {
 		}
 	}
 
-	A_MusicUpdateEvent();
+	//A_MusicUpdateEvent();
 
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
@@ -244,9 +244,9 @@ bool init() {
 	}
 
 	//Initialize SDL_mixer
-	if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
-		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
-	}	
+	//if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
+	//	snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
+	//}	
 
 	// initialize texture manager - tijon
 	texturemgr = new game_texture();
@@ -266,7 +266,7 @@ bool init() {
 
 	/* load textures and sound effects into our memory */
 	R_InitTextures(texturemgr);
-	A_InitSoundEffects(sfxmgr);
+	//A_InitSoundEffects(sfxmgr);
 	/* initialize the player entity */
 //	PLAYER_Init();
 
@@ -293,8 +293,8 @@ void kill() {
 	free(UI_nsod.crash_logbuffer);
 
 	//Free the music
-	Mix_FreeMusic(mixer.music);
-	mixer.music = NULL;	
+	//Mix_FreeMusic(mixer.music);
+	//mixer.music = NULL;	
 
 	TTF_CloseFont( font );
 	SDL_DestroyTexture( texture );
@@ -305,7 +305,9 @@ void kill() {
 	window = NULL;
 	renderer = NULL;
 
-	Mix_Quit();	
+	A_KillAudioEngine();
+
+	//Mix_Quit();	
 	TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();

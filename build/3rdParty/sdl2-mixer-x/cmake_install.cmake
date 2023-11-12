@@ -54,3 +54,9 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/pkgconfig" TYPE FILE FILES "/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2-mixer-x/SDL2_mixer_ext.pc")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2-mixer-x/examples/cmake_install.cmake")
+
+endif()
+

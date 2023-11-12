@@ -194,13 +194,16 @@ bin/kektech: lib/libSDL2main.a
 bin/kektech: lib/libSDL2.a
 bin/kektech: lib/libSDL2_image.a
 bin/kektech: lib/libSDL2_ttf.a
-bin/kektech: lib/libSDL2_mixer_ext.a
 bin/kektech: lib/libogg.a
+bin/kektech: lib/libsndfile.a
 bin/kektech: lib/libmodplug.a
 bin/kektech: lib/libopus.a
-bin/kektech: /usr/lib64/libfreetype.so
-bin/kektech: lib/libSDL2main.a
 bin/kektech: lib/libSDL2.a
+bin/kektech: /usr/lib64/libfreetype.so
+bin/kektech: /usr/lib64/libvorbisenc.so
+bin/kektech: /usr/lib64/libvorbis.so
+bin/kektech: /usr/lib64/libFLAC.so
+bin/kektech: lib/libogg.a
 bin/kektech: CMakeFiles/kektech.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/m4kulatura/Documents/GitHub/kektech/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable bin/kektech"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/kektech.dir/link.txt --verbose=$(VERBOSE)

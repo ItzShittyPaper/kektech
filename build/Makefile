@@ -689,6 +689,760 @@ test_opus_encode/fast:
 .PHONY : test_opus_encode/fast
 
 #=============================================================================
+# Target rules for targets named sndfile
+
+# Build rule for target.
+sndfile: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile
+.PHONY : sndfile
+
+# fast build rule for target.
+sndfile/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile.dir/build
+.PHONY : sndfile/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-info
+
+# Build rule for target.
+sndfile-info: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-info
+.PHONY : sndfile-info
+
+# fast build rule for target.
+sndfile-info/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-info.dir/build
+.PHONY : sndfile-info/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-play
+
+# Build rule for target.
+sndfile-play: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-play
+.PHONY : sndfile-play
+
+# fast build rule for target.
+sndfile-play/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-play.dir/build
+.PHONY : sndfile-play/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-convert
+
+# Build rule for target.
+sndfile-convert: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-convert
+.PHONY : sndfile-convert
+
+# fast build rule for target.
+sndfile-convert/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-convert.dir/build
+.PHONY : sndfile-convert/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-cmp
+
+# Build rule for target.
+sndfile-cmp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-cmp
+.PHONY : sndfile-cmp
+
+# fast build rule for target.
+sndfile-cmp/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-cmp.dir/build
+.PHONY : sndfile-cmp/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-metadata-set
+
+# Build rule for target.
+sndfile-metadata-set: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-metadata-set
+.PHONY : sndfile-metadata-set
+
+# fast build rule for target.
+sndfile-metadata-set/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-set.dir/build
+.PHONY : sndfile-metadata-set/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-metadata-get
+
+# Build rule for target.
+sndfile-metadata-get: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-metadata-get
+.PHONY : sndfile-metadata-get
+
+# fast build rule for target.
+sndfile-metadata-get/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-metadata-get.dir/build
+.PHONY : sndfile-metadata-get/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-interleave
+
+# Build rule for target.
+sndfile-interleave: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-interleave
+.PHONY : sndfile-interleave
+
+# fast build rule for target.
+sndfile-interleave/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-interleave.dir/build
+.PHONY : sndfile-interleave/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-deinterleave
+
+# Build rule for target.
+sndfile-deinterleave: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-deinterleave
+.PHONY : sndfile-deinterleave
+
+# fast build rule for target.
+sndfile-deinterleave/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-deinterleave.dir/build
+.PHONY : sndfile-deinterleave/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-concat
+
+# Build rule for target.
+sndfile-concat: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-concat
+.PHONY : sndfile-concat
+
+# fast build rule for target.
+sndfile-concat/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-concat.dir/build
+.PHONY : sndfile-concat/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-salvage
+
+# Build rule for target.
+sndfile-salvage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-salvage
+.PHONY : sndfile-salvage
+
+# fast build rule for target.
+sndfile-salvage/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-salvage.dir/build
+.PHONY : sndfile-salvage/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-to-text
+
+# Build rule for target.
+sndfile-to-text: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-to-text
+.PHONY : sndfile-to-text
+
+# fast build rule for target.
+sndfile-to-text/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-to-text.dir/build
+.PHONY : sndfile-to-text/fast
+
+#=============================================================================
+# Target rules for targets named sndfile-loopify
+
+# Build rule for target.
+sndfile-loopify: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfile-loopify
+.PHONY : sndfile-loopify
+
+# fast build rule for target.
+sndfile-loopify/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfile-loopify.dir/build
+.PHONY : sndfile-loopify/fast
+
+#=============================================================================
+# Target rules for targets named make_sine
+
+# Build rule for target.
+make_sine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 make_sine
+.PHONY : make_sine
+
+# fast build rule for target.
+make_sine/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build.make 3rdParty/libsndfile/CMakeFiles/make_sine.dir/build
+.PHONY : make_sine/fast
+
+#=============================================================================
+# Target rules for targets named sfprocess
+
+# Build rule for target.
+sfprocess: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sfprocess
+.PHONY : sfprocess
+
+# fast build rule for target.
+sfprocess/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfprocess.dir/build
+.PHONY : sfprocess/fast
+
+#=============================================================================
+# Target rules for targets named list_formats
+
+# Build rule for target.
+list_formats: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 list_formats
+.PHONY : list_formats
+
+# fast build rule for target.
+list_formats/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build.make 3rdParty/libsndfile/CMakeFiles/list_formats.dir/build
+.PHONY : list_formats/fast
+
+#=============================================================================
+# Target rules for targets named generate
+
+# Build rule for target.
+generate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 generate
+.PHONY : generate
+
+# fast build rule for target.
+generate/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/generate.dir/build.make 3rdParty/libsndfile/CMakeFiles/generate.dir/build
+.PHONY : generate/fast
+
+#=============================================================================
+# Target rules for targets named sndfilehandle
+
+# Build rule for target.
+sndfilehandle: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sndfilehandle
+.PHONY : sndfilehandle
+
+# fast build rule for target.
+sndfilehandle/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build.make 3rdParty/libsndfile/CMakeFiles/sndfilehandle.dir/build
+.PHONY : sndfilehandle/fast
+
+#=============================================================================
+# Target rules for targets named test_utils
+
+# Build rule for target.
+test_utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_utils
+.PHONY : test_utils
+
+# fast build rule for target.
+test_utils/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_utils.dir/build
+.PHONY : test_utils/fast
+
+#=============================================================================
+# Target rules for targets named test_main
+
+# Build rule for target.
+test_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_main
+.PHONY : test_main
+
+# fast build rule for target.
+test_main/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/test_main.dir/build.make 3rdParty/libsndfile/CMakeFiles/test_main.dir/build
+.PHONY : test_main/fast
+
+#=============================================================================
+# Target rules for targets named sfversion
+
+# Build rule for target.
+sfversion: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sfversion
+.PHONY : sfversion
+
+# fast build rule for target.
+sfversion/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build.make 3rdParty/libsndfile/CMakeFiles/sfversion.dir/build
+.PHONY : sfversion/fast
+
+#=============================================================================
+# Target rules for targets named error_test
+
+# Build rule for target.
+error_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 error_test
+.PHONY : error_test
+
+# fast build rule for target.
+error_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/error_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/error_test.dir/build
+.PHONY : error_test/fast
+
+#=============================================================================
+# Target rules for targets named ulaw_test
+
+# Build rule for target.
+ulaw_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ulaw_test
+.PHONY : ulaw_test
+
+# fast build rule for target.
+ulaw_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ulaw_test.dir/build
+.PHONY : ulaw_test/fast
+
+#=============================================================================
+# Target rules for targets named alaw_test
+
+# Build rule for target.
+alaw_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 alaw_test
+.PHONY : alaw_test
+
+# fast build rule for target.
+alaw_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/alaw_test.dir/build
+.PHONY : alaw_test/fast
+
+#=============================================================================
+# Target rules for targets named dwvw_test
+
+# Build rule for target.
+dwvw_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dwvw_test
+.PHONY : dwvw_test
+
+# fast build rule for target.
+dwvw_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/dwvw_test.dir/build
+.PHONY : dwvw_test/fast
+
+#=============================================================================
+# Target rules for targets named command_test
+
+# Build rule for target.
+command_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 command_test
+.PHONY : command_test
+
+# fast build rule for target.
+command_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/command_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/command_test.dir/build
+.PHONY : command_test/fast
+
+#=============================================================================
+# Target rules for targets named floating_point_test
+
+# Build rule for target.
+floating_point_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 floating_point_test
+.PHONY : floating_point_test
+
+# fast build rule for target.
+floating_point_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/floating_point_test.dir/build
+.PHONY : floating_point_test/fast
+
+#=============================================================================
+# Target rules for targets named checksum_test
+
+# Build rule for target.
+checksum_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 checksum_test
+.PHONY : checksum_test
+
+# fast build rule for target.
+checksum_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/checksum_test.dir/build
+.PHONY : checksum_test/fast
+
+#=============================================================================
+# Target rules for targets named scale_clip_test
+
+# Build rule for target.
+scale_clip_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 scale_clip_test
+.PHONY : scale_clip_test
+
+# fast build rule for target.
+scale_clip_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/scale_clip_test.dir/build
+.PHONY : scale_clip_test/fast
+
+#=============================================================================
+# Target rules for targets named headerless_test
+
+# Build rule for target.
+headerless_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 headerless_test
+.PHONY : headerless_test
+
+# fast build rule for target.
+headerless_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/headerless_test.dir/build
+.PHONY : headerless_test/fast
+
+#=============================================================================
+# Target rules for targets named rdwr_test
+
+# Build rule for target.
+rdwr_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rdwr_test
+.PHONY : rdwr_test
+
+# fast build rule for target.
+rdwr_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/rdwr_test.dir/build
+.PHONY : rdwr_test/fast
+
+#=============================================================================
+# Target rules for targets named locale_test
+
+# Build rule for target.
+locale_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 locale_test
+.PHONY : locale_test
+
+# fast build rule for target.
+locale_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/locale_test.dir/build
+.PHONY : locale_test/fast
+
+#=============================================================================
+# Target rules for targets named cpp_test
+
+# Build rule for target.
+cpp_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cpp_test
+.PHONY : cpp_test
+
+# fast build rule for target.
+cpp_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/cpp_test.dir/build
+.PHONY : cpp_test/fast
+
+#=============================================================================
+# Target rules for targets named external_libs_test
+
+# Build rule for target.
+external_libs_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 external_libs_test
+.PHONY : external_libs_test
+
+# fast build rule for target.
+external_libs_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/external_libs_test.dir/build
+.PHONY : external_libs_test/fast
+
+#=============================================================================
+# Target rules for targets named format_check_test
+
+# Build rule for target.
+format_check_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 format_check_test
+.PHONY : format_check_test
+
+# fast build rule for target.
+format_check_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/format_check_test.dir/build
+.PHONY : format_check_test/fast
+
+#=============================================================================
+# Target rules for targets named channel_test
+
+# Build rule for target.
+channel_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 channel_test
+.PHONY : channel_test
+
+# fast build rule for target.
+channel_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/channel_test.dir/build
+.PHONY : channel_test/fast
+
+#=============================================================================
+# Target rules for targets named pcm_test
+
+# Build rule for target.
+pcm_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pcm_test
+.PHONY : pcm_test
+
+# fast build rule for target.
+pcm_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pcm_test.dir/build
+.PHONY : pcm_test/fast
+
+#=============================================================================
+# Target rules for targets named write_read_test
+
+# Build rule for target.
+write_read_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 write_read_test
+.PHONY : write_read_test
+
+# fast build rule for target.
+write_read_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/write_read_test.dir/build
+.PHONY : write_read_test/fast
+
+#=============================================================================
+# Target rules for targets named lossy_comp_test
+
+# Build rule for target.
+lossy_comp_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lossy_comp_test
+.PHONY : lossy_comp_test
+
+# fast build rule for target.
+lossy_comp_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/lossy_comp_test.dir/build
+.PHONY : lossy_comp_test/fast
+
+#=============================================================================
+# Target rules for targets named peak_chunk_test
+
+# Build rule for target.
+peak_chunk_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 peak_chunk_test
+.PHONY : peak_chunk_test
+
+# fast build rule for target.
+peak_chunk_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/peak_chunk_test.dir/build
+.PHONY : peak_chunk_test/fast
+
+#=============================================================================
+# Target rules for targets named header_test
+
+# Build rule for target.
+header_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 header_test
+.PHONY : header_test
+
+# fast build rule for target.
+header_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/header_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/header_test.dir/build
+.PHONY : header_test/fast
+
+#=============================================================================
+# Target rules for targets named misc_test
+
+# Build rule for target.
+misc_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 misc_test
+.PHONY : misc_test
+
+# fast build rule for target.
+misc_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/misc_test.dir/build
+.PHONY : misc_test/fast
+
+#=============================================================================
+# Target rules for targets named string_test
+
+# Build rule for target.
+string_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 string_test
+.PHONY : string_test
+
+# fast build rule for target.
+string_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/string_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/string_test.dir/build
+.PHONY : string_test/fast
+
+#=============================================================================
+# Target rules for targets named multi_file_test
+
+# Build rule for target.
+multi_file_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 multi_file_test
+.PHONY : multi_file_test
+
+# fast build rule for target.
+multi_file_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/multi_file_test.dir/build
+.PHONY : multi_file_test/fast
+
+#=============================================================================
+# Target rules for targets named aiff_rw_test
+
+# Build rule for target.
+aiff_rw_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 aiff_rw_test
+.PHONY : aiff_rw_test
+
+# fast build rule for target.
+aiff_rw_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/aiff_rw_test.dir/build
+.PHONY : aiff_rw_test/fast
+
+#=============================================================================
+# Target rules for targets named chunk_test
+
+# Build rule for target.
+chunk_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 chunk_test
+.PHONY : chunk_test
+
+# fast build rule for target.
+chunk_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/chunk_test.dir/build
+.PHONY : chunk_test/fast
+
+#=============================================================================
+# Target rules for targets named long_read_write_test
+
+# Build rule for target.
+long_read_write_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 long_read_write_test
+.PHONY : long_read_write_test
+
+# fast build rule for target.
+long_read_write_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/long_read_write_test.dir/build
+.PHONY : long_read_write_test/fast
+
+#=============================================================================
+# Target rules for targets named raw_test
+
+# Build rule for target.
+raw_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 raw_test
+.PHONY : raw_test
+
+# fast build rule for target.
+raw_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/raw_test.dir/build
+.PHONY : raw_test/fast
+
+#=============================================================================
+# Target rules for targets named compression_size_test
+
+# Build rule for target.
+compression_size_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 compression_size_test
+.PHONY : compression_size_test
+
+# fast build rule for target.
+compression_size_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/compression_size_test.dir/build
+.PHONY : compression_size_test/fast
+
+#=============================================================================
+# Target rules for targets named ogg_test
+
+# Build rule for target.
+ogg_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ogg_test
+.PHONY : ogg_test
+
+# fast build rule for target.
+ogg_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_test.dir/build
+.PHONY : ogg_test/fast
+
+#=============================================================================
+# Target rules for targets named ogg_opus_test
+
+# Build rule for target.
+ogg_opus_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ogg_opus_test
+.PHONY : ogg_opus_test
+
+# fast build rule for target.
+ogg_opus_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/ogg_opus_test.dir/build
+.PHONY : ogg_opus_test/fast
+
+#=============================================================================
+# Target rules for targets named mpeg_test
+
+# Build rule for target.
+mpeg_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mpeg_test
+.PHONY : mpeg_test
+
+# fast build rule for target.
+mpeg_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/mpeg_test.dir/build
+.PHONY : mpeg_test/fast
+
+#=============================================================================
+# Target rules for targets named stdin_test
+
+# Build rule for target.
+stdin_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stdin_test
+.PHONY : stdin_test
+
+# fast build rule for target.
+stdin_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdin_test.dir/build
+.PHONY : stdin_test/fast
+
+#=============================================================================
+# Target rules for targets named stdout_test
+
+# Build rule for target.
+stdout_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stdout_test
+.PHONY : stdout_test
+
+# fast build rule for target.
+stdout_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdout_test.dir/build
+.PHONY : stdout_test/fast
+
+#=============================================================================
+# Target rules for targets named stdio_test
+
+# Build rule for target.
+stdio_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stdio_test
+.PHONY : stdio_test
+
+# fast build rule for target.
+stdio_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/stdio_test.dir/build
+.PHONY : stdio_test/fast
+
+#=============================================================================
+# Target rules for targets named pipe_test
+
+# Build rule for target.
+pipe_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pipe_test
+.PHONY : pipe_test
+
+# fast build rule for target.
+pipe_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/pipe_test.dir/build
+.PHONY : pipe_test/fast
+
+#=============================================================================
+# Target rules for targets named virtual_io_test
+
+# Build rule for target.
+virtual_io_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 virtual_io_test
+.PHONY : virtual_io_test
+
+# fast build rule for target.
+virtual_io_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/virtual_io_test.dir/build
+.PHONY : virtual_io_test/fast
+
+#=============================================================================
+# Target rules for targets named g72x_test
+
+# Build rule for target.
+g72x_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 g72x_test
+.PHONY : g72x_test
+
+# fast build rule for target.
+g72x_test/fast:
+	$(MAKE) $(MAKESILENT) -f 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build.make 3rdParty/libsndfile/CMakeFiles/g72x_test.dir/build
+.PHONY : g72x_test/fast
+
+#=============================================================================
 # Target rules for targets named sdl_headers_copy
 
 # Build rule for target.
@@ -1012,19 +1766,6 @@ showimage: cmake_check_build_system
 showimage/fast:
 	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-image/CMakeFiles/showimage.dir/build.make 3rdParty/sdl2-image/CMakeFiles/showimage.dir/build
 .PHONY : showimage/fast
-
-#=============================================================================
-# Target rules for targets named SDL2_mixer_ext_Static
-
-# Build rule for target.
-SDL2_mixer_ext_Static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2_mixer_ext_Static
-.PHONY : SDL2_mixer_ext_Static
-
-# fast build rule for target.
-SDL2_mixer_ext_Static/fast:
-	$(MAKE) $(MAKESILENT) -f 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build.make 3rdParty/sdl2-mixer-x/CMakeFiles/SDL2_mixer_ext_Static.dir/build
-.PHONY : SDL2_mixer_ext_Static/fast
 
 #=============================================================================
 # Target rules for targets named SDL2_ttf
@@ -1376,10 +2117,11 @@ help:
 	@echo "... OpenAL"
 	@echo "... SDL2-static"
 	@echo "... SDL2_image"
-	@echo "... SDL2_mixer_ext_Static"
 	@echo "... SDL2_test"
 	@echo "... SDL2_ttf"
 	@echo "... SDL2main"
+	@echo "... aiff_rw_test"
+	@echo "... alaw_test"
 	@echo "... alconvolve"
 	@echo "... alhrtf"
 	@echo "... allatency"
@@ -1391,26 +2133,82 @@ help:
 	@echo "... alstream"
 	@echo "... alstreamcb"
 	@echo "... altonegen"
+	@echo "... channel_test"
+	@echo "... checksum_test"
+	@echo "... chunk_test"
 	@echo "... client.o"
+	@echo "... command_test"
 	@echo "... common"
+	@echo "... compression_size_test"
+	@echo "... cpp_test"
+	@echo "... dwvw_test"
+	@echo "... error_test"
 	@echo "... ex-common"
+	@echo "... external_libs_test"
+	@echo "... floating_point_test"
+	@echo "... format_check_test"
+	@echo "... g72x_test"
+	@echo "... generate"
 	@echo "... glfont"
+	@echo "... header_test"
+	@echo "... headerless_test"
 	@echo "... kektech"
+	@echo "... list_formats"
+	@echo "... locale_test"
+	@echo "... long_read_write_test"
+	@echo "... lossy_comp_test"
+	@echo "... make_sine"
+	@echo "... misc_test"
 	@echo "... modplug"
+	@echo "... mpeg_test"
+	@echo "... multi_file_test"
 	@echo "... ogg"
+	@echo "... ogg_opus_test"
+	@echo "... ogg_test"
 	@echo "... openal-info"
 	@echo "... opus"
+	@echo "... pcm_test"
+	@echo "... peak_chunk_test"
+	@echo "... pipe_test"
+	@echo "... raw_test"
+	@echo "... rdwr_test"
+	@echo "... scale_clip_test"
+	@echo "... sfprocess"
+	@echo "... sfversion"
 	@echo "... showanim"
 	@echo "... showfont"
 	@echo "... showimage"
+	@echo "... sndfile"
+	@echo "... sndfile-cmp"
+	@echo "... sndfile-concat"
+	@echo "... sndfile-convert"
+	@echo "... sndfile-deinterleave"
+	@echo "... sndfile-info"
+	@echo "... sndfile-interleave"
+	@echo "... sndfile-loopify"
+	@echo "... sndfile-metadata-get"
+	@echo "... sndfile-metadata-set"
+	@echo "... sndfile-play"
+	@echo "... sndfile-salvage"
+	@echo "... sndfile-to-text"
+	@echo "... sndfilehandle"
+	@echo "... stdin_test"
+	@echo "... stdio_test"
+	@echo "... stdout_test"
+	@echo "... string_test"
 	@echo "... test_bitwise"
 	@echo "... test_framing"
+	@echo "... test_main"
 	@echo "... test_opus_api"
 	@echo "... test_opus_decode"
 	@echo "... test_opus_encode"
 	@echo "... test_opus_padding"
+	@echo "... test_utils"
 	@echo "... uhjdecoder"
 	@echo "... uhjencoder"
+	@echo "... ulaw_test"
+	@echo "... virtual_io_test"
+	@echo "... write_read_test"
 	@echo "... audio.o"
 	@echo "... audio.i"
 	@echo "... audio.s"

@@ -59,6 +59,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/libsndfile/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2/cmake_install.cmake")
 endif()
 
@@ -70,11 +75,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2-image/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/m4kulatura/Documents/GitHub/kektech/build/3rdParty/sdl2-mixer-x/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

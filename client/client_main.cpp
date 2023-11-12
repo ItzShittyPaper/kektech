@@ -81,7 +81,8 @@ bool ClientInput(int key_code) {
 				default: break;
 			}
 
-			Mix_PlayChannel( -1, A_GetSoundEffect(sfxmgr, "select"), 0);
+			A_PlaySFX("data/mus/select.wav");
+//			Mix_PlayChannel( -1, A_GetSoundEffect(sfxmgr, "select"), 0);
 			std::cout << "Z pressed" << std::endl; break;
 		case 1:
 
@@ -228,7 +229,7 @@ void ClientGameLoop() {
 
 		if (gamemgr.is_paused == false)
 			ProcessInput();
-		A_MusicUpdateEvent();
+		//A_MusicUpdateEvent();
 
 		/* ------------------------- */
 

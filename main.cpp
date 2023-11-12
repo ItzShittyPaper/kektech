@@ -140,7 +140,7 @@ bool loop() {
 		}
 	}
 
-	//A_MusicUpdateEvent();
+	A_StreamMUS();
 
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
@@ -243,15 +243,11 @@ bool init() {
 		snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING FONT, FILE DOES NOT EXIST / PERMISSION DENIED"); mode = kkui_crash; return false;
 	}
 
-	//Initialize SDL_mixer
-	//if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
-	//	snprintf(UI_nsod.crash_logbuffer, 256, "ERROR INITIALIZING AUDIO, YOUR SOUND CARD / DRIVER MIGHT NOT WORK"); mode = kkui_crash; return false;
-	//}	
+	A_StartAudioEngine();
 
 	// initialize texture manager - tijon
 	texturemgr = new game_texture();
 	texturemgr->cachedMaterials = std::vector<MaterialDefinition*>();
-
 	sfxmgr = new game_sfx();
 	sfxmgr->cachedSounds = std::vector<SoundDefinition*>();
 
@@ -266,16 +262,20 @@ bool init() {
 
 	/* load textures and sound effects into our memory */
 	R_InitTextures(texturemgr);
-	//A_InitSoundEffects(sfxmgr);
+	A_InitSoundEffects(sfxmgr);
 	/* initialize the player entity */
 //	PLAYER_Init();
 
 	mode = kkui_dashboard;
 	strcpy(gamemgr.currentmap, "data/ds/start.ds");
 
+//	A_LoadSoundEffects(sfxmgr, "data/mat/game.sfx");
+
 	//SAVE_InitSaveOperation();
 	//SAVE_WriteKeyToFile("omg", "haii");
 	//SAVE_ReadKeyFromFile();
+
+	A_PlayMUS("data/mus/corner.flac");
 
 	ClientInit();
 

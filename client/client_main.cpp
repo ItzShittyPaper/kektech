@@ -81,8 +81,8 @@ bool ClientInput(int key_code) {
 				default: break;
 			}
 
-			A_PlaySFX("data/mus/select.wav");
 //			Mix_PlayChannel( -1, A_GetSoundEffect(sfxmgr, "select"), 0);
+			A_PlaySFX(A_GetSoundEffect(sfxmgr, "select").c_str());
 			std::cout << "Z pressed" << std::endl; break;
 		case 1:
 

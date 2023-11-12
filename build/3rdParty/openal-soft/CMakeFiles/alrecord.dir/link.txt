@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/alrecord.dir/examples/alrecord.c.o -o ../../bin/alrecord  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin: -pthread ../../lib/libex-common.a ../../bin/libopenal.so.1.23.1 -lrt 

@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_opus_padding.dir/tests/test_opus_padding.c.o -o ../../bin/test_opus_padding  ../../lib/libopus.a -lm 

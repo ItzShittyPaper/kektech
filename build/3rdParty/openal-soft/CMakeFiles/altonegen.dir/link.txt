@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/altonegen.dir/examples/altonegen.c.o -o ../../bin/altonegen  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin: -pthread -lm -lm ../../lib/libex-common.a ../../bin/libopenal.so.1.23.1 -lrt 

@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -rdynamic CMakeFiles/alstreamcb.dir/examples/alstreamcb.cpp.o -o ../../bin/alstreamcb  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin -pthread /usr/lib64/libsndfile.so ../../lib/libex-common.a ../../bin/libopenal.so.1.23.1 -lrt 

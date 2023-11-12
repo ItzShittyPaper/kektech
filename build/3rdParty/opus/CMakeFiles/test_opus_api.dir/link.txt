@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_opus_api.dir/tests/test_opus_api.c.o -o ../../bin/test_opus_api  ../../lib/libopus.a -lm 

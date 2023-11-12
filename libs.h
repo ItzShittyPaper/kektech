@@ -20,6 +20,7 @@
 /* SDL_Mixer-X for audio code*/
 /* sudo64 note: its been fucking 40 minutes i'm trying get this fucking code to find this stupid library. */
 #include <al.h>
+#include <alc.h>
 #include <alext.h>
 
 /* include your game source here */

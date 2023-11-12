@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/test_bitwise.dir/src/bitwise.c.o -o ../../bin/test_bitwise 

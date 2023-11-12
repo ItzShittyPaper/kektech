@@ -2,8 +2,8 @@
 #define AUDIO_H_INCLUDED
 
 #define OPENMPT_MODULE_RENDER_INTERPOLATIONFILTER_LENGTH 1
-#define MAX_BUFFERS 128
-#define BUFFER_SIZE 512
+#define MAX_BUFFERS 4
+#define BUFFER_SIZE 8192
 
 #include "libs.h"
 #include <vector>
@@ -25,7 +25,7 @@ struct audio_arch {
 	std::vector<ALuint> buffers;
 	ALCuint source;
 
-	SNDFILE* sndfile = NULL;
+	SNDFILE* sndfile;
 	SF_INFO sfinfo;
 	ALenum format;
 
@@ -35,11 +35,12 @@ struct audio_arch {
 
 struct al_music {
 
+	ALuint source;
 	SNDFILE* sndfile;
-	SF_INFO* sfinfo;
+	SF_INFO sfinfo;
 	ALenum* err;
 	ALenum format;
-	ALuint* buffers;
+	ALuint buffers[MAX_BUFFERS];
 	short* membuf;
 
 } extern music;
@@ -49,9 +50,6 @@ extern struct SoundDefinition
 	std::string soundName;
 	std::string pathName;
 
-	//Mix_Chunk* cache;
-
-	
 } sounddefinition;
 
 struct game_sfx {
@@ -63,11 +61,16 @@ void A_FreeSoundEffect(game_sfx* manager);
 void A_AddSoundEffect(game_sfx* manager, SoundDefinition* definition);
 void A_ClearSoundEffects(game_sfx* manager);
 void A_RemoveSoundEffect(game_sfx* manager, SoundDefinition* definition);
-//Mix_Chunk* A_GetSoundEffect(game_sfx* manager, const char* sound);
+std::string A_GetSoundEffect(game_sfx* manager, const char* sound);
 void A_InitSoundEffects(game_sfx* manager);
 
 void A_StartAudioEngine();
 void A_KillAudioEngine();
+void A_LoadMUS(const char* filename);
+void A_UpdateMUS();
+int A_InitMUS();
+int A_PlayMUS(const char* filename);
+int A_StreamMUS();
 int A_PlaySFX(const char* filename);
 int A_MusicUpdateEvent();
 

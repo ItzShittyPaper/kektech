@@ -1,1 +1,0 @@
-/usr/bin/cc -O3 -DNDEBUG -rdynamic CMakeFiles/allatency.dir/examples/allatency.c.o -o ../../bin/allatency  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin: -pthread /usr/lib64/libsndfile.so ../../lib/libex-common.a ../../bin/libopenal.so.1.23.1 -lrt 

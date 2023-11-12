@@ -1,2 +1,0 @@
-/usr/bin/ar qc lib/libclient.o.a CMakeFiles/client.o.dir/client/client_render.cpp.o CMakeFiles/client.o.dir/client/client_main.cpp.o CMakeFiles/client.o.dir/client/dialog.cpp.o CMakeFiles/client.o.dir/client/snake.cpp.o
-/usr/bin/ranlib lib/libclient.o.a

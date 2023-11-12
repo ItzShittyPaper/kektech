@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG -rdynamic CMakeFiles/alconvolve.dir/examples/alconvolve.c.o -o ../../bin/alconvolve  -Wl,-rpath,/home/m4kulatura/Documents/GitHub/kektech/build/bin -pthread ../../lib/libcommon.a /usr/lib64/libsndfile.so ../../lib/libex-common.a ../../bin/libopenal.so.1.23.1 -lrt 

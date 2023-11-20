@@ -1,0 +1,39 @@
+/0# RURY
+co tu sie odpierdala, czego chcecie?
+/1# OTIS
+/2# JA
+/3# MCAT
+/3# MY
+no zrobilismy ten twoj *zasrany* teleporter
+/0# RURY
+tak szybko? macie przeciez jeszcze z dobre dwie czy nawet trzy godziny. nie rozpieszczajcie mnie tak.
+/2# JA
+a no widzisz, my tutaj to ekspertami jestesmy w dziedzinie. szybko zawsze nam idzie. wiemy co trzeba z tym robic
+/0# RURY
+wlasnie widac ze umiecie. nie marnujecie sie
+musze przekazac ta informacje moim pracodawcom... poczekajcie chwile jesli mozecie. w najgorszym wypadku zmieszaja was z blotem i dostaniecie mocny chuj w dupsko, w najlepszym donix wchodzi w tym momencie
+/0-
+/1# JA
+no dobra, niech ci bedzie
+/2# OTIS
+rury sa niezlym kawalem smiecia, co nie? ehhhh
+/1# JA
+przyzwyczailem sie, normalny z niego gosciu zazwyczaj.
+/2# OTIS
+to dlatego bo ty tu byles pierwszy, rury cie znaja i szanuja jako kurwa jedynego. moze i ciebie to nie obchodzi bo to nie jest twoj problem. ale kazdy inny dostaje tylko po dupie i musi sie podlizywac aby otrzymac jakikolwiek grosz szacunku.
+ilu osobom juz zdechlo sie bo powiedzieli cos w zlym momencie. chuj temu smieciowi w dupe i tyle.
+/1# JA
+no twoja opinia. nie wiem skad takie emocje no ale niech ci bedzie
+/3# MCAT
+no nie chce nic mowic, ale jest to troche prawda...
+/1# JA
+wezcie przestancie, wszyscy tu mamy sie lubic okej? jestesmy teamem.
+/0# RURY
+wrocilem ponownie, i mam dobre newsy.
+nie dostajecie chuja w dupe, a wy otis i kot nie wypierdalacie. dobra robota.
+ty donix, no coz. chodzcie za mna to wam wszystko odpowiednio pokaze. zapewne nie mozecie sie doczekac tej procedury. no bynajmniej ja nie moge
+/0-
+/1-
+/2-
+/3-
+/=== leo/ds/server4.ds

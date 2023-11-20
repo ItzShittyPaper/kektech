@@ -1,0 +1,8 @@
+/0# RURY
+dobra to od czego tu zaczac?
+ten teleporter zostal wyslany nam od rzadu, oni chca abysmy przetestowali ich oprogramowanie. nudzi im sie chyba, ale no co sie z tym zrobi, my tu odpierdalamy brudna robote
+cygar i mcat wyslali do systemu wczoraj dane dziecinstwa donixa, aby mogl sie odnalezc w swiecie. jednakze wydarzenia moga sie nieznacznie roznic. nie jestesmy w stanie okreslic wplywu swiadomosci agentow na swiat, wiec to zadanie nalezy klasycznie do donixa.
+jesli jakis agent zacznie sie zachowywac agresywnie w strone ciebie, donix. to pamietaj. uciekaj jak najszybciej, nie chcemy cie stracic. nawet nie mowiac o stratach PR-owych. po prostu tam sie trzymaj
+dobra donix, jestes gotowy?
+/0-
+/=m= TEXT_1:no dobra, nie mam wyboru;TEXT_2:a moglbym troche czasu?;PATH_1:leo/txt/server41.txt;PATH_2:leo/txt/server42.txt

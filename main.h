@@ -6,6 +6,9 @@ bool loop();
 #ifndef MAIN_H_INCLUDED
 #define MAIN_H_INCLUDED
 
+#define GAME_VIEWPORT_WIDTH 640
+#define GAME_VIEWPORT_HEIGHT 480
+
 /*
 
 GAME MODES / SCREENS

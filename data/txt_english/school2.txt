@@ -1,0 +1,46 @@
+/0# JA
+/1# KTOSIEK
+/2# FLORYDA
+/3# KAZDY
+hi
+/0# JA
+ok ktosiek, what do you have here that's so important.
+/3# JALAPENO
+this little thing right here *shows me a key*
+/0# JA
+what? it's a fucking key
+/2# FLORYDA
+this is THE key to the school's underground warehouse
+/0# JA
+aaand where did you find it? (this doesn't look good...)
+/3# JALAPENO
+the janitor just left it on a desk, so we took it "just in case"
+/0# JA
+aaand now you want me to go there with you, yeah?
+/2# FLORYDA
+yeah, why not? *the bell rings*
+okay, the break is over. but don't go to class now-
+/1# KTOSIEK
+huh?
+/2# FLORYDA
+let's go there now with donix. just wait for me since we'll have to bring our stuff with us.
+*pulls books out of a backpack, packing them on the windowsill so that no one takes them*
+can someone write to askel? it would be nice if someone would do that crap. but fuck it, he's probably not coming anyway.
+
+we go in, then make a plan of this place, and in the end we steal everything we can, I don't think such an opportunity will happen to us, so yeah.
+does anyone have any questions, or is stressed?
+/3# JALAPENO
+Not going to lie this is kind of a fucked up plan, but i think we'll do it.
+after we do it lets go to my place, we'll play some doom 2. i have a special WAD for you that i worked on.
+/2# FLORYDA
+great idea, we'll unpack there and plan our next move. in short these will be our best truancy that we'll ever go on.
+well donix, I guess I didn't leave you much choice here but...
+/0# JA
+yeah?
+/2# FLORYDA
+you in?
+/3-
+/2-
+/1-
+/0-
+/=m= TEXT_1:Fuck it, im in B);TEXT_2:huh, i think i'll stay;PATH_1:leo/txt/school21.txt;PATH_2:leo/txt/school22.txt

@@ -49,13 +49,13 @@ bool M_CheckCollision(SDL_Rect a, SDL_Rect b) {
 
 void M_PlayerBorderCollide(SDL_Rect player_collider) {
 
-	if( ( player.pos_y < 0 ) || ( player.pos_y + 16 > game_viewport_height)) {
+	if( ( player.pos_y < 0 ) || ( player.pos_y + 16 > GAME_VIEWPORT_HEIGHT)) {
 		//move back
 		player.pos_y -= player.vel_y;
 		player.collider.y = player.pos_y;
 	}
 
-	if( ( player.pos_x < 0 ) || ( player.pos_x + 16 > game_viewport_width)) {
+	if( ( player.pos_x < 0 ) || ( player.pos_x + 16 > GAME_VIEWPORT_WIDTH)) {
 		//move back
 		player.pos_x -= player.vel_x;    
 		player.collider.x = player.pos_x;

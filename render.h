@@ -4,7 +4,7 @@
 #include "libs.h"
 #include <vector>
 
-#define RENDER_SCALE 1
+#define RENDER_SCALE 2
 #define TARGET_FPS 60
 
 extern int animplayer_character;

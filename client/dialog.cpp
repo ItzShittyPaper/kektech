@@ -36,6 +36,20 @@ int UI_DialogBox(bool is_animated, const char* file) {
 			}
 
 			else if (strstr(dialog.ch, "/0#") != NULL) {
+
+			//	char *head = strtok(dialog.ch, "; ");
+			//	char *initbuf = (char*)malloc(sizeof(char) * 64);
+
+			//	while (head != NULL) {
+
+			//		if(strstr(head, "CHARNAME:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; strncpy(dialog.character0, initbuf + 1, 16); printf("%s\n", initbuf + 1); }
+		
+			//		printf("'%s'\n", head);
+			//		head = strtok(NULL, ";");
+			//	}	
+
+			//	free(head);
+
 				if (strcmp(dialog.character0, " ") == 0) { R_ResetPortraitAnim(); }
 				strncpy(dialog.character0, dialog.ch, 16);
 				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
@@ -120,17 +134,17 @@ int UI_DialogBox(bool is_animated, const char* file) {
 		}
 
 		/* the main dialog box */
-		UI_FillRect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
-		UI_Rect(STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, game_viewport_width / UI_SCALE - 4, 72, true);
+		UI_FillRect(STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 72, GAME_VIEWPORT_WIDTH / UI_SCALE - 4, 72, true);
+		UI_Rect(STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 72, GAME_VIEWPORT_WIDTH / UI_SCALE - 4, 72, true);
 
 		/* the character name box */
-		UI_FillRect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
-		UI_Rect(STANDARD_PADDING + 10, game_viewport_height / UI_SCALE - 84, 72, 12, true);
+		UI_FillRect(STANDARD_PADDING + 10, GAME_VIEWPORT_HEIGHT / UI_SCALE - 84, 72, 12, true);
+		UI_Rect(STANDARD_PADDING + 10, GAME_VIEWPORT_HEIGHT / UI_SCALE - 84, 72, 12, true);
 
 		/* the label */
 		if (animplayer6 > 223 && animplayer7 > 223) {
-			UI_TextLabelEx(2 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 72, 255, 255, 255, dialog.ch, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
-			UI_TextLabelEx(10 + STANDARD_PADDING, game_viewport_height / UI_SCALE - 84, 255, 255, 255, dialog.current_character, game_viewport_width / UI_SCALE - STANDARD_PADDING, true);
+			UI_TextLabelEx(2 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 72, 255, 255, 255, dialog.ch, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
+			UI_TextLabelEx(10 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 84, 255, 255, 255, dialog.current_character, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
 		}
 	}
 	return 0;
@@ -176,15 +190,15 @@ char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const 
 		}
 
 		for (int i = 0; i < 2; i++) {
-			UI_FillRect(6, (game_viewport_height / UI_SCALE) - ((i + 1) * 35), 308, 33, false);
+			UI_FillRect(6, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), 308, 33, false);
 
-			if (i == menu.option) { UI_SelectRect(6, (game_viewport_height / UI_SCALE) - ((i + 1) * 35), 308, 33, false); }
-			else { UI_Rect(6, (game_viewport_height / UI_SCALE) - ((i + 1) * 35), 308, 33, false); }
+			if (i == menu.option) { UI_SelectRect(6, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), 308, 33, false); }
+			else { UI_Rect(6, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), 308, 33, false); }
 				
 			if (i == 0) {
-				UI_TextLabel(8, (game_viewport_height / UI_SCALE) - ((i + 1) * 35), label_1, 244);
+				UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_1, 244);
 			} else {
-				UI_TextLabel(8, (game_viewport_height / UI_SCALE) - ((i + 1) * 35), label_2, 244);
+				UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_2, 244);
 			}
 		}
 	}

@@ -29,17 +29,10 @@ int is_interacting = 0;
 
 // game-specific variables
 const char *game_name = "silly funny game";
-const char *game_version = "1.0";
-const char *game_creator = "sexo";
-const char *game_info = "a kektech game";
-const char *game_url = "https://makulaturka.tk";
-
-const int game_viewport_width = 1280;
-const int game_viewport_height = 720;
 
 //Screen dimension constants
-const int game_screen_width = game_viewport_width * RENDER_SCALE;
-const int game_screen_height = game_viewport_height * RENDER_SCALE;
+const int game_screen_width = GAME_VIEWPORT_WIDTH * RENDER_SCALE;
+const int game_screen_height = GAME_VIEWPORT_HEIGHT * RENDER_SCALE;
 
 // Pointers to our window, renderer, texture, and font
 SDL_Rect dest;
@@ -104,7 +97,7 @@ bool loop() {
 	SDL_Rect dest;
 	is_interacting = 0;
 
-	SDL_RenderSetLogicalSize(renderer, game_viewport_width, game_viewport_height);
+	SDL_RenderSetLogicalSize(renderer, GAME_VIEWPORT_WIDTH, GAME_VIEWPORT_HEIGHT);
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
 	R_Clear();
 
@@ -185,8 +178,8 @@ bool loop() {
 	*/
 
 	if (gamemgr.is_paused == true) {
-		UI_FillRectEx(2, game_viewport_height / UI_SCALE - 20, game_viewport_width / UI_SCALE, 20, 255, 255, 255, true);
-		UI_TextLabelEx(2,  game_viewport_height / UI_SCALE / 2 - 20 / UI_SCALE, 0, 0, 0, "THE GAME IS PAUSED, PRESS F10 TO RESUME IT\nWARNING: MOVING WHILE PAUSED CAN CAUSE ISSUES", game_viewport_width / UI_SCALE, true);
+		UI_FillRectEx(2, GAME_VIEWPORT_HEIGHT / UI_SCALE - 20, GAME_VIEWPORT_WIDTH / UI_SCALE, 20, 255, 255, 255, true);
+		UI_TextLabelEx(2,  GAME_VIEWPORT_HEIGHT / UI_SCALE / 2 - 20 / UI_SCALE, 0, 0, 0, "THE GAME IS PAUSED, PRESS F10 TO RESUME IT\nWARNING: MOVING WHILE PAUSED CAN CAUSE ISSUES", GAME_VIEWPORT_WIDTH / UI_SCALE, true);
 	}
 
 	/* UPDATE WINDOW AT THE END */

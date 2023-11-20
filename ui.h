@@ -6,7 +6,7 @@
 
 #include "libs.h"
 
-#define UI_SCALE 2
+#define UI_SCALE 1
 #define STANDARD_PADDING 2
 
 #define LOG_SHOW_LENGTH 320

@@ -1,0 +1,32 @@
+/0# JA
+ok, im in my school now. finally lol. i actually thought this was the shortcut, but i just probably have dementia. ooor something else, i can't really know.
+let's go with this crap.
+Good Morning!
+/1# PORTIERKA
+Good Morniing?
+/1-
+/0# JA
+now it's the time to go through the stairs...
+school stair were always a nightmare for me. every single hour you had to go like 3 floors up or down, and the stairs were always crowded so it took ages to get through.
+these stairs always have their own rules, different in every school.
+i kinda miss that stuff, but anyways.
+/=== leo/ds/stairs.ds
+*step*
+*step*
+*step*
+ehhhh...
+*step*
+*step*
+/1# KTOSIEK
+yooo donix is here, we thought you're home playing games or something. the teacher literally forgot about your existence.
+/0# JA
+wait how?
+/1# KTOSIEK
+i don't know, and i don't care really. come with me i gotta show you something.
+/0# JA
+okay i guess, i have some time to spare.
+*casually goes with ktosiek to the school bathroom*
+/3-
+/2-
+/0-
+/=== leo/ds/school2.ds

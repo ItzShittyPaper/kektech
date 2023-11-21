@@ -268,7 +268,7 @@ bool init() {
 	//SAVE_WriteKeyToFile("omg", "haii");
 	//SAVE_ReadKeyFromFile();
 
-	A_PlayMUS("data/mus/corner.flac");
+	A_PlayMUS("data/mus/corner.flac\n");
 
 	ClientInit();
 

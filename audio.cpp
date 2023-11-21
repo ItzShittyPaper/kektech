@@ -4,6 +4,9 @@
 #include "ui.h"
 #include "main.h"
 
+#define __STDC_FORMAT_MACROS 1
+#include <inttypes.h>
+
 audio_arch mixer;
 al_music music;
 game_sfx* sfxmgr;
@@ -17,7 +20,7 @@ void A_FreeSoundEffect(game_sfx* manager)
 void A_LoadSoundEffects(game_sfx* manager, const char* path) {
 
 	FILE* file = fopen(path, "r");
-	if (file == NULL) { snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING SOUND EFFECT DEFINITIONS, FILE DOES NOT EXIST / PERMISSION DENIED\nSFX PATH: %s\n"); mode = kkui_crash; return; }
+	if (file == NULL) { snprintf(UI_nsod.crash_logbuffer, 256, "ERROR LOADING SOUND EFFECT DEFINITIONS, FILE DOES NOT EXIST / PERMISSION DENIED\nSFX PATH: %s\n", path); mode = kkui_crash; return; }
 
 	char soundChunk[128];
 	/* parse line by line */
@@ -150,12 +153,12 @@ static ALuint A_LoadSFX(const char *filename)
 	sndfile = sf_open(filename, SFM_READ, &sfinfo);
 	if (!sndfile)
 	{
-		fprintf(stderr, "Could not open audio in %s: %s\n", filename, sf_strerror(sndfile));
+		fprintf(stderr, "\nCould not open audio in %s: %s\n", filename, sf_strerror(sndfile));
 		return 0;
 	}
 	if (sfinfo.frames < 1 || sfinfo.frames >(sf_count_t)(INT_MAX / sizeof(short)) / sfinfo.channels)
 	{
-		fprintf(stderr, "Bad sample count in %s (%" PRId64 ")\n", filename, sfinfo.frames);
+		fprintf(stderr, "\nBad sample count in %s (%" PRId64 ")\n", filename, sfinfo.frames);
 		sf_close(sndfile);
 		return 0;
 	}
@@ -177,13 +180,13 @@ static ALuint A_LoadSFX(const char *filename)
 				format = AL_FORMAT_BFORMAT3D_16;
 			break;
 		default:
-			fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
+			fprintf(stderr, "\nUnsupported channel count: %d\n", sfinfo.channels);
 			sf_close(sndfile);
 			return 0;
 	}
 	if (!format)
 	{
-		fprintf(stderr, "Unsupported channel count: %d\n", sfinfo.channels);
+		fprintf(stderr, "\nUnsupported channel count: %d\n", sfinfo.channels);
 		sf_close(sndfile);
 		return 0;
 	}
@@ -196,7 +199,7 @@ static ALuint A_LoadSFX(const char *filename)
 	{
 		free(membuf);
 		sf_close(sndfile);
-		fprintf(stderr, "Failed to read samples in %s (%" PRId64 ")\n", filename, num_frames);
+		fprintf(stderr, "\nFailed to read samples in %s (%" PRId64 ")\n", filename, num_frames);
 		return 0;
 	}
 	num_bytes = (ALsizei)(num_frames * sfinfo.channels) * (ALsizei)sizeof(short);
@@ -232,6 +235,7 @@ void A_LoadMUS(const char* filename) {
 	alGenBuffers(MAX_BUFFERS, music.buffers);
 	std::size_t frame_size;
 
+	printf(filename);
 	music.sndfile = sf_open(filename, SFM_READ, &music.sfinfo);
 	if (!music.sndfile)
 	{

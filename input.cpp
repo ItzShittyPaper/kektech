@@ -28,9 +28,20 @@ movement:
 		W / UP = 13
 		S / DOWN = 14
 
+mouse:
+	press:
+		LEFT = 15
+		RIGHT = 16
+	release:
+		LEFT = 17
+		RIGHT = 18
+
 */
 
 SDL_Event e;
+mouseoffset global_offset;
+/*mousemasks_released global_mousemasks_released;
+mousemasks_pressed global_mousemasks_pressed; */
 
 void I_ProcessKeyDownEvent() {
 
@@ -86,6 +97,19 @@ void I_ProcessKeyUpEvent() {
 	}
 }
 
+int I_ProcessMouseButtonDownEvent(int button) {
+	if (button >= 15) {
+		return button;
+	}
+	return 0;
+}
+
+int I_ProcessMouseButtonUpEvent(int button) {
+	if (button >= 17) {
+		return button;
+	}
+	return 0;
+}
 
 bool I_ProcessInput(int key_code) {
 
@@ -95,4 +119,14 @@ bool I_ProcessInput(int key_code) {
 
 	skip:
 	return true;
+}
+
+mouseoffset I_GetMouseOffsets(int x, int y) {
+
+	mouseoffset offset;
+
+	offset.x = x;	
+	offset.y = y;
+	return offset;
+
 }

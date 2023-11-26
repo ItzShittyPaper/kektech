@@ -75,6 +75,7 @@ int main(int argc, char *argv[]) {
 
 	while ( loop() ) {
 		// wait before processing the next frame
+
 		if (gamemgr.frame_deltatime > (1000 / TARGET_FPS)) { } else {
 			SDL_Delay((1000 / TARGET_FPS) - gamemgr.frame_deltatime);
 		}
@@ -101,7 +102,17 @@ bool loop() {
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);	
 	R_Clear();
 
+	/* HERE IT DECLARES THE BUTTON, IK IT SHOULD TO THAT EVERY FRAME BUT ITS JUST AN EXAMPLE */
+	ui_button button;
+	button.pos_x = 0;
+	button.pos_y = 0;
+	button.width = 128;
+	button.height = 128;
+
 	/* ------------------------- */
+
+	/* THIS JUST RENDERS THAT BUTTON */
+	UI_RenderButton(button);
 
 	// Event loop
 	while ( SDL_PollEvent( &e ) != 0 ) {
@@ -112,13 +123,13 @@ bool loop() {
 				return false;
 			case SDL_TEXTINPUT:
 				textbox_input += e.text.text;
-				break;
+				continue;
 			case SDL_KEYUP:
 				if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
 					textbox_input.pop_back();
 				} else if (gamemgr.is_paused == false) {
 					I_ProcessKeyUpEvent();
-				} break;
+				} continue;
 			case SDL_KEYDOWN:
 				if (e.key.repeat == 0) {
 					if (e.key.keysym.sym == SDLK_BACKSPACE && textbox_input.size()) {
@@ -129,8 +140,16 @@ bool loop() {
 					} else {
 						I_ProcessPauseEvent();
 					}
-				} break;
+				} continue;
+			case SDL_MOUSEMOTION:
+				global_offset = I_GetMouseOffsets(e.motion.x, e.motion.y);
+
+				//printf("MOUSE OFFSETS: x = %d, y = %d\n", e.motion.x, e.motion.y);
 		}
+
+		/* HERE IT PROCESSES THE BUTTON EVENTS AND RENDERS ADDITIONAL BUTTON STATES, THIS FUNCTION ONLY WORKS IN THE EVENT LOOP */
+		/* THERE ARE TWO PROBLEMS WITH THAT: ITS BAD FOR SCALABILITY, AND YOU CAN CLICK THE BUTTON ONLY WHEN MOVING YOUR MOUSE  */
+		UI_HandleButtonEvent(e, button);
 	}
 
 	A_StreamMUS();
@@ -191,6 +210,7 @@ bool loop() {
 
 	gamemgr.frame_endtime = SDL_GetTicks64();
 	gamemgr.frame_deltatime = gamemgr.frame_endtime - gamemgr.frame_starttime;
+	//free(offset);
 
 	/* do nothing if you're in the menu */
 	return true;

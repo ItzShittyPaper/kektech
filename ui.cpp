@@ -316,6 +316,106 @@ void UI_CrashScreen(const char *label) {
 
 }
 
+/* ----------------------------
+	BUTTON CODE
+*/
+
+void UI_ExampleButtonCallback() { 
+	printf("hello!!!!! :3\n");
+}
+
+void UI_ButtonCallback(void (*ptr)())
+{
+    (*ptr)(); /* callback to UI_ExampleButtonCallback() */
+}
+
+void UI_RenderButton(ui_button button) {
+
+	UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
+	UI_Rect(button.pos_x, button.pos_y, button.width, button.height, true);
+	UI_TextLabel(button.pos_x + (button.width / 2) - (strlen("epic gaming") * 3), button.pos_y + (button.height / 2), "epic gaming", 144);
+
+}
+
+void UI_RenderSelectButton(ui_button button) {
+
+	UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
+	UI_SelectRect(button.pos_x, button.pos_y, button.width, button.height, true);
+	UI_TextLabel(button.pos_x + (button.width / 2) - (strlen("epic gaming") * 3), button.pos_y + (button.height / 2), "epic gaming", 144);
+
+}
+
+void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
+
+	button.pos_x = 0;
+	button.pos_y = 0;
+	button.width = 128;
+	button.height = 128;
+    
+
+   //The mouse offsets
+    int x = 0, y = 0;
+
+    while (SDL_PollEvent(&e) != 0) {
+	// process events
+		switch (e.type) {
+    			case SDL_MOUSEMOTION:
+   				x = global_offset.x;
+        			y = global_offset.y;
+        
+        			//If the mouse is over the button
+        			if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+					UI_RenderButton(button);
+        			}
+				continue;
+
+    			//If a mouse button was pressed
+    			case SDL_MOUSEBUTTONDOWN:
+        			//If the left mouse button was pressed
+        			if( e.button.button == SDL_BUTTON_LEFT ) {
+            				//Get the mouse offsets
+            				x = e.button.x;
+            				y = e.button.y;
+        
+            				//If the mouse is over the button
+            				if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+						UI_RenderSelectButton(button);
+						printf("sex\n");
+            				}
+        			}
+    				continue;	
+
+    			//If a mouse button was released
+    			case SDL_MOUSEBUTTONUP:
+        			//If the left mouse button was released
+        			if( e.button.button == SDL_BUTTON_LEFT ) { 
+            				//Get the mouse offsets
+            				x = e.button.x;
+            				y = e.button.y;
+        		
+            				//If the mouse is over the button
+            				if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+						UI_RenderButton(button);
+						void (*ptr)() = &UI_ExampleButtonCallback;
+						UI_ButtonCallback(ptr);
+            				}
+        			}
+    		}
+	}		
+}
+
+void UI_Button(ui_button button) {
+	
+	button.pos_x = 0;
+	button.pos_y = 0;
+	button.width = 128;
+	button.height = 128;
+    
+	UI_HandleButtonEvent(e, button);
+	UI_RenderButton(button);
+
+}
+
 void UI_WindowFrameEx(int pos_x, int pos_y, int width, int height, uint8_t r_bg, uint8_t g_bg, uint8_t b_bg, uint8_t r_text, uint8_t g_text, uint8_t b_text, const char* title) {
 
 	int y_content_offset = 8;

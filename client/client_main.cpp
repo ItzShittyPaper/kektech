@@ -214,6 +214,10 @@ bool ClientInit() {
 
 	strncpy(dialog.character0, " ", 1); strncpy(dialog.character1, " ", 1); strncpy(dialog.character2, " ", 1); strncpy(dialog.character3, " ", 1);
 	SNAKE_InitGame();
+
+	potraitmgr = new game_avatar();
+	potraitmgr->cachedAvatars = std::vector<PotraitDefinition*>();
+
 	UI_InitAvatars(potraitmgr);
 	return true;
 

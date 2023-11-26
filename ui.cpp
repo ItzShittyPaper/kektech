@@ -356,7 +356,6 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
    //The mouse offsets
     int x = 0, y = 0;
 
-    while (SDL_PollEvent(&e) != 0) {
 	// process events
 		switch (e.type) {
     			case SDL_MOUSEMOTION:
@@ -367,7 +366,6 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
         			if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
 					UI_RenderButton(button);
         			}
-				continue;
 
     			//If a mouse button was pressed
     			case SDL_MOUSEBUTTONDOWN:
@@ -379,11 +377,10 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
         
             				//If the mouse is over the button
             				if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
-						UI_RenderSelectButton(button);
-						printf("sex\n");
+								UI_RenderSelectButton(button);
+								printf("sex\n");
             				}
         			}
-    				continue;	
 
     			//If a mouse button was released
     			case SDL_MOUSEBUTTONUP:
@@ -401,7 +398,7 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
             				}
         			}
     		}
-	}		
+	//}		
 }
 
 void UI_Button(ui_button button) {

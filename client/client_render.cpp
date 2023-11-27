@@ -20,8 +20,8 @@ void R_DrawCharacterPortrait(SDL_Texture* texture_index) {
 	portrait.srcrect.w = 214;
 	portrait.srcrect.h = 464;
 	
-	portrait.dstrect.x = 214 * dialog.character_count;
-	portrait.dstrect.y = GAME_VIEWPORT_HEIGHT - 464 - 72;
+	portrait.dstrect.x = 0 * dialog.character_count;
+	portrait.dstrect.y = 0;
 	portrait.dstrect.w = 214;
 	portrait.dstrect.h = 464;
 

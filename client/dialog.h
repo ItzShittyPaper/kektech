@@ -4,22 +4,22 @@
 #include <string>
 #include <vector>
 
-extern struct PotraitDefinition
+extern struct PortraitDefinition
 {
 	std::string charName;
 	// path to the potrait sheet
 	std::string pathName;
-} potraitdefinition;
+} portraitdefinition;
 
 struct game_avatar {
-	std::vector<PotraitDefinition*> cachedAvatars;
-} extern* potraitmgr;
+	std::vector<PortraitDefinition*> cachedAvatars;
+};
 
 void UI_LoadAvatar(game_avatar* manager, char* path);
 void UI_FreeAvatar(game_avatar* manager);
-void UI_AddAvatar(game_avatar* manager, PotraitDefinition* definition);
+void UI_AddAvatar(game_avatar* manager, PortraitDefinition* definition);
 void UI_ClearAvatar(game_avatar* manager);
-void UI_RemoveAvatar(game_avatar* manager, PotraitDefinition* definition);
+void UI_RemoveAvatar(game_avatar* manager, PortraitDefinition* definition);
 std::string UI_GetAvatar(game_avatar* manager, const char* avatar);
 void UI_InitAvatars(game_avatar* manager);
 

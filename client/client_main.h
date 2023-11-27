@@ -4,6 +4,7 @@
 #define CLIENT_MAIN_H_INCLUDED
 
 #include "engine.h"
+#include "dialog.h"
 
 /*
 
@@ -104,6 +105,8 @@ struct helper_ent {
 
 
 };
+
+extern game_avatar *portraitmgr;
 
 /* GAME-CRITICAL FUNCTIONS */
 void PLAYER_Init();

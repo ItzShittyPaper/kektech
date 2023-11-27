@@ -1,8 +1,7 @@
 #include "engine.h"
 #include "dialog.h"
 
-
-game_avatar* potraitmgr;
+//game_avatar *portraitmanager;
 
 void UI_FreeAvatar(game_avatar* manager)
 {
@@ -19,7 +18,7 @@ void UI_LoadAvatar(game_avatar* manager, const char* path) {
 	/* parse line by line */
 	while (fgets(avatarChunk, sizeof(avatarChunk), file) != NULL) {
 
-		PotraitDefinition* def = new PotraitDefinition();
+		PortraitDefinition* def = new PortraitDefinition();
 		def->charName = std::string();
 		def->pathName = std::string();
 		
@@ -27,19 +26,19 @@ void UI_LoadAvatar(game_avatar* manager, const char* path) {
 		// this should be the char name.
 		char* tok = strtok(avatarChunk, ";");
 		def->charName = tok;
-		//printf("%s, ", tok);
+		printf("avatar name: %s, \n", tok);
 
 		// this should be the char path
 		tok = strtok(NULL, ";");
 		def->pathName = tok;
 
-		//printf("%s, ", tok);
+		printf("material name: %s, \n", tok);
 
 		UI_AddAvatar(manager, def);
 	}
 }
 
-void UI_AddAvatar(game_avatar* manager, PotraitDefinition* definition)
+void UI_AddAvatar(game_avatar* manager, PortraitDefinition* definition)
 {
 	printf(definition->charName.c_str());
 	printf(definition->pathName.c_str());
@@ -50,17 +49,17 @@ void UI_ClearAvatar(game_avatar* manager)
 {
 	for (int i = 0; i < manager->cachedAvatars.size(); i++)
 	{
-		PotraitDefinition* def = manager->cachedAvatars[i];
+		PortraitDefinition* def = manager->cachedAvatars[i];
 	}
 
 	manager->cachedAvatars.clear();
 }
 
-void UI_RemoveAvatar(game_avatar* manager, PotraitDefinition* definition)
+void UI_RemoveAvatar(game_avatar* manager, PortraitDefinition* definition)
 {
 	for (int i = 0; i < manager->cachedAvatars.size(); i++)
 	{
-		PotraitDefinition* def = manager->cachedAvatars[i];
+		PortraitDefinition* def = manager->cachedAvatars[i];
 		if (def == definition)
 		{
 			manager->cachedAvatars.erase(manager->cachedAvatars.begin() + i);
@@ -73,7 +72,8 @@ std::string UI_GetAvatar(game_avatar* manager, const char* avatar)
 {
 	for (int i = 0; i < manager->cachedAvatars.size(); i++)
 	{
-		PotraitDefinition* definition = manager->cachedAvatars[i];
+
+		PortraitDefinition* definition = manager->cachedAvatars[i];
 		if (strcmp(definition->charName.c_str(), avatar) == 0)
 		{
 			return definition->pathName;
@@ -138,6 +138,7 @@ int UI_DialogBox(bool is_animated, const char* file) {
 
 				if (strcmp(dialog.character0, " ") == 0) { R_ResetPortraitAnim(); }
 				strncpy(dialog.character0, dialog.ch, 16);
+				dialog.character0[ strlen(dialog.character0) - 1 ] = '\0';
 				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
 				R_ResetPortraitAnim();
 				goto read;
@@ -216,35 +217,37 @@ int UI_DialogBox(bool is_animated, const char* file) {
 			}
 			*/
 
-			std::string avatar = UI_GetAvatar(potraitmgr, dialog.character0);
+			std::string avatar = UI_GetAvatar(portraitmgr, dialog.character0);
+			printf("------------------\ndialog.character0: %s\navatar: %s\n---------------------\n", dialog.character0, avatar);
+			if (!avatar.empty())
+			{
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
+				printf("whatever man\n");
+				dialog.character_count++;
+			}
+
+			/*avatar = UI_GetAvatar(portraitmgr, dialog.character1);
 			if (!avatar.empty())
 			{
 				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
 				dialog.character_count++;
 			}
 
-			avatar = UI_GetAvatar(potraitmgr, dialog.character1);
+			avatar = UI_GetAvatar(portraitmgr, dialog.character2);
 			if (!avatar.empty())
 			{
 				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
 				dialog.character_count++;
 			}
 
-			avatar = UI_GetAvatar(potraitmgr, dialog.character2);
+			avatar = UI_GetAvatar(portraitmgr, dialog.character3);
 			if (!avatar.empty())
 			{
 				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
 				dialog.character_count++;
 			}
 
-			avatar = UI_GetAvatar(potraitmgr, dialog.character3);
-			if (!avatar.empty())
-			{
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
-				dialog.character_count++;
-			}
-
-
+*/
 			dialog.character_count = 1;
 		}
 

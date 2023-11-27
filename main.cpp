@@ -10,6 +10,8 @@
 #include "input.h"
 #include "save.h"
 
+#include "client/dialog.h"
+
 // definitions
 dialog_file dialog;
 dialog_menu menu;
@@ -263,6 +265,8 @@ bool init() {
 	texturemgr->cachedMaterials = std::vector<MaterialDefinition*>();
 	sfxmgr = new game_sfx();
 	sfxmgr->cachedSounds = std::vector<SoundDefinition*>();
+	portraitmgr = new game_avatar(); /* que? */
+	portraitmgr->cachedAvatars = std::vector<PortraitDefinition*>();
 
 	/* start sending SDL_TextInput events */
 //	SDL_StartTextInput();

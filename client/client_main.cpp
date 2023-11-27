@@ -4,6 +4,8 @@
 #include "dialog.h"
 #include "snake.h"
 
+game_avatar *portraitmgr;
+
 void PLAYER_Init() {
 
 	player.collider.x = 0;
@@ -214,7 +216,8 @@ bool ClientInit() {
 
 	strncpy(dialog.character0, " ", 1); strncpy(dialog.character1, " ", 1); strncpy(dialog.character2, " ", 1); strncpy(dialog.character3, " ", 1);
 	SNAKE_InitGame();
-	UI_InitAvatars(potraitmgr);
+
+	UI_InitAvatars(portraitmgr);
 	return true;
 
 }

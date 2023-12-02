@@ -42,7 +42,7 @@ extern struct CharacterWorldSprite {
 
 /* drawing functions */
 void R_DrawPlayer(SDL_Texture* texture_index, int direction);
-void R_DrawCharacterPortrait(SDL_Texture* texture_index);
+void R_DrawCharacterPortrait(SDL_Texture* texture_index, int expression);
 void R_ResetPortraitAnim();
 void NPC_DrawEntity(SDL_Texture* texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type);
 

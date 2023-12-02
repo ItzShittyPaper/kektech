@@ -4,6 +4,7 @@
 #include <cassert>
 #include <climits>
 #include <time.h>
+#include <algorithm>
 #include <string>
 #include <vector>
 #include <bit>

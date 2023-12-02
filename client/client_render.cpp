@@ -13,17 +13,50 @@ void R_ResetPortraitAnim() {
 		portrait.animplayer = 0;
 }
 
-void R_DrawCharacterPortrait(SDL_Texture* texture_index) {
+void R_DrawCharacterPortrait(SDL_Texture* texture_index, int expression) {
 
-	portrait.srcrect.x = 0;
-	portrait.srcrect.y = 0;
-	portrait.srcrect.w = 214;
-	portrait.srcrect.h = 464;
+	/* CHARACTER EXPRESSION INDEX
+
+		0 - IDLE
+		1 - FIGHT
+		2 - ANGRY
+		3 - BLUSHY / EMBARASSED
+		4 - HALF-NAKED
+
+	*/
+
+	portrait.srcrect.w = 200;
+	portrait.srcrect.h = 360;
 	
-	portrait.dstrect.x = 0 * dialog.character_count;
-	portrait.dstrect.y = 0;
+	switch(expression) {
+
+		case 0:
+			portrait.srcrect.x = 0;
+			portrait.srcrect.y = 0;
+			break;
+		case 1:
+			portrait.srcrect.x = (portrait.srcrect.w * 1);
+			portrait.srcrect.y = 0;
+			break;
+		case 3:
+			portrait.srcrect.x = (portrait.srcrect.w * 2);
+			portrait.srcrect.y = 0;
+			break;
+		case 4:
+			portrait.srcrect.x = (portrait.srcrect.w * 4);
+			portrait.srcrect.y = 0;
+			break;
+
+
+
+	}
+
+
 	portrait.dstrect.w = 214;
-	portrait.dstrect.h = 464;
+	portrait.dstrect.h = 360;
+
+	portrait.dstrect.x = 72 + (portrait.dstrect.w * (dialog.character_count - 2));
+	portrait.dstrect.y = GAME_VIEWPORT_HEIGHT - portrait.dstrect.h;
 
 	if (portrait.animplayer < 254) {
 		SDL_SetTextureAlphaMod(texture_index, portrait.animplayer);

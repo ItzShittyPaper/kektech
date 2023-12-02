@@ -22,6 +22,11 @@ struct dialog_file {
 	int target_num = 1;
 	int line_num = 1;
 
+	int char0expr;
+	int char1expr;
+	int char2expr;
+	int char3expr;
+
 	FILE* ptr;
 	char* tag;
 	char* file_buffer;

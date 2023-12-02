@@ -22,17 +22,13 @@ void UI_LoadAvatar(game_avatar* manager, const char* path) {
 		def->charName = std::string();
 		def->pathName = std::string();
 		
-
 		// this should be the char name.
 		char* tok = strtok(avatarChunk, ";");
 		def->charName = tok;
-		printf("avatar name: %s, \n", tok);
 
 		// this should be the char path
 		tok = strtok(NULL, ";");
 		def->pathName = tok;
-
-		printf("material name: %s, \n", tok);
 
 		UI_AddAvatar(manager, def);
 	}
@@ -74,8 +70,10 @@ std::string UI_GetAvatar(game_avatar* manager, const char* avatar)
 	{
 
 		PortraitDefinition* definition = manager->cachedAvatars[i];
-		if (strcmp(definition->charName.c_str(), avatar) == 0)
+		//printf("LOOK AT THIS SHIT: %s\n", definition->charName.c_str());
+		if (strstr(avatar, definition->charName.c_str()) != 0)
 		{
+			definition->pathName.erase(std::remove(definition->pathName.begin(), definition->pathName.end(), '\n'), definition->pathName.cend());
 			return definition->pathName;
 		}
 	}
@@ -123,23 +121,23 @@ int UI_DialogBox(bool is_animated, const char* file) {
 
 			else if (strstr(dialog.ch, "/0#") != NULL) {
 
-				//	char *head = strtok(dialog.ch, "; ");
-				//	char *initbuf = (char*)malloc(sizeof(char) * 64);
-
-				//	while (head != NULL) {
-
-				//		if(strstr(head, "CHARNAME:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; strncpy(dialog.character0, initbuf + 1, 16); printf("%s\n", initbuf + 1); }
-
-				//		printf("'%s'\n", head);
-				//		head = strtok(NULL, ";");
-				//	}	
-
-				//	free(head);
-
 				if (strcmp(dialog.character0, " ") == 0) { R_ResetPortraitAnim(); }
-				strncpy(dialog.character0, dialog.ch, 16);
-				dialog.character0[ strlen(dialog.character0) - 1 ] = '\0';
-				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
+
+				char * pch;
+				int i = 0;
+				pch = strtok(dialog.ch, "; ");
+				while (pch != NULL) {
+					if (i == 1) {
+						strncpy(dialog.character0, pch, 16);
+					} else if (i == 2) {
+						dialog.char0expr = atoi(pch);
+					}
+					pch = strtok (NULL, "; ");
+					i++;
+				}
+
+				strncpy(dialog.current_character, dialog.character0, 16);
+				dialog.character_count++;
 				R_ResetPortraitAnim();
 				goto read;
 			}
@@ -147,25 +145,31 @@ int UI_DialogBox(bool is_animated, const char* file) {
 				if (strcmp(dialog.character1, " ") == 0) { R_ResetPortraitAnim(); }
 				strncpy(dialog.character1, dialog.ch, 16);
 				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
+
+				dialog.character_count++;
 				goto read;
 			}
 			else if (strstr(dialog.ch, "/2#") != NULL) {
 				if (strcmp(dialog.character2, " ") == 0) { R_ResetPortraitAnim(); }
 				strncpy(dialog.character2, dialog.ch, 16);
 				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
+
+				dialog.character_count++;
 				goto read;
 			}
 			else if (strstr(dialog.ch, "/3#") != NULL) {
 				if (strcmp(dialog.character3, " ") == 0) { R_ResetPortraitAnim(); }
 				strncpy(dialog.character3, dialog.ch, 16);
 				strncpy(dialog.current_character, strchr(dialog.ch, ' '), 16);
+
+				dialog.character_count++;
 				goto read;
 			}
 
-			else if (strstr(dialog.ch, "/0-") != NULL) { strncpy(dialog.character0, " ", 16); R_ResetPortraitAnim(); goto read; }
-			else if (strstr(dialog.ch, "/1-") != NULL) { strncpy(dialog.character1, " ", 16); R_ResetPortraitAnim(); goto read; }
-			else if (strstr(dialog.ch, "/2-") != NULL) { strncpy(dialog.character2, " ", 16); R_ResetPortraitAnim(); goto read; }
-			else if (strstr(dialog.ch, "/3-") != NULL) { strncpy(dialog.character3, " ", 16); R_ResetPortraitAnim(); goto read; }
+			else if (strstr(dialog.ch, "/0-") != NULL) { strncpy(dialog.character0, " ", 16); dialog.character_count--; R_ResetPortraitAnim(); goto read; }
+			else if (strstr(dialog.ch, "/1-") != NULL) { strncpy(dialog.character1, " ", 16); dialog.character_count--; R_ResetPortraitAnim(); goto read; }
+			else if (strstr(dialog.ch, "/2-") != NULL) { strncpy(dialog.character2, " ", 16); dialog.character_count--; R_ResetPortraitAnim(); goto read; }
+			else if (strstr(dialog.ch, "/3-") != NULL) { strncpy(dialog.character3, " ", 16); dialog.character_count--; R_ResetPortraitAnim(); goto read; }
 
 			else if (strstr(dialog.ch, "/=m=") != NULL) {
 
@@ -192,63 +196,30 @@ int UI_DialogBox(bool is_animated, const char* file) {
 		}
 
 		if (animplayer6 > 223 && animplayer7 > 223 && dialog.render_characters == true) {
-			/* character shit */
-			/*
-			if (strstr(dialog.character0, "CYGAR") != NULL || strstr(dialog.character1, "CYGAR") != NULL || strstr(dialog.character2, "CYGAR") != NULL || strstr(dialog.character3, "CYGAR") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "cygar_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "RURY") != NULL || strstr(dialog.character1, "RURY") != NULL || strstr(dialog.character2, "RURY") != NULL || strstr(dialog.character3, "RURY") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "rury_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "DONIX") != NULL || strstr(dialog.character1, "DONIX") != NULL || strstr(dialog.character2, "DONIX") != NULL || strstr(dialog.character3, "DONIX") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "donix_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "OTIS") != NULL || strstr(dialog.character1, "OTIS") != NULL || strstr(dialog.character2, "OTIS") != NULL || strstr(dialog.character3, "OTIS") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "otis_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "MCAT") != NULL || strstr(dialog.character1, "MCAT") != NULL || strstr(dialog.character2, "MCAT") != NULL || strstr(dialog.character3, "MCAT") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "mcat_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "KTOSIEK") != NULL || strstr(dialog.character1, "KTOSIEK") != NULL || strstr(dialog.character2, "KTOSIEK") != NULL || strstr(dialog.character3, "KTOSIEK") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "ktosiek_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "FLORYDA") != NULL || strstr(dialog.character1, "FLORYDA") != NULL || strstr(dialog.character2, "FLORYDA") != NULL || strstr(dialog.character3, "FLORYDA") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "floryda_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "JALAPENO") != NULL || strstr(dialog.character1, "JALAPENO") != NULL || strstr(dialog.character2, "JALAPENO") != NULL || strstr(dialog.character3, "JALAPENO") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "jalapeno_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "MISSINGNO") != NULL || strstr(dialog.character1, "MISSINGNO") != NULL || strstr(dialog.character2, "MISSINGNO") != NULL || strstr(dialog.character3, "MISSINGNO") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "missingno_sheet")); dialog.character_count++;
-			} if (strstr(dialog.character0, "ABW") != NULL || strstr(dialog.character1, "ABW") != NULL || strstr(dialog.character2, "ABW") != NULL || strstr(dialog.character3, "ABW") != NULL) {
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, "glowie_sheet")); dialog.character_count++;
-			}
-			*/
 
 			std::string avatar = UI_GetAvatar(portraitmgr, dialog.character0);
-			printf("------------------\ndialog.character0: %s\navatar: %s\n---------------------\n", dialog.character0, avatar);
 			if (!avatar.empty())
 			{
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
-				printf("whatever man\n");
-				dialog.character_count++;
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()), dialog.char0expr);
 			}
 
-			/*avatar = UI_GetAvatar(portraitmgr, dialog.character1);
+			avatar = UI_GetAvatar(portraitmgr, dialog.character1);
 			if (!avatar.empty())
 			{
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
-				dialog.character_count++;
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()), 0);
 			}
 
 			avatar = UI_GetAvatar(portraitmgr, dialog.character2);
 			if (!avatar.empty())
 			{
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
-				dialog.character_count++;
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()), 0);
 			}
 
 			avatar = UI_GetAvatar(portraitmgr, dialog.character3);
 			if (!avatar.empty())
 			{
-				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()));
-				dialog.character_count++;
+				R_DrawCharacterPortrait(R_GetMaterial(texturemgr, avatar.c_str()), 0);
 			}
-
-*/
-			dialog.character_count = 1;
 		}
 
 		/* the main dialog box */

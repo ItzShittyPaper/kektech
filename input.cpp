@@ -40,8 +40,8 @@ mouse:
 
 SDL_Event e;
 mouseoffset global_offset;
-/*mousemasks_released global_mousemasks_released;
-mousemasks_pressed global_mousemasks_pressed; */
+mousemasks_pressed global_mousemasks_pressed;
+mousemasks_pressed global_mousemasks_released;
 
 void I_ProcessKeyDownEvent() {
 
@@ -119,6 +119,16 @@ bool I_ProcessInput(int key_code) {
 
 	skip:
 	return true;
+}
+
+void I_ResetMousemasks() {
+
+	global_mousemasks_pressed.mouse_left = false;
+	global_mousemasks_pressed.mouse_right = false;
+
+	global_mousemasks_released.mouse_left = false;
+	global_mousemasks_released.mouse_right = false;
+
 }
 
 mouseoffset I_GetMouseOffsets(int x, int y) {

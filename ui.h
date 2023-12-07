@@ -54,6 +54,7 @@ struct ui_button {
 	int pos_y;
 	int width;
 	int height;
+	int mode;
 	
 	SDL_Rect box;
 	SDL_Rect* clip;
@@ -75,7 +76,7 @@ void UI_SelectRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uin
 void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
 void UI_HandleButtonEvent(SDL_Event e, ui_button button);
-void UI_RenderButton(ui_button button);
+void UI_RenderButton(ui_button button, int rendermode);
 void UI_Button(ui_button button);
 void UI_WindowFrameEx(int pos_x, int pos_y, int width, int height, uint8_t r_bg, uint8_t g_bg, uint8_t b_bg, uint8_t r_text, uint8_t g_text, uint8_t b_text, const char* title);
 void UI_CrashScreen(const char *label);

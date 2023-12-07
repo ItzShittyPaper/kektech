@@ -7,7 +7,6 @@ void I_ProcessKeyUpEvent();
 int I_ProcessMouseButtonDownEvent(int button);
 int I_ProcessMouseButtonUpEvent(int button);
 bool I_ProcessInput(int key_code);
-
 struct mouseoffset {
 
 	int x;
@@ -20,15 +19,9 @@ struct mousemasks_pressed {
 	bool mouse_left;
 	bool mouse_right;
 
-} extern global_mousemasks_pressed;
+} extern global_mousemasks_pressed, global_mousemasks_released;
 
-struct mousemasks_released {
-
-	bool mouse_left;
-	bool mouse_right;
-
-} extern global_mousemasks_released;
-
+void I_ResetMousemasks();
 mouseoffset I_GetMouseOffsets(int x, int y);
 
 /* EVENT SHIT */

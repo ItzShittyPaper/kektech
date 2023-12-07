@@ -10,6 +10,14 @@ ui_dashboard UI_dashboard;
 ui_nsod UI_nsod;
 ui_rgbcolor UI_rgbcolor;
 
+#define RECT_R 16
+#define RECT_G 128
+#define RECT_B 64
+
+#define SELECT_RECT_R 64
+#define SELECT_RECT_G 16
+#define SELECT_RECT_B 128
+
 // Pointers to our window, renderer, texture, and font
 
 ui_rgbcolor UI_RGBColorReturn(char* chunk) {
@@ -180,14 +188,14 @@ void UI_Rect(int pos_x, int pos_y, int width, int height, bool is_animated) {
 	rect.h = height * UI_SCALE;
 
 	if (is_animated == false) {
-		SDL_SetRenderDrawColor(renderer, 0, 255, 128, 255);
+		SDL_SetRenderDrawColor(renderer, RECT_R, RECT_G, RECT_B, 255);
 	} else {
 
 		if (animplayer7 > 255) {
 			animplayer7 = 255;
 		}
 
-		SDL_SetRenderDrawColor(renderer, 0, 255, 128, 0 + animplayer7);
+		SDL_SetRenderDrawColor(renderer, RECT_R, RECT_G, RECT_B, 0 + animplayer7);
 		animplayer7 = animplayer7 + 8;
 	}
 
@@ -206,14 +214,14 @@ void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated
 	rect.h = height * UI_SCALE;
 
 	if (is_animated == false) {
-		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 255);
+		SDL_SetRenderDrawColor(renderer, SELECT_RECT_R, SELECT_RECT_G, SELECT_RECT_B, 255);
 	} else {
 
 		if (animplayer7 > 255) {
 			animplayer7 = 255;
 		}
 
-		SDL_SetRenderDrawColor(renderer, 0, 255, 255, 0 + animplayer7);
+		SDL_SetRenderDrawColor(renderer, SELECT_RECT_R, SELECT_RECT_G, SELECT_RECT_B, 0 + animplayer7);
 		animplayer7 = animplayer7 + 8;
 	}
 
@@ -329,76 +337,47 @@ void UI_ButtonCallback(void (*ptr)())
     (*ptr)(); /* callback to UI_ExampleButtonCallback() */
 }
 
-void UI_RenderButton(ui_button button) {
-
-	UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
-	UI_Rect(button.pos_x, button.pos_y, button.width, button.height, true);
-	UI_TextLabel(button.pos_x + (button.width / 2) - (strlen("epic gaming") * 3), button.pos_y + (button.height / 2), "epic gaming", 144);
-
-}
-
-void UI_RenderSelectButton(ui_button button) {
-
-	UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
-	UI_SelectRect(button.pos_x, button.pos_y, button.width, button.height, true);
-	UI_TextLabel(button.pos_x + (button.width / 2) - (strlen("epic gaming") * 3), button.pos_y + (button.height / 2), "epic gaming", 144);
-
+void UI_RenderButton(ui_button button, int rendermode) {
+	if (rendermode > 0) {
+		UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
+		UI_SelectRect(button.pos_x, button.pos_y, button.width, button.height, true);
+		UI_TextLabel(button.pos_x + (button.width / 2) - (strlen(button.title) * 3), button.pos_y + (button.height / 2), button.title, 144);
+	} else {
+		UI_FillRect(button.pos_x, button.pos_y, button.width, button.height, true);
+		UI_Rect(button.pos_x, button.pos_y, button.width, button.height, true);
+		UI_TextLabel(button.pos_x + (button.width / 2) - (strlen(button.title) * 3), button.pos_y + (button.height / 2), button.title, 144);
+	}
 }
 
 void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
 
-	button.pos_x = 0;
-	button.pos_y = 0;
-	button.width = 128;
-	button.height = 128;
-    
-
    //The mouse offsets
     int x = 0, y = 0;
+	x = global_offset.x;
+        y = global_offset.y;
 
-	// process events
-		switch (e.type) {
-    			case SDL_MOUSEMOTION:
-   				x = global_offset.x;
-        			y = global_offset.y;
+	if( global_mousemasks_pressed.mouse_left == true ) {
         
-        			//If the mouse is over the button
-        			if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
-					UI_RenderButton(button);
-        			}
+            	//If the mouse is over the button
+            	if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+			printf("sex\n");
+			button.mode = 1;
+            	}
+        }
 
-    			//If a mouse button was pressed
-    			case SDL_MOUSEBUTTONDOWN:
-        			//If the left mouse button was pressed
-        			if( e.button.button == SDL_BUTTON_LEFT ) {
-            				//Get the mouse offsets
-            				x = e.button.x;
-            				y = e.button.y;
-        
-            				//If the mouse is over the button
-            				if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
-								UI_RenderSelectButton(button);
-								printf("sex\n");
-            				}
-        			}
+	else if( global_mousemasks_released.mouse_left == true ) {
 
-    			//If a mouse button was released
-    			case SDL_MOUSEBUTTONUP:
-        			//If the left mouse button was released
-        			if( e.button.button == SDL_BUTTON_LEFT ) { 
-            				//Get the mouse offsets
-            				x = e.button.x;
-            				y = e.button.y;
-        		
-            				//If the mouse is over the button
-            				if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
-						UI_RenderButton(button);
-						void (*ptr)() = &UI_ExampleButtonCallback;
-						UI_ButtonCallback(ptr);
-            				}
-        			}
-    		}
-	//}		
+            	//If the mouse is over the button
+            	if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+			//UI_RenderButton(button);
+			button.mode = 0;
+			void (*ptr)() = &UI_ExampleButtonCallback;
+			UI_ButtonCallback(ptr);
+            	}
+	}
+
+	UI_RenderButton(button, button.mode);
+
 }
 
 void UI_Button(ui_button button) {
@@ -408,8 +387,9 @@ void UI_Button(ui_button button) {
 	button.width = 128;
 	button.height = 128;
     
+	button.title = "epic gaming";
+
 	UI_HandleButtonEvent(e, button);
-	UI_RenderButton(button);
 
 }
 

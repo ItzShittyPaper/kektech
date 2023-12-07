@@ -19,6 +19,8 @@ player_ent  player;
 modes       mode;
 game_manager gamemgr;
 
+		ui_button button;
+
 /* ANIMATION PLAYERS */
 /* reserved for the player (and party) world animations */
 int animplayer5 = 0;
@@ -105,16 +107,8 @@ bool loop() {
 	R_Clear();
 
 	/* HERE IT DECLARES THE BUTTON, IK IT SHOULD TO THAT EVERY FRAME BUT ITS JUST AN EXAMPLE */
-	ui_button button;
-	button.pos_x = 0;
-	button.pos_y = 0;
-	button.width = 128;
-	button.height = 128;
 
 	/* ------------------------- */
-
-	/* THIS JUST RENDERS THAT BUTTON */
-	UI_RenderButton(button);
 
 	// Event loop
 	while ( SDL_PollEvent( &e ) != 0 ) {
@@ -147,19 +141,41 @@ bool loop() {
 				global_offset = I_GetMouseOffsets(e.motion.x, e.motion.y);
 
 				//printf("MOUSE OFFSETS: x = %d, y = %d\n", e.motion.x, e.motion.y);
-		}
+				continue;
 
-		/* HERE IT PROCESSES THE BUTTON EVENTS AND RENDERS ADDITIONAL BUTTON STATES, THIS FUNCTION ONLY WORKS IN THE EVENT LOOP */
-		/* THERE ARE TWO PROBLEMS WITH THAT: ITS BAD FOR SCALABILITY, AND YOU CAN CLICK THE BUTTON ONLY WHEN MOVING YOUR MOUSE  */
-		UI_HandleButtonEvent(e, button);
-	}
+   			//If a mouse button was pressed
+    			case SDL_MOUSEBUTTONDOWN:
+        			//If the left mouse button was pressed
+        			if( e.button.button == SDL_BUTTON_LEFT ) {
+					global_mousemasks_pressed.mouse_left = true;
+        			}
+				//If the left mouse button was pressed
+        			if( e.button.button == SDL_BUTTON_RIGHT ) {
+					global_mousemasks_pressed.mouse_right = true;
+        			} continue;
+
+   			//If a mouse button was pressed
+    			case SDL_MOUSEBUTTONUP:
+        			//If the left mouse button was pressed
+        			if( e.button.button == SDL_BUTTON_LEFT ) {
+					global_mousemasks_released.mouse_left = true;
+        			}
+				//If the left mouse button was pressed
+        			if( e.button.button == SDL_BUTTON_RIGHT ) {
+					global_mousemasks_released.mouse_right = true;
+        			}
+		}
+}
 
 	A_StreamMUS();
 
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
 	if (mode < 250) {
-
+		/* HERE IT PROCESSES THE BUTTON EVENTS AND RENDERS ADDITIONAL BUTTON STATES, THIS FUNCTION ONLY WORKS IN THE EVENT LOOP */
+		/* THERE ARE TWO PROBLEMS WITH THAT: ITS BAD FOR SCALABILITY, AND YOU CAN CLICK THE BUTTON ONLY WHEN MOVING YOUR MOUSE  */
+		UI_Button(button);
+	
 		ClientGameLoop();
 
 	}
@@ -210,6 +226,7 @@ bool loop() {
 		WRAP-UP
 	*/
 
+	I_ResetMousemasks();
 	gamemgr.frame_endtime = SDL_GetTicks64();
 	gamemgr.frame_deltatime = gamemgr.frame_endtime - gamemgr.frame_starttime;
 	//free(offset);

@@ -123,8 +123,12 @@ bool I_ProcessInput(int key_code) {
 
 void I_ResetMousemasks() {
 
-	global_mousemasks_pressed.mouse_left = false;
-	global_mousemasks_pressed.mouse_right = false;
+	if (global_mousemasks_released.mouse_left == true) {
+		global_mousemasks_pressed.mouse_left = false;
+	}
+	if (global_mousemasks_released.mouse_right == true) {
+		global_mousemasks_pressed.mouse_right = false;
+	}
 
 	global_mousemasks_released.mouse_left = false;
 	global_mousemasks_released.mouse_right = false;

@@ -19,8 +19,6 @@ player_ent  player;
 modes       mode;
 game_manager gamemgr;
 
-		ui_button button;
-
 /* ANIMATION PLAYERS */
 /* reserved for the player (and party) world animations */
 int animplayer5 = 0;
@@ -47,6 +45,9 @@ MISC FUNCTIONS
 
 */
 
+/* forward declaration because uhhhh idk */
+void kill();
+
 void RNG_Init() {
 
 	srand(time(0));	
@@ -63,6 +64,59 @@ int RNG_GenSeed(int rand_min, int rand_max) {
 }
 
 /* ======================== */
+
+int MENU_StartGame() {
+
+	mode = loading_mode;
+	gamemgr.map_is_initialized = 0;
+	return 0;
+
+}
+
+int MENU_AboutPage() {
+	UI_dashboard.menu_background = IMG_LoadTexture(renderer, "leo/bmp/about.png");
+	return 0;
+}
+
+int MENU_ShowMenuButtons(int pos_x, int pos_y, int width, int height, int gap) {
+
+	ui_button start_game;
+	ui_button about_screen;
+	ui_button exit_game;
+
+	start_game.pos_x = pos_x;
+	start_game.pos_y = pos_y;
+	start_game.width = 128;
+	start_game.height = 32;
+	start_game.title = "new game";
+	start_game.textstyle = 0;
+	start_game.ptr = (void (*)())&MENU_StartGame;
+
+	UI_Button(start_game);
+
+	about_screen.pos_x = pos_x;
+	about_screen.pos_y = (pos_y) + (height * 1) + gap;
+	about_screen.width = 128;
+	about_screen.height = 32;
+	about_screen.title = "about / options";
+	about_screen.textstyle = 0;
+	about_screen.ptr = (void (*)())&MENU_AboutPage;
+
+	UI_Button(about_screen);
+
+	exit_game.pos_x = pos_x;
+	exit_game.pos_y = (pos_y) + (height * 2) + (gap * 2);
+	exit_game.width = 128;
+	exit_game.height = 32;
+	exit_game.title = "exit game :3";
+	exit_game.textstyle = 0;
+	exit_game.ptr = (void (*)())&kill;
+
+	UI_Button(exit_game);
+
+	return 0;
+
+}
 
 int main(int argc, char *argv[]) {
 
@@ -172,12 +226,7 @@ bool loop() {
 	/* check if the player isn't in the game menu (dashboard) */
 	/* this function is flexible, handling exceptions like the player not being alive etc. */
 	if (mode < 250) {
-		/* HERE IT PROCESSES THE BUTTON EVENTS AND RENDERS ADDITIONAL BUTTON STATES, THIS FUNCTION ONLY WORKS IN THE EVENT LOOP */
-		/* THERE ARE TWO PROBLEMS WITH THAT: ITS BAD FOR SCALABILITY, AND YOU CAN CLICK THE BUTTON ONLY WHEN MOVING YOUR MOUSE  */
-		UI_Button(button);
-	
 		ClientGameLoop();
-
 	}
 	else {
 
@@ -197,6 +246,7 @@ bool loop() {
 				M_ReadMapFile("data/ds/kkui_dashboard/dashboard.ds", texturemgr);
 /*				UI_WindowFrameEx(6, 82, 240, 72, 0, 0, 0, 224, 112, 224, "WITAMY W DEMIE ZDS!!!");
 				UI_TextLabelEx(8, 98, 224, 112, 224, "AKTUALIZACJA 1.0.2: SNAKE MINIGIERKA DOSTEPNA POD KLAWISZEM V, NOWA WERSJA SILNIKA, AKTUALIZACJE INTERFEJSU POD MASKA, OGOLNE POPRAWKI. DZIEKUJE ZA WSZELKIE WSPARCIE - m4kulatura", 238, true); */
+				MENU_ShowMenuButtons(2, 128, 128, 32, 2);
 				UI_ShowLog(UI_log.logbuffer);	
 				break;
 			/* kkui_crash (the so called "NSOD" (nerd screen of death)) */
@@ -288,7 +338,10 @@ bool init() {
 	/* start sending SDL_TextInput events */
 //	SDL_StartTextInput();
 
-	//dialog.is_menu = false;
+	button.pos_x = 0;
+	button.pos_y = 0;
+	button.width = 128;
+	button.height = 128;
 
 	UI_InitLog();
 	/* initialize the random number generator */

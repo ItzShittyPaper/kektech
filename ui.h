@@ -54,14 +54,18 @@ struct ui_button {
 	int pos_y;
 	int width;
 	int height;
-	int mode;
+	int8_t mode = 0;
+	int8_t textstyle;
 	
 	SDL_Rect box;
 	SDL_Rect* clip;
 
+	void (*ptr)();
 	const char* title;
 
-};
+} extern button;
+
+//ui_button button;
 
 void UI_SendLog(const char* text);
 void UI_InitLog();

@@ -1,0 +1,25 @@
+DSHEADER;MENUMODE;BACKGROUND:data/res/bg.png
+
+0
+322
+/t
+Press "Z" to start the game.
+RED:0;GREEN:0;BLUE:0
+
+0
+330
+/t
+Press "X" to show the about page (unfinished lmao).
+RED:0;GREEN:0;BLUE:0
+
+0
+338
+/t
+Game written by
+RED:0;GREEN:0;BLUE:0
+
+86
+338
+/t
+m4kulatura.
+RED:196;GREEN:0;BLUE:64

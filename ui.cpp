@@ -12,9 +12,13 @@ ui_rgbcolor UI_rgbcolor;
 
 ui_button button;
 
-#define RECT_R 16
-#define RECT_G 128
-#define RECT_B 64
+#define RECT_R 0.0625f
+#define RECT_G 0.5f
+#define RECT_B 0.25f
+
+#define RECTBG_R 0.0f
+#define RECTBG_G 0.0f
+#define RECTBG_B 0.0f
 
 #define SELECT_RECT_R 64
 #define SELECT_RECT_G 16
@@ -177,7 +181,8 @@ void UI_ShowLog(const char* text) {
 	if (UI_log.logtextanimation < LOG_SHOW_LENGTH) {
 
 		/* bruh */
-		UI_TextLabel(2, 2, text, game_screen_width);
+		//UI_TextLabel(2, 2, text, game_screen_width);
+		R_RenderText(fontshader, text, 2.0f * UI_SCALE, 2.0f * UI_SCALE, 1.0f, glm::vec3(1.0, 1.0f, 1.0f));
 		UI_log.logtextanimation++;
 
 	}
@@ -257,11 +262,12 @@ void UI_SelectRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uin
 		animplayer7 = animplayer7 + 8;
 	}
 
+
 	SDL_RenderDrawRect(renderer, &rect);
 	
 }
 
-void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated) {
+void UI_FillRect(float pos_x, float pos_y, float width, float height, bool is_animated) {
 
 //	animplayer6 = 0;
 
@@ -360,12 +366,13 @@ void UI_RenderButton(ui_button button, int rendermode) {
 
 		case 0:
 			UI_TextLabel(button.pos_x + BUTTON_TEXTGAP, button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT, button.title, button.width);
+			R_RenderText(fontshader, button.title, (button.pos_x + BUTTON_TEXTGAP) * UI_SCALE, (button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 			break;
 		case 1:
 			UI_TextLabel(button.pos_x + (button.width / 2) - (strlen(button.title) * BUTTON_FONTWIDTH), button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT, button.title, button.width);
+			R_RenderText(fontshader, button.title, (button.pos_x + (button.width / 2) - (strlen(button.title)) * BUTTON_FONTWIDTH) * UI_SCALE, (button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 			break;
 	}
-
 }
 
 void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
@@ -375,18 +382,13 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
 	x = global_offset.x;
         y = global_offset.y;
 
-	if( global_mousemasks_pressed.mouse_left == true ) {
-        
-            	//If the mouse is over the button
-            	if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
-			button.mode = 1;
-            	}
-        }
+	//If the mouse is over the button
+        if ((x > button.pos_x) && (x < button.pos_x + button.width) && (y > button.pos_y - ((button.height / 2) * UI_SCALE)) && (y < button.pos_y + button.height)) {
 
-	if( global_mousemasks_released.mouse_left == true) {
-
-            	//If the mouse is over the button
-            	if( ( x > button.pos_x ) && ( x < button.pos_x + button.width ) && ( y > button.pos_y ) && ( y < button.pos_y + button.height ) ) {
+		if( global_mousemasks_pressed.mouse_left == true ) {
+				button.mode = 1;
+        	}
+		if( global_mousemasks_released.mouse_left == true) {
 			//void *ptr = button.ptr;
 			UI_ButtonCallback(button.ptr);
             	}

@@ -6,7 +6,7 @@
 
 #include "libs.h"
 
-#define UI_SCALE 1
+#define UI_SCALE 2
 #define STANDARD_PADDING 2
 
 #define LOG_SHOW_LENGTH 320
@@ -36,8 +36,7 @@ struct ui_nsod {
 } extern UI_nsod;
 
 struct ui_dashboard {
-	SDL_Texture* menu_background;
-	int animplayer;
+	float animplayer = 1.0f;
 } extern UI_dashboard;
 
 struct ui_rgbcolor {
@@ -77,7 +76,7 @@ void UI_TextLabelEx(int pos_x, int pos_y, uint8_t r, uint8_t g, uint8_t b,  cons
 void UI_Rect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_SelectRect(int pos_x, int pos_y, int width, int height, bool is_animated);
 void UI_SelectRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
-void UI_FillRect(int pos_x, int pos_y, int width, int height, bool is_animated);
+void UI_FillRect(float pos_x, float pos_y, float width, float height, bool is_animated);
 void UI_FillRectEx(int pos_x, int pos_y, int width, int height, uint8_t r, uint8_t g, uint8_t b, bool is_animated);
 void UI_HandleButtonEvent(SDL_Event e, ui_button button);
 void UI_RenderButton(ui_button button, int rendermode);

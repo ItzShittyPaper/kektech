@@ -8,7 +8,8 @@ struct CharacterPortrait {
 
 	int animplayer = 0;
 
-	SDL_Rect srcrect;
+	gl_textureclip clipdata;
+	gl_textureclip* clip = &clipdata;
 	SDL_Rect dstrect;
 
 };
@@ -41,10 +42,10 @@ extern struct CharacterWorldSprite {
 } playerworldsprite;
 
 /* drawing functions */
-void R_DrawPlayer(SDL_Texture* texture_index, int direction);
-void R_DrawCharacterPortrait(SDL_Texture* texture_index, int expression);
+void R_DrawPlayer(gl_texture texture_index, int direction);
+void R_DrawCharacterPortrait(gl_texture texture_index, int expression);
 void R_ResetPortraitAnim();
-void NPC_DrawEntity(SDL_Texture* texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type);
+void NPC_DrawEntity(gl_texture texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type);
 
 //extern SDL_Texture* R_GetMaterial(game_texture* manager, const char* material);
 

@@ -8,6 +8,8 @@
 struct Tile {
 
 	SDL_Rect rect;
+
+	float tile_size;
 	SDL_Rect getBox();
 
 };
@@ -89,7 +91,7 @@ void M_PlayerCollidePortal(SDL_Rect player_collider, SDL_Rect tile, char* path) 
 }
 
 
-void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index) {
+void M_DrawTile(int pos_x, int pos_y, int tile_size, gl_texture texture_index) {
 
 	Tile bgtile;
 
@@ -98,7 +100,8 @@ void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index)
 	bgtile.rect.w = tile_size;
 	bgtile.rect.h = tile_size;
 
-	SDL_RenderCopy(renderer, texture_index, NULL, &bgtile.rect); 
+	//SDL_RenderCopy(renderer, texture_index, NULL, &bgtile.rect); 
+	//R_RenderQuad(glm::vec3(0.0f, 0.0f, 0.0f), glm::radians(0.0f), glm::vec3(bgtile.tile_size, bgtile.tile_size, bgtile.tile_size), NULL, texture_index, NULL, 0.0f, texturequadshader);
 
 	/* COLLISION DETECTION */
 	if (map.no_collide == 0) {
@@ -116,14 +119,14 @@ void M_DrawPortal(int pos_x, int pos_y, int tile_size, char* path) {
 	bgtile.rect.w = tile_size;
 	bgtile.rect.h = tile_size;
 
-	SDL_RenderCopy(renderer, R_GetMaterial(texturemgr, "glaggle"), NULL, &bgtile.rect); 
+	//SDL_RenderCopy(renderer, R_GetMaterial(texturemgr, "glaggle"), NULL, &bgtile.rect); 
 
 	M_PlayerCollidePortal(player.collider, bgtile.rect, path);
 
 }
 
 
-void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, SDL_Texture* texture_index) {
+void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, gl_texture texture_index) {
 
 	for (int i0 = 0; i0 < num_y; i0++) {
 		for (int i1 = 0; i1 < num_x; i1++) {
@@ -163,7 +166,6 @@ int commandcheck() {
 	map.ye = strstr(map.chunk, "/d");
         if (map.ye != NULL) { map.i = 18; return 8; }
 
-
 	return 0;
 
 }
@@ -176,15 +178,16 @@ int M_InitCMD(FILE* map_file) {
 	map.is_uielement = false;
 	dialog.render_characters = false;
 	dialog.current_dialog = NULL;
-	UI_dashboard.menu_background = NULL;
-
+	background_texname.clear();
 	while (head != NULL) {
 
 		if(strstr(head, "MENUMODE") != NULL) { map.is_uielement = true; }
 		if(strstr(head, "CREDITMODE") != NULL) { mode = kkui_credit; /* change mode to credits */ }
 		if(strstr(head, "RENDERCHARACTERS") != NULL) { dialog.render_characters = true; }
-		if(strstr(head, "BACKGROUND:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; UI_dashboard.menu_background = IMG_LoadTexture(renderer, initbuf + 1); printf("%s\n", initbuf + 1); }
-		
+		if(strstr(head, "BACKGROUND:") != NULL) {
+			initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0;
+			background_texname = initbuf + 1;
+		}
 //		if(strstr(head, "MUSIC:") != NULL) { initbuf = strchr( head, ':' ); initbuf[strcspn(initbuf, "\n")] = 0; Mix_HaltMusic(); mixer.music = Mix_LoadMUS(initbuf + 1); printf("%s\n", initbuf + 1); }
 		/* NOT VISUAL NOVEL RELATED, NOT USEFUL IN KEKTECH_ZDS */
 
@@ -223,8 +226,10 @@ int M_ReadMapFile(const char* map_path, game_texture* texture) {
 		}
 	}
 
+	/* draw background */
+	if (!background_texname.empty())
+		R_RenderBackground();
 	/* check if the player collides with the border of the screen */
-	R_DrawBackground();
 	M_PlayerBorderCollide(player.collider);
 
 	/* parsing the .ds file */

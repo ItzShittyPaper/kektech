@@ -13,44 +13,44 @@ void R_ResetPortraitAnim() {
 		portrait.animplayer = 0;
 }
 
-void R_DrawCharacterPortrait(SDL_Texture* texture_index, int expression) {
+void R_DrawCharacterPortrait(gl_texture texture_index, int expression) {
 
 	/* CHARACTER EXPRESSION INDEX
 
 		0 - IDLE
-		1 - FIGHT
-		2 - ANGRY
-		3 - BLUSHY / EMBARASSED
+		1 - ANGRY
+		2 - BLUSHY / EMBARASSED
+		3 - FIGHT
 		4 - HALF-NAKED
 
 	*/
 
-	portrait.srcrect.w = 200;
-	portrait.srcrect.h = 360;
+	portrait.clip->width = 0.312f;
+	portrait.clip->height = 0.312f;
 	
 	switch(expression) {
 
 		case 0:
-			portrait.srcrect.x = 0;
-			portrait.srcrect.y = 0;
+			portrait.clip->pos_x = 0;
+			portrait.clip->pos_y = 0;
 			break;
 		case 1:
-			portrait.srcrect.x = (portrait.srcrect.w * 1);
-			portrait.srcrect.y = 0;
+			portrait.clip->pos_x = (portrait.clip->width * 1);
+			portrait.clip->pos_y = 0;
+			break;
+		case 2:
+			portrait.clip->pos_x = (portrait.clip->width * 2);
+			portrait.clip->pos_y = 0;
 			break;
 		case 3:
-			portrait.srcrect.x = (portrait.srcrect.w * 2);
-			portrait.srcrect.y = 0;
+			portrait.clip->pos_x = 0;
+			portrait.clip->pos_y = (portrait.clip->height * 1);
 			break;
 		case 4:
-			portrait.srcrect.x = (portrait.srcrect.w * 4);
-			portrait.srcrect.y = 0;
+			portrait.clip->pos_x = (portrait.clip->width * 1);
+			portrait.clip->pos_y = (portrait.clip->height * 1);
 			break;
-
-
-
 	}
-
 
 	portrait.dstrect.w = 214;
 	portrait.dstrect.h = 360;
@@ -59,19 +59,20 @@ void R_DrawCharacterPortrait(SDL_Texture* texture_index, int expression) {
 	portrait.dstrect.y = GAME_VIEWPORT_HEIGHT - portrait.dstrect.h;
 
 	if (portrait.animplayer < 254) {
-		SDL_SetTextureAlphaMod(texture_index, portrait.animplayer);
+		//SDL_SetTextureAlphaMod(texture_index, portrait.animplayer);
 		portrait.animplayer += 8;
 	}
 	if (portrait.animplayer > 254) {
 		portrait.animplayer = 255;
-		SDL_SetTextureAlphaMod(texture_index, 255);
+		//SDL_SetTextureAlphaMod(texture_index, 255);
 	}
 
-	SDL_RenderCopy(renderer, texture_index, &portrait.srcrect, &portrait.dstrect); 
+	R_setQuadSpritesheetCoords(portrait.clip->pos_x, portrait.clip->pos_y, portrait.clip->width, portrait.clip->height, texture_index);
+	R_RenderTextureQuad(glm::vec3(0.0f, -0.2f, -0.0f), glm::radians(0.0f), glm::vec3(1.5f, 1.5f, 1.0f), portrait.clip, texture_index, NULL, 0.0, texturequadshader);
 
 }
 
-void R_DrawPlayer(SDL_Texture* texture_index, int direction) {
+void R_DrawPlayer(gl_texture texture_index, int direction) {
 
 	//UI_FillRect(player.pos_x, player.pos_y, 16, 16, false);
 	playerworldsprite.srcrect.w = 16;
@@ -115,8 +116,8 @@ void R_DrawPlayer(SDL_Texture* texture_index, int direction) {
 	playerworldsprite.dstrect.h = 16;
 
 	/* direction check flipping the sprite horizontally if needed */
-	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect); }
-	else { SDL_RenderCopyEx(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
+//	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect); }
+//	else { SDL_RenderCopyEx(renderer, texture_index, &playerworldsprite.srcrect, &playerworldsprite.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
 
 	/* animation controller check */
 	if (player.is_moving == 1) {
@@ -125,7 +126,7 @@ void R_DrawPlayer(SDL_Texture* texture_index, int direction) {
 
 }
 
-void NPC_DrawEntity(SDL_Texture* texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type) {
+void NPC_DrawEntity(gl_texture texture_index, int pos_x, int pos_y, int direction, char* dialog_path, int type) {
 
 	helper_ent npc;
 
@@ -182,8 +183,8 @@ void NPC_DrawEntity(SDL_Texture* texture_index, int pos_x, int pos_y, int direct
 	NPC_HelperActivate(player.collider, npc.intrect, npc.dialog);
 
 	/* direction check flipping the sprite horizontally if needed */
-	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &npc.srcrect, &npc.dstrect);  }
-	else { SDL_RenderCopyEx(renderer, texture_index, &npc.srcrect, &npc.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
+//	if (direction != 1) { SDL_RenderCopy(renderer, texture_index, &npc.srcrect, &npc.dstrect);  }
+//	else { SDL_RenderCopyEx(renderer, texture_index, &npc.srcrect, &npc.dstrect, 0, NULL, SDL_FLIP_HORIZONTAL); }
 
 }
 

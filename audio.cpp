@@ -108,19 +108,19 @@ void A_StartAudioEngine() {
 	/* check for EAX 2.0 support */
 	alIsExtensionPresent("EAX2.0");
 
-
+	alGenSources(1, &mixer.source);
 }
 
 void A_KillAudioEngine() {
 
-/*	alDeleteBuffers(MAX_OAL_BUFS, &mixer.buffer);	
+	//alDeleteBuffers(MAX_OAL_BUFS, &mixer.buffers);
 
 	mixer.context = alcGetCurrentContext();
 	mixer.device = alcGetContextsDevice(mixer.context);
 
-    	alDeleteSources(1, &mixer.source);
-    	alDeleteBuffers(1, &mixer.buffer);
-*/
+	alDeleteSources(1, &mixer.source);
+    	//alDeleteBuffers(1, &mixer.buffer);
+
 	alcMakeContextCurrent(NULL);
 	alcDestroyContext(mixer.context);
 	alcCloseDevice(mixer.device);
@@ -368,14 +368,14 @@ int A_PlayMUS(const char* filename) {
 
 int A_StreamMUS() {
 
-//	while (mixer.state == AL_PLAYING && alGetError() == AL_NO_ERROR) {
+	while (A_IsPlaying(music.source) /*&& alGetError() == AL_NO_ERROR */) {
 		A_UpdateMUS();
 		alGetSourcei(music.source, AL_SOURCE_STATE, &mixer.state);
-//	}
-	if (!A_IsPlaying(music.source)) {
-		sf_seek(music.sndfile, 0, 0);
-		A_InitMUS();
 	}
+	//if (!A_IsPlaying(music.source)) {
+	//	sf_seek(music.sndfile, 0, 0);
+	//	A_InitMUS();
+	//}
 	return 0;
 
 }
@@ -386,7 +386,6 @@ int A_PlaySFX(const char* filename) {
 	ALfloat offset;
 	buffer = A_LoadSFX(filename);
 
-	alGenSources(1, &mixer.source);
 	alSourcei(mixer.source, AL_BUFFER, (ALint)buffer);
 
 	/* Play the sound until it finishes. */
@@ -397,7 +396,7 @@ int A_PlaySFX(const char* filename) {
 	while (mixer.state == AL_PLAYING) {
         	alGetSourcei(mixer.source, AL_SOURCE_STATE, &mixer.state);
         	// check for errors
-	}	
+	}
 
 	return 0;
 

@@ -11,10 +11,10 @@ void M_InitTiling();
 bool M_CheckCollision(SDL_Rect a, SDL_Rect b);
 void M_PlayerTileCollide(SDL_Rect player_collider, SDL_Rect tile);
 
-void M_DrawTile(int pos_x, int pos_y, int tile_size, SDL_Texture* texture_index);
-void M_DrawTileLineH(int pos_x, int pos_y, int num_x, int tile_size, SDL_Texture* texture_index);
-void M_DrawTileLineV(int pos_x, int pos_y, int num_y, int tile_size, SDL_Texture* texture_index);
-void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, SDL_Texture* texture_index);
+void M_DrawTile(int pos_x, int pos_y, int tile_size, gl_texture texture_index);
+void M_DrawTileLineH(int pos_x, int pos_y, int num_x, int tile_size, gl_texture texture_index);
+void M_DrawTileLineV(int pos_x, int pos_y, int num_y, int tile_size, gl_texture texture_index);
+void M_DrawTileRect(int pos_x, int pos_y, int num_x, int num_y, int tile_size, gl_texture texture_index);
 
 class game_texture;
 int M_ReadMapFile(const char* map_path, game_texture* texture);

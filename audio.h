@@ -42,6 +42,7 @@ struct al_music {
 	ALenum format;
 	ALuint buffers[MAX_BUFFERS];
 	short* membuf;
+	bool is_playing_music;
 
 } extern music;
 
@@ -63,11 +64,13 @@ void A_ClearSoundEffects(game_sfx* manager);
 void A_RemoveSoundEffect(game_sfx* manager, SoundDefinition* definition);
 std::string A_GetSoundEffect(game_sfx* manager, const char* sound);
 void A_InitSoundEffects(game_sfx* manager);
-
 void A_StartAudioEngine();
 void A_KillAudioEngine();
 void A_LoadMUS(const char* filename);
 void A_UpdateMUS();
+
+bool A_IsPlaying(ALuint source);
+
 int A_InitMUS();
 int A_PlayMUS(const char* filename);
 int A_StreamMUS();

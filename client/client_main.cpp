@@ -77,7 +77,6 @@ bool ClientInput(int key_code) {
 				case 255:
 					mode = loading_mode;
 					gamemgr.map_is_initialized = 0;
-					//SDL_DestroyTexture(UI_dashboard.menu_background);
 					break;
 
 				default: break;
@@ -91,8 +90,8 @@ bool ClientInput(int key_code) {
 
 				/* main menu */
 				case 255:
-					UI_dashboard.menu_background = IMG_LoadTexture(renderer, "leo/bmp/about.png");
-					//SDL_DestroyTexture(UI_dashboard.menu_background);
+					//R_FlushTexture(background);
+					//R_IMGLoadTexture(background, "data/bmp/about.png");
 					break;
 
 				default: break;
@@ -241,8 +240,8 @@ void ClientGameLoop() {
 
 		M_ReadMapFile(gamemgr.currentmap, texturemgr);
 
-		if (player.is_alive == true)
-			R_DrawPlayer(R_GetMaterial(texturemgr, "leo_sheet"), player.direction);
+		//if (player.is_alive == true)
+			//R_DrawPlayer(R_GetMaterial(texturemgr, "leo_sheet"), player.direction);
 
 		/* ------------------------- */
 
@@ -272,7 +271,7 @@ void ClientLoadingAnim() {
 
 	if (UI_dashboard.animplayer > 0) {
 		/* render the map background */
-		SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
+		//SDL_SetTextureAlphaMod(UI_dashboard.menu_background, UI_dashboard.animplayer);
 		UI_dashboard.animplayer -= 16;
 	}
 	if (UI_dashboard.animplayer <= 0 ) {

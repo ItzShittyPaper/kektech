@@ -232,8 +232,10 @@ int UI_DialogBox(bool is_animated, const char* file) {
 
 		/* the label */
 		if (animplayer6 > 223 && animplayer7 > 223) {
-			UI_TextLabelEx(2 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 72, 255, 255, 255, dialog.ch, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
-			UI_TextLabelEx(10 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 84, 255, 255, 255, dialog.current_character, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
+			//UI_TextLabelEx(2 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 72, 255, 255, 255, dialog.ch, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
+			R_RenderText(fontshader, dialog.ch, (2 + STANDARD_PADDING) * UI_SCALE, (GAME_VIEWPORT_HEIGHT / UI_SCALE - 72) * UI_SCALE, 1.0f, glm::vec3(1.0, 1.0f, 1.0f));
+			//UI_TextLabelEx(10 + STANDARD_PADDING, GAME_VIEWPORT_HEIGHT / UI_SCALE - 84, 255, 255, 255, dialog.current_character, GAME_VIEWPORT_WIDTH / UI_SCALE - STANDARD_PADDING, true);
+			R_RenderText(fontshader, dialog.current_character, (10 + STANDARD_PADDING) * UI_SCALE, (GAME_VIEWPORT_HEIGHT / UI_SCALE - 84) * UI_SCALE, 1.0f, glm::vec3(1.0, 1.0f, 1.0f));
 		}
 	}
 	return 0;
@@ -285,9 +287,11 @@ char* UI_Menu(bool is_animated, const char* label_1, const char* label_2, const 
 			else { UI_Rect(6, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), 308, 33, false); }
 				
 			if (i == 0) {
-				UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_1, 244);
+				//UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_1, 244);
+				R_RenderText(fontshader, label_1, 8 * UI_SCALE, ((GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35)) * UI_SCALE, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 			} else {
-				UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_2, 244);
+				//UI_TextLabel(8, (GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35), label_2, 244);
+				R_RenderText(fontshader, label_2, 8 * UI_SCALE, ((GAME_VIEWPORT_HEIGHT / UI_SCALE) - ((i + 1) * 35)) * UI_SCALE, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
 			}
 		}
 	}

@@ -389,10 +389,10 @@ void R_RenderUIQuad(glm::vec3 position, float rotation, glm::vec3 scale, glm::ve
 	glBindVertexArray(gVAO);
 	glBindBuffer( GL_ARRAY_BUFFER, gVBO );
 	glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, gIBO );
-	glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_STATIC_DRAW );
+	glBufferData( GL_ELEMENT_ARRAY_BUFFER, sizeof(indexData), indexData, GL_DYNAMIC_DRAW );
 
 	NormalizedquadVertices = R_setQuadColorCoords(color);
-	glBufferData( GL_ARRAY_BUFFER, sizeof(NormalizedquadVertices), (void*)&NormalizedquadVertices[0], GL_STATIC_DRAW );
+	glBufferData( GL_ARRAY_BUFFER, sizeof(NormalizedquadVertices), (void*)&NormalizedquadVertices[0], GL_DYNAMIC_DRAW );
 
 	/* Transformation data */
 	glm::mat4 trans = glm::mat4(1.0f);
@@ -400,6 +400,7 @@ void R_RenderUIQuad(glm::vec3 position, float rotation, glm::vec3 scale, glm::ve
 	trans = glm::rotate(trans, rotation, glm::vec3(0.0, 0.0, -1.0));
 	trans = glm::scale(trans, scale);
 
+	//projection = glm::ortho(0.0f, (float)game_screen_width, 0.0f, (float)game_screen_height);
 	unsigned int transformLoc = glGetUniformLocation(shader.ID, "TransformMatrix");
 	glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 	unsigned int alphaLoc = glGetUniformLocation(shader.ID, "alpha");
@@ -572,7 +573,7 @@ void R_RenderText(gl_shaderprogram shader, std::string text, float x, float y, f
 		gl_character ch = charactermap[*c];
 
 		float xpos = x + ch.bearing.x * scale;
-		float ypos = (game_screen_height - y) - (ch.size.y - ch.bearing.y) * scale;
+		float ypos = y - (ch.size.y - ch.bearing.y) * scale;
 
 		float w = ch.size.x * scale;
 		float h = ch.size.y * scale;

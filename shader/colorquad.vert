@@ -12,6 +12,6 @@ uniform mat4 projection;
 uniform mat4 TransformMatrix;
 
 void main() {
-    gl_Position = projection * view * model * TransformMatrix * vec4(VertexPos3D, 1.0f);
+    gl_Position = projection * TransformMatrix * vec4(VertexPos3D, 1.0f);
     VertexColor = VertexColor3D;
 }

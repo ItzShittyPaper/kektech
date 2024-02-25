@@ -93,6 +93,7 @@ int MENU_StartGame() {
 
 int MENU_AboutPage() {
 	ilDeleteImages( 1, &background.imgID ); glDeleteTextures( 1, &background.TextureID );
+	background_texname = "menuabout";
 	//R_IMGLoadTexture(background, "data/bmp/about.png");
 	return 0;
 }
@@ -333,7 +334,6 @@ bool loop() {
 	}
 
 	//R_RenderText(fontshader, "This is sample text", 25.0f, 25.0f, 1.0f, glm::vec3(0.5, 0.8f, 0.2f));
-
 	/* 
 		PAUSE CHECK
 	*/

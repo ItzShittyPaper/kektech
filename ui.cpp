@@ -291,6 +291,8 @@ void UI_FillRect(float pos_x, float pos_y, float width, float height, bool is_an
 
 	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
 	SDL_RenderFillRect(renderer, &rect);
+
+	R_RenderUIQuad({pos_x * UI_SCALE, pos_y * UI_SCALE, 0.0}, 0.0, {width * UI_SCALE, height * UI_SCALE, 1.0}, {RECTBG_R, RECTBG_G, RECTBG_B, 1.0}, colorquadshader);
 	
 }
 
@@ -366,11 +368,11 @@ void UI_RenderButton(ui_button button, int rendermode) {
 
 		case 0:
 			UI_TextLabel(button.pos_x + BUTTON_TEXTGAP, button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT, button.title, button.width);
-			R_RenderText(fontshader, button.title, (button.pos_x + BUTTON_TEXTGAP) * UI_SCALE, (button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+			R_RenderText(fontshader, button.title, (button.pos_x + BUTTON_TEXTGAP) * UI_SCALE, (button.pos_y - (button.height / 2)) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 			break;
 		case 1:
 			UI_TextLabel(button.pos_x + (button.width / 2) - (strlen(button.title) * BUTTON_FONTWIDTH), button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT, button.title, button.width);
-			R_RenderText(fontshader, button.title, (button.pos_x + (button.width / 2) - (strlen(button.title)) * BUTTON_FONTWIDTH) * UI_SCALE, (button.pos_y + (button.height / 2) - BUTTON_FONTHEIGHT) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+			R_RenderText(fontshader, button.title, (button.pos_x + (button.width / 2) - (strlen(button.title)) * BUTTON_FONTWIDTH) * UI_SCALE, (button.pos_y - (button.height / 2)) * UI_SCALE, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 			break;
 	}
 }
@@ -383,7 +385,7 @@ void UI_HandleButtonEvent(SDL_Event e, ui_button button) {
         y = global_offset.y;
 
 	//If the mouse is over the button
-        if ((x > button.pos_x) && (x < button.pos_x + button.width) && (y > button.pos_y - ((button.height / 2) * UI_SCALE)) && (y < button.pos_y + button.height)) {
+	if ((x > button.pos_x) && (x < button.pos_x + button.width) && (y > ((game_screen_height / UI_SCALE) - button.pos_y - ((button.height / 2) * UI_SCALE)) && (y < (game_screen_height / UI_SCALE) - button.pos_y + button.height))) {
 
 		if( global_mousemasks_pressed.mouse_left == true ) {
 				button.mode = 1;
